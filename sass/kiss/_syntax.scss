@@ -25,7 +25,7 @@ pre.highlight, pre {
     margin: 0 -27px;
 
     @include media-query($on-mobile) {
-        margin: 0 calc(51% - 51vw);
+        margin: 0 calc(50% - 50vw); // Poprawka na idealne rozciągnięcie bez paska przewijania
         padding-left: 20px;
     }
 
