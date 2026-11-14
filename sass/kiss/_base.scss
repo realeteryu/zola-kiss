@@ -173,3 +173,9 @@ blockquote {
     font-style: italic;
     margin: $spacing-full 0;
 }
+
+// Text selection
+::selection {
+    background-color: $dark-text-link-blue; /* Różowy kolor zaznaczenia */
+    color: $white;
+}
