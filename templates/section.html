@@ -5,12 +5,12 @@
 {% block main %}
     <h1 class="header-title" style="margin-top: 2rem; margin-bottom: 2rem;">{{ section.title }}</h1>
     
-    <div class="post-list">
+    <ul class="post-list">
     {% for page in section.pages %}
-        <div class="post-item">
+        <li class="post-item">
             <span class="post-item-date">{{ page.date | date(format="%b %d, %Y") }}</span>
             <a href="{{ page.permalink }}" class="post-item-title">{{ page.title }}</a>
-        </div>
+        </li>
     {% endfor %}
-    </div>
+    </ul>
 {% endblock main %}
