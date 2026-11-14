@@ -88,10 +88,10 @@ body[data-theme="dark"] {
             .menu-link { color: $dark-white; }
             .menu-icon > svg { stroke: $dark-white; }
             
-            // Tlo menu mobilnego
+            // Tlo menu mobilnego z efektem polprzezroczystosci
             @include media-query($on-mobile) {
                 input[type="checkbox"]:checked ~ .trigger {
-                    background: $dark-black;
+                    background-color: rgba($dark-black, 0.85);
                 }
             }
         }
