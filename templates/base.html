@@ -6,7 +6,7 @@
     <title>{% block title %}{{ config.title }}{% endblock %}</title>
     
     <!-- Bunny Fonts (privacy-friendly) -->
-    <link href="https://fonts.bunny.net/css?family=ibm-plex-mono:400,700|roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.bunny.net/css?family=roboto:400,700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
 </head>
@@ -38,9 +38,6 @@
             </label>
 
             <a id="mode" href="javascript:void(0);" title="Toggle theme">
-                <svg class="mode-moon" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
                 <svg class="mode-sunny" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="5"></circle>
                     <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -57,7 +54,13 @@
             <div class="trigger">
                 <a href="{{ config.base_url }}" class="menu-link">{{ config.title }}</a>
                 <a href="{{ get_url(path='@/posts/_index.md') }}" class="menu-link">Wpisy</a>
-                <a href="{{ get_url(path='index.xml') }}" class="menu-link rss">RSS</a>
+                <a href="{{ get_url(path='index.xml') }}" class="menu-link rss" title="RSS">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                        <circle cx="5" cy="19" r="1"></circle>
+                    </svg>
+                </a>
             </div>
         </nav>
     </div>
@@ -69,7 +72,13 @@
     <footer class="footer">
         <a href="{{ config.base_url }}" class="footer_item">home</a>
         <a href="{{ get_url(path='@/posts/_index.md') }}" class="footer_item">wpisy</a>
-        <a href="{{ get_url(path='index.xml') }}" class="footer_item">rss</a>
+        <a href="{{ get_url(path='index.xml') }}" class="footer_item" title="RSS">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 11a9 9 0 0 1 9 9"></path>
+                <path d="M4 4a16 16 0 0 1 16 16"></path>
+                <circle cx="5" cy="19" r="1"></circle>
+            </svg>
+        </a>
         <span class="footer_item">&copy; 2026</span>
     </footer>
 
