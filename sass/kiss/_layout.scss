@@ -25,7 +25,6 @@
     border-bottom: 1px solid $light;
     padding: $spacing-full - 15px $spacing-full;
     
-    /* Clearfix dla floatów */
     &::after {
         content: "";
         display: table;
@@ -54,6 +53,7 @@
         transform: scale(1, 1);
         opacity: 0.7;
         z-index: 1;
+        color: $black; /* KRYTYCZNE: ustawia kolor ikony w trybie jasnym */
         
         &:hover {
             cursor: pointer;
@@ -63,18 +63,17 @@
             transform: scale(0.9, 0.9);
         }
         
-        /* Stylizacja obu ikon (włącznie z tagiem <path>) */
         .mode-moon {
             display: block;
-            path { stroke: $black; fill: none; }
-            line { stroke: $black; fill: none; }
-            circle { fill: $black; stroke: $black; }
+            path { stroke: currentColor; fill: none; }
+            line { stroke: currentColor; fill: none; }
+            circle { fill: currentColor; stroke: currentColor; }
         }
         .mode-sunny {
             display: none;
-            path { stroke: $dark-white; fill: none; }
-            line { stroke: $dark-white; fill: none; }
-            circle { fill: none; stroke: $dark-white; }
+            path { stroke: currentColor; fill: none; }
+            line { stroke: currentColor; fill: none; }
+            circle { fill: none; stroke: currentColor; }
         }
     }
 
@@ -139,6 +138,7 @@
             z-index: 10;
             float: none;
             clear: none;
+            color: $black; /* Kolor w trybie jasnym na mobile */
         }
 
         .menu-icon {
@@ -154,7 +154,7 @@
             text-align: center;
             z-index: 10;
             > svg {
-                fill: $black;
+                fill: currentColor;
                 opacity: 0.7;
             }
             &:hover > svg {
@@ -197,6 +197,7 @@
             font-size: 1.1em;
             padding: 4px 0;
             margin: 0;
+            color: $black; /* Kolor linków w trybie jasnym na mobile */
         }
     }
 }
