@@ -50,11 +50,8 @@
         top: 6px;
         position: relative;
         clear: both;
-        width: 24px;
-        height: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
         opacity: 0.7;
         z-index: 1;
         
@@ -66,14 +63,16 @@
             transform: scale(0.9, 0.9);
         }
         
-        /* Dwie ikony - CSS decyduje, która jest widoczna */
+        /* Stylizacja obu ikon (włącznie z tagiem <path>) */
         .mode-moon {
             display: block;
+            path { stroke: $black; fill: none; }
             line { stroke: $black; fill: none; }
             circle { fill: $black; stroke: $black; }
         }
         .mode-sunny {
             display: none;
+            path { stroke: $dark-white; fill: none; }
             line { stroke: $dark-white; fill: none; }
             circle { fill: none; stroke: $dark-white; }
         }
@@ -109,8 +108,10 @@
             position: relative;
             bottom: -3px;
             outline: none;
-            display: inline-flex;
-            align-items: center;
+        }
+
+        @include media-query($on-mobile) {
+            opacity: 0.8;
         }
     }
 
@@ -176,7 +177,7 @@
             width: 100vw;
             height: 100dvh;
             display: flex;
-            flex-direction: column; /* Linki jeden pod drugim */
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             background-color: rgba(255, 255, 255, 0.85);
