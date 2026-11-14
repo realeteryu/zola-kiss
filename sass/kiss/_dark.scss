@@ -73,10 +73,27 @@ body[data-theme="dark"] {
         color: $dark-white;
     }
 
+    // Nowa sekcja nawigacji dla trybu ciemnego
     .navbar {
         border-color: $dark-light;
-        .menu .menu-link {
-            color: $dark-white;
+        
+        .menu {
+            // Przelaczanie ikony ksiezyca i slonca
+            a#mode {
+                .mode-sunny { display: block; }
+                .mode-moon { display: none; }
+            }
+
+            // Kolory linkow i ikony hamburgera
+            .menu-link { color: $dark-white; }
+            .menu-icon > svg { stroke: $dark-white; }
+            
+            // Tlo menu mobilnego
+            @include media-query($on-mobile) {
+                input[type="checkbox"]:checked ~ .trigger {
+                    background: $dark-black;
+                }
+            }
         }
     }
 
@@ -87,9 +104,9 @@ body[data-theme="dark"] {
         .post-item-date {
             color: $dark-white;
         }
-        .post-item-title a {
+        .post-item-title {
             color: $dark-text-base-color;
-            &:hover, &focus {
+            &:hover, &:focus {
                 color: $dark-white;
             }
         }
