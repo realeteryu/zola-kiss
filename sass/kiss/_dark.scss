@@ -77,11 +77,13 @@ body[data-theme="dark"] {
         border-color: $dark-light;
         
         .menu {
-            background-color: $dark-black; /* Naprawia bialy pasek na mobile */
+            background-color: $dark-black; /* Fixes white top bar on mobile */
             border-color: $dark-light;
 
             a#mode {
-                .mode-sunny {
+                /* Show sun, hide moon in dark mode */
+                .mode-moon { display: none; }
+                .mode-sunny { display: block; 
                     line { stroke: $dark-white; fill: none; }
                     circle { fill: none; stroke: $dark-white; }
                 }
@@ -91,6 +93,7 @@ body[data-theme="dark"] {
             .menu-icon > svg { fill: $dark-white; }
             
             @include media-query($on-mobile) {
+                /* Dark blur overlay for mobile menu */
                 input[type="checkbox"]:checked ~ .trigger {
                     background-color: rgba($dark-black, 0.85);
                 }
