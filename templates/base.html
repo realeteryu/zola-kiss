@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{{ config.title }}{% endblock %}</title>
     
-    <!-- Bunny Fonts (privacy-friendly) -->
     <link href="https://fonts.bunny.net/css?family=roboto:400,700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
@@ -95,7 +94,6 @@
         });
     </script>
 
-    <!-- Image Lightbox Logic -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const images = document.querySelectorAll('.page-content img');
@@ -109,7 +107,6 @@
             document.body.appendChild(overlay);
 
             images.forEach(image => {
-                // Skip images that are wrapped in a link
                 if (image.closest('a')) return;
 
                 image.classList.add('zoomable');
