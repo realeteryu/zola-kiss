@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block main %}
-    <div class="post-list">
+    <ul class="post-list">
     {% set posts_section = get_section(path="posts/_index.md") %}
     {% for page in posts_section.pages %}
-        <div class="post-item">
+        <li class="post-item">
             <span class="post-item-date">{{ page.date | date(format="%b %d, %Y") }}</span>
             <a href="{{ page.permalink }}" class="post-item-title">{{ page.title }}</a>
-        </div>
+        </li>
     {% endfor %}
-    </div>
+    </ul>
 {% endblock main %}
