@@ -3,13 +3,14 @@
 {% block title %}{{ section.title }} — {{ config.title }}{% endblock %}
 
 {% block main %}
-    <h1>{{ section.title }}</h1>
-    <ul class="post-list">
+    <h1 class="header-title" style="margin-top: 2rem; margin-bottom: 2rem;">{{ section.title }}</h1>
+    
+    <div class="post-list">
     {% for page in section.pages %}
-        <li>
-            <span class="post-date">{{ page.date | date(format="%b %d, %Y") }}</span>
-            <a href="{{ page.permalink }}">{{ page.title }}</a>
-        </li>
+        <div class="post-item">
+            <span class="post-item-date">{{ page.date | date(format="%b %d, %Y") }}</span>
+            <a href="{{ page.permalink }}" class="post-item-title">{{ page.title }}</a>
+        </div>
     {% endfor %}
-    </ul>
+    </div>
 {% endblock main %}
