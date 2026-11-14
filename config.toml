@@ -1,0 +1,7 @@
+base_url = "https://realeteryu.github.io/zola-kiss/"
+title = "Zola Kiss"
+description = "Minimalistyczny motyw dla Zoli"
+compile_sass = true
+
+[extra]
+# Na razie puste
