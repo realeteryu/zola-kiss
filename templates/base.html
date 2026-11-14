@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
 </head>
 <body>
-    <!-- Skrypt zapobiegajacy migotaniu (FOUC) -->
     <script>
         const theme = (() => {
             if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -25,7 +24,6 @@
     <div class="container">
         <nav class="navbar">
             <div class="menu">
-                <!-- Przycisk przelaczania motywu -->
                 <a href="javascript:void(0);" id="mode" title="Zmień motyw">
                     <svg class="mode-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -51,12 +49,12 @@
         </main>
 
         <footer class="footer">
-            <span class="footer_item">Theme Kiss for Zola</span>
+            <span class="footer_item">Zola Kiss</span>
+            <a href="{{ get_url(path='index.xml') }}" class="footer_item">RSS</a>
             <small class="footer_copyright">&copy; 2026</small>
         </footer>
     </div>
 
-    <!-- Skrypt obslugujacy klikniecie przycisku -->
     <script>
         document.getElementById('mode').addEventListener('click', () => {
             const element = document.body;
