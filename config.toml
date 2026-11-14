@@ -1,7 +1,25 @@
+# The URL the site will be built for
 base_url = "https://realeteryu.github.io/zola-kiss/"
 title = "Zola Kiss"
-description = "Minimalistyczny motyw dla Zoli"
+description = "Minimalist theme for Zola"
+
+# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
+# Whether to generate a feed
+generate_feeds = true
+
+# The taxonomies to generate
+[taxonomies]
+tags = "tags"
+
+# Configuration of the Markdown rendering
+[markdown]
+highlight_code = true
+highlight_theme = "gruvbox-dark"
+render_emoji = true
+
 [extra]
-# Na razie puste
+# Theme configuration variables
+author = "Eteryu"
+avatar = "https://github.com/identicons/realeteryu.png"
