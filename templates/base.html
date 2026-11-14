@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{{ config.title }}{% endblock %}</title>
     
-    <!-- Czcionki z Bunny Fonts (bez zbierania danych) -->
+    <!-- Bunny Fonts (privacy-friendly) -->
     <link href="https://fonts.bunny.net/css?family=ibm-plex-mono:400,700|roboto:400,700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
@@ -37,7 +37,7 @@
                 </span>
             </label>
 
-            <a id="mode" href="javascript:void(0);" title="Zmień motyw">
+            <a id="mode" href="javascript:void(0);" title="Toggle theme">
                 <svg class="mode-moon" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
@@ -83,6 +83,46 @@
             }
             element.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
+        });
+    </script>
+
+    <!-- Image Lightbox Logic -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll('.page-content img');
+            if (images.length === 0) return;
+
+            const overlay = document.createElement('div');
+            overlay.className = 'lightbox-overlay';
+            const img = document.createElement('img');
+            img.className = 'lightbox-image';
+            overlay.appendChild(img);
+            document.body.appendChild(overlay);
+
+            images.forEach(image => {
+                // Skip images that are wrapped in a link
+                if (image.closest('a')) return;
+
+                image.classList.add('zoomable');
+                image.addEventListener('click', (e) => {
+                    img.src = e.target.src;
+                    img.alt = e.target.alt;
+                    overlay.classList.add('is-open');
+                    document.body.classList.add('lightbox-open');
+                });
+            });
+
+            overlay.addEventListener('click', () => {
+                overlay.classList.remove('is-open');
+                document.body.classList.remove('lightbox-open');
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+                    overlay.classList.remove('is-open');
+                    document.body.classList.remove('lightbox-open');
+                }
+            });
         });
     </script>
 </body>
