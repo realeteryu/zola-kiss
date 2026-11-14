@@ -73,7 +73,7 @@ body[data-theme="dark"] {
         color: $dark-white;
     }
 
-    // Nowa sekcja nawigacji dla trybu ciemnego
+    // Sekcja nawigacji dla trybu ciemnego
     .navbar {
         border-color: $dark-light;
         
@@ -86,12 +86,12 @@ body[data-theme="dark"] {
 
             // Kolory linkow i ikony hamburgera
             .menu-link { color: $dark-white; }
-            .menu-icon > svg { stroke: $dark-white; }
+            .menu-icon > svg { fill: $dark-white; } /* Zmiana ze stroke na fill */
             
-            // Tlo menu mobilnego z efektem polprzezroczystosci
+            // Tlo menu mobilnego (jednolite, bez przezroczystosci)
             @include media-query($on-mobile) {
                 input[type="checkbox"]:checked ~ .trigger {
-                    background-color: rgba($dark-black, 0.85);
+                    background-color: $dark-black;
                 }
             }
         }
