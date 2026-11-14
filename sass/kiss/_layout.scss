@@ -9,6 +9,12 @@
     }
 }
 
+// Blur effect for wrapper when mobile menu is open
+.wrapper.blurry {
+    filter: blur(4px);
+    transition: filter 0.3s ease;
+}
+
 // Navbar
 .navbar {
     height: auto;
@@ -18,6 +24,13 @@
     margin-left: auto;
     border-bottom: 1px solid $light;
     padding: $spacing-full - 15px $spacing-full;
+    
+    /* Clearfix dla floatów */
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 
     @include media-query($on-mobile) {
         padding: 0;
@@ -53,11 +66,16 @@
             transform: scale(0.9, 0.9);
         }
         
-        .mode-sunny {
+        /* Dwie ikony - CSS decyduje, która jest widoczna */
+        .mode-moon {
             display: block;
-            transition: transform 0.3s ease;
             line { stroke: $black; fill: none; }
-            circle { fill: none; stroke: $black; }
+            circle { fill: $black; stroke: $black; }
+        }
+        .mode-sunny {
+            display: none;
+            line { stroke: $dark-white; fill: none; }
+            circle { fill: none; stroke: $dark-white; }
         }
     }
 
@@ -118,8 +136,8 @@
             top: 50%;
             transform: translateY(-50%);
             z-index: 10;
-            float: none; /* Reset float */
-            clear: none; /* Reset clear */
+            float: none;
+            clear: none;
         }
 
         .menu-icon {
@@ -158,7 +176,7 @@
             width: 100vw;
             height: 100dvh;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Linki jeden pod drugim */
             justify-content: center;
             align-items: center;
             background-color: rgba(255, 255, 255, 0.85);
@@ -176,7 +194,7 @@
             display: block;
             box-sizing: border-box;
             font-size: 1.1em;
-            padding: 4px 0; /* Zmniejszony padding */
+            padding: 4px 0;
             margin: 0;
         }
     }
