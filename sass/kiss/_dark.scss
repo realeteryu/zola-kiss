@@ -81,16 +81,20 @@ body[data-theme="dark"] {
             border-color: $dark-light;
 
             a#mode {
+                color: $dark-white; /* KRYTYCZNE: biały kolor ikony w trybie ciemnym */
                 .mode-sunny { display: block; }
                 .mode-moon { display: none; }
             }
 
             .menu-link { color: $dark-white; }
-            .menu-icon > svg { fill: $dark-white; }
+            .menu-icon > svg { fill: currentColor; }
             
             @include media-query($on-mobile) {
                 input[type="checkbox"]:checked ~ .trigger {
                     background-color: rgba($dark-black, 0.85);
+                }
+                .menu-link {
+                    color: $dark-white; /* Białe linki w menu mobilnym */
                 }
             }
         }
