@@ -103,7 +103,7 @@
             left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            z-index: 10; /* Wyżej niż menu, żeby można było kliknąć */
+            z-index: 10;
         }
 
         .menu-icon {
@@ -117,8 +117,7 @@
             line-height: 50px;
             cursor: pointer;
             text-align: center;
-            z-index: 10; /* Wyżej niż menu, żeby można było zamknąć */
-            
+            z-index: 10;
             > svg {
                 fill: $black;
                 opacity: 0.7;
@@ -143,18 +142,20 @@
             top: 0;
             left: 0;
             width: 100vw;
-            height: 100dvh; /* 100dvh zapobiega skakaniu na mobile */
+            height: 100dvh;
             display: flex;
-            flex-direction: column; /* Linki jeden pod drugim */
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: $white;
-            z-index: 5; /* Niżej niż ikony (z-index: 10) */
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 5;
             animation: 0.2s ease-in forwards fadein;
             -webkit-animation: 0.2s ease-in forwards fadein;
         }
 
-        /* Blokada przewijania strony w tle */
+        /* Prevent body scrolling when menu is open */
         body:has(#menu-trigger:checked) {
             overflow: hidden;
         }
@@ -165,7 +166,7 @@
             font-size: 1.1em;
             &:not(:last-child) {
                 margin: 0;
-                padding: 8px 0;
+                padding: 2px 0; /* Przywrocone oryginalne wypelnienie */
             }
         }
     }
