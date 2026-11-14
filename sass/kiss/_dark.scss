@@ -73,25 +73,22 @@ body[data-theme="dark"] {
         color: $dark-white;
     }
 
-    // Sekcja nawigacji dla trybu ciemnego
     .navbar {
+        background-color: $dark-black; /* Naprawia bialy header w trybie ciemnym */
         border-color: $dark-light;
         
         .menu {
-            // Przelaczanie ikony ksiezyca i slonca
             a#mode {
                 .mode-sunny { display: block; }
                 .mode-moon { display: none; }
             }
 
-            // Kolory linkow i ikony hamburgera
             .menu-link { color: $dark-white; }
-            .menu-icon > svg { fill: $dark-white; } /* Zmiana ze stroke na fill */
+            .menu-icon > svg { fill: $dark-white; }
             
-            // Tlo menu mobilnego (jednolite, bez przezroczystosci)
             @include media-query($on-mobile) {
                 input[type="checkbox"]:checked ~ .trigger {
-                    background-color: $dark-black;
+                    background-color: rgba($dark-black, 0.85); /* Ciemne, polprzezroczyste tlo dla menu */
                 }
             }
         }
