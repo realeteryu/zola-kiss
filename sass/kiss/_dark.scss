@@ -74,14 +74,16 @@ body[data-theme="dark"] {
     }
 
     .navbar {
-        background-color: $dark-black;
         border-color: $dark-light;
         
         .menu {
+            background-color: $dark-black; /* Naprawia bialy pasek na mobile */
+            border-color: $dark-light;
+
             a#mode {
                 .mode-sunny {
                     line { stroke: $dark-white; fill: none; }
-                    circle { fill: $dark-white; stroke: $dark-white; }
+                    circle { fill: none; stroke: $dark-white; }
                 }
             }
 
@@ -91,7 +93,6 @@ body[data-theme="dark"] {
             @include media-query($on-mobile) {
                 input[type="checkbox"]:checked ~ .trigger {
                     background-color: rgba($dark-black, 0.85);
-                    border-color: $dark-light;
                 }
             }
         }
