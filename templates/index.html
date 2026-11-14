@@ -2,8 +2,8 @@
 
 {% block main %}
     <div class="author">
-        <!-- Wgraj swój avatar do static/images/avatar.png lub podmień link -->
-        <img class="author-avatar" src="https://github.com/identicons/realeteryu.png" alt="Eteryu">
+        <!-- Upload your avatar to static/images/avatar.png or change the link in config.toml -->
+        <img class="author-avatar" src="{{ config.extra.avatar }}" alt="{{ config.extra.author }}">
         <h1 class="author-name">{{ config.title }}</h1>
         <p class="author-bio">{{ config.description }}</p>
     </div>
