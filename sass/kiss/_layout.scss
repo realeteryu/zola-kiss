@@ -33,15 +33,11 @@
             -webkit-transform: scale(0.9, 0.9);
             transform: scale(0.9, 0.9);
         }
-        .mode-moon {
-            display: block;
-            line { stroke: $black; fill: none; }
-            circle { fill: $black; stroke: $black; }
-        }
         .mode-sunny {
-            display: none;
-            line { stroke: $dark-white; fill: none; }
-            circle { fill: none; stroke: $dark-white; }
+            display: block;
+            transition: all 0.3s ease;
+            line { stroke: $black; fill: none; }
+            circle { fill: none; stroke: $black; }
         }
     }
 
@@ -148,9 +144,10 @@
             justify-content: center;
             align-items: center;
             background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             z-index: 5;
+            border: 1px solid $light; /* Dodane obramowanie */
             animation: 0.2s ease-in forwards fadein;
             -webkit-animation: 0.2s ease-in forwards fadein;
         }
@@ -163,10 +160,11 @@
         .menu-link {
             display: block;
             box-sizing: border-box;
-            font-size: 1.1em;
+            font-size: 1em; /* Zmniejszony rozmiar */
+            line-height: 1.2; /* Zmniejszona interlinia */
             &:not(:last-child) {
                 margin: 0;
-                padding: 2px 0; /* Przywrocone oryginalne wypelnienie */
+                padding: 1px 0; /* Zmniejszony padding */
             }
         }
     }
