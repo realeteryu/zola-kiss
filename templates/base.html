@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{{ config.title }}{% endblock %}</title>
+    
+    <!-- Czcionki z Bunny Fonts (bez zbierania danych) -->
+    <link href="https://fonts.bunny.net/css?family=ibm-plex-mono:400,700|roboto:400,700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
 </head>
 <body>
@@ -24,11 +28,12 @@
     <div class="container">
         <nav class="navbar">
             <div class="menu">
+                <!-- Przelacznik motywu -->
                 <a href="javascript:void(0);" id="mode" title="Zmień motyw">
-                    <svg class="mode-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="mode-moon" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg class="mode-sunny" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="mode-sunny" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>
                         <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -40,7 +45,23 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </a>
-                <a href="{{ config.base_url }}" class="menu-link">{{ config.title }}</a>
+
+                <!-- Hamburger dla mobile -->
+                <label for="menu-trigger" class="menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </label>
+                <input type="checkbox" id="menu-trigger" style="display: none;">
+
+                <!-- Tytuł i linki -->
+                <div class="trigger">
+                    <a href="{{ config.base_url }}" class="menu-link">{{ config.title }}</a>
+                    <a href="{{ get_url(path='@/posts/_index.md') }}" class="menu-link">Wpisy</a>
+                    <a href="{{ get_url(path='index.xml') }}" class="menu-link rss">RSS</a>
+                </div>
             </div>
         </nav>
 
@@ -49,9 +70,10 @@
         </main>
 
         <footer class="footer">
-            <span class="footer_item">Zola Kiss</span>
-            <a href="{{ get_url(path='index.xml') }}" class="footer_item">RSS</a>
-            <small class="footer_copyright">&copy; 2026</small>
+            <a href="{{ config.base_url }}" class="footer_item">home</a>
+            <a href="{{ get_url(path='@/posts/_index.md') }}" class="footer_item">wpisy</a>
+            <a href="{{ get_url(path='index.xml') }}" class="footer_item">rss</a>
+            <span class="footer_item">&copy; 2026</span>
         </footer>
     </div>
 
