@@ -74,13 +74,19 @@ body[data-theme="dark"] {
     }
 
     .navbar {
-        background-color: $dark-black; /* Naprawia bialy header w trybie ciemnym */
+        background-color: $dark-black;
         border-color: $dark-light;
         
         .menu {
             a#mode {
-                .mode-sunny { display: block; }
-                .mode-moon { display: none; }
+                .mode-moon {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+                .mode-sunny {
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
 
             .menu-link { color: $dark-white; }
@@ -88,7 +94,7 @@ body[data-theme="dark"] {
             
             @include media-query($on-mobile) {
                 input[type="checkbox"]:checked ~ .trigger {
-                    background-color: rgba($dark-black, 0.85); /* Ciemne, polprzezroczyste tlo dla menu */
+                    background-color: rgba($dark-black, 0.85);
                 }
             }
         }
