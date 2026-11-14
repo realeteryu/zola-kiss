@@ -1,13 +1,23 @@
 {% extends "base.html" %}
 
 {% block main %}
-    <ul class="post-list">
-    {% set posts_section = get_section(path="posts/_index.md") %}
-    {% for page in posts_section.pages %}
-        <li class="post-item">
-            <span class="post-item-date">{{ page.date | date(format="%b %d, %Y") }}</span>
-            <a href="{{ page.permalink }}" class="post-item-title">{{ page.title }}</a>
-        </li>
-    {% endfor %}
-    </ul>
+    <div class="author">
+        <!-- Wgraj swój avatar do static/images/avatar.png lub podmień link -->
+        <img class="author-avatar" src="https://github.com/identicons/realeteryu.png" alt="Eteryu">
+        <h1 class="author-name">{{ config.title }}</h1>
+        <p class="author-bio">{{ config.description }}</p>
+    </div>
+
+    <div class="post-list-wrapper">
+        <h2 style="font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem;">Ostatnie wpisy</h2>
+        <ul class="post-list">
+        {% set posts_section = get_section(path="posts/_index.md") %}
+        {% for page in posts_section.pages %}
+            <li class="post-item">
+                <span class="post-item-date">{{ page.date | date(format="%b %d, %Y") }}</span>
+                <a href="{{ page.permalink }}" class="post-item-title">{{ page.title }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
 {% endblock main %}
