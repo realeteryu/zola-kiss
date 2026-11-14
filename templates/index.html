@@ -3,7 +3,8 @@
 {% block main %}
     <h1>{{ section.title }}</h1>
     <ul class="post-list">
-    {% for page in section.pages %}
+    {% set posts_section = get_section(path="posts/_index.md") %}
+    {% for page in posts_section.pages %}
         <li>
             <span class="post-date">{{ page.date | date(format="%b %d, %Y") }}</span>
             <a href="{{ page.permalink }}">{{ page.title }}</a>
