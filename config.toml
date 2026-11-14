@@ -9,10 +9,6 @@ compile_sass = true
 # Whether to generate a feed
 generate_feeds = true
 
-# The taxonomies to generate
-[taxonomies]
-tags = "tags"
-
 # Configuration of the Markdown rendering
 [markdown]
 highlight_code = true
