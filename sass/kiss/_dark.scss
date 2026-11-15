@@ -174,4 +174,39 @@ body[data-theme="dark"] {
             opacity: 1;
         }
     }
+
+    // ==========================================
+    // ARCHIVE PAGE DARK MODE OVERRIDES (Nowa sekcja)
+    // ==========================================
+    .search-container {
+        input[type="text"] {
+            background-color: $dark-light;
+            border-color: $dark-light;
+            color: $dark-white;
+
+            &::placeholder {
+                color: $dark-gray;
+            }
+            &:focus {
+                border-color: $dark-gray;
+            }
+        }
+    }
+
+    .archive-year {
+        color: $dark-white;
+        border-bottom-color: $dark-light;
+    }
+
+    .archive-item {
+        border-bottom-color: $dark-light;
+        
+        .archive-link {
+            color: $dark-text-base-color;
+            
+            &:hover {
+                color: $dark-white;
+            }
+        }
+    }
 }
