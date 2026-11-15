@@ -123,10 +123,6 @@ body[data-theme="dark"] {
                     stroke: $dark-white;
                     fill: $dark-white;
                 }
-                
-                &:focus {
-                    outline: 3px solid rgba(255, 82, 119, 0.6) !important;
-                }
             }
 
             .menu-link { 
@@ -147,11 +143,6 @@ body[data-theme="dark"] {
                 }
                 .menu-link {
                     color: $dark-white;
-                }
-                
-                /* RAMKA DLA HAMBURGERA W CIEMNYM MOTYWIE */
-                .menu-trigger:focus ~ label .menu-icon {
-                    outline: 3px solid rgba(255, 82, 119, 0.6) !important;
                 }
             }
         }
