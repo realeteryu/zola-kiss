@@ -6,8 +6,9 @@ compile_sass = true
 generate_feeds = true
 feed_filenames = ["index.xml"]
 
-[taxonomies]
-tags = "tags"
+taxonomies = [
+    { name = "tags" },
+]
 
 [markdown]
 render_emoji = true
@@ -19,7 +20,6 @@ theme = "gruvbox-dark-medium"
 author = "Eteryu"
 avatar = "https://avatars.githubusercontent.com/u/117126022?s=400&u=6d6363ad30ba498f53133c6712a8a75455b6aad6&v=4"
 
-# Nowa sekcja na teksty interfejsu użytkownika
 [extra.ui]
 search_placeholder = "Find some articles here"
 search_no_results = "No results found"
