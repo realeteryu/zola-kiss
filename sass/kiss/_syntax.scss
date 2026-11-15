@@ -1,4 +1,3 @@
-// Inline Code (Kod w linii)
 code {
     font-family: $mono-family;
     text-rendering: optimizeLegibility;
@@ -10,7 +9,6 @@ code {
     word-wrap: normal;
     font-size: 0.9em;
 
-    // Stylizacja tylko dla kodu w linii (zapobiega nadpisywaniu bloków kodu)
     &:not(pre code) {
         padding: 2px 6px;
         background-color: #f6f6f6;
@@ -19,7 +17,6 @@ code {
     }
 }
 
-// Block Code (Bloki kodu)
 pre {
     margin: 1.5em 0;
     border: 1px solid rgba(128, 128, 128, 0.1);
@@ -41,7 +38,6 @@ pre {
     }
 }
 
-// Gruvbox Syntax Highlighting Colors (Zoptymalizowane dla Zoli)
 pre .w { color: #fbf1c7; }
 pre .err { color: #fb4934; font-weight: bold; }
 pre .c, pre .cd, pre .cm, pre .c1, pre .cs { color: #928374; font-style: italic; }
