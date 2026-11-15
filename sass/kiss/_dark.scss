@@ -35,8 +35,11 @@ body[data-theme="dark"] {
         }
     }
 
-    code.highlighter-rouge {
+    // POPRAWKA: Zastąpiono Jekyllowe .highlighter-rouge na standardowe Zolowe code
+    code:not(pre code) {
         background-color: $dark-light;
+        border-color: rgba(128, 128, 128, 0.1);
+        color: $dark-text-base-color;
     }
 
     kbd {
