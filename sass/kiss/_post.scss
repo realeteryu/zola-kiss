@@ -147,7 +147,45 @@
         }
     }
 
-    /* NOWA SEKCJA: Poprawka dla tabel */
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+        display: block;
+        margin: 1.5em auto;
+    }
+
+    blockquote {
+        border-left: 4px solid $light;
+        padding-left: 1.2em;
+        margin: 1.5em 0;
+        color: $gray;
+        font-style: italic;
+        background-color: rgba(128, 128, 128, 0.05);
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        padding-right: 1em;
+        border-radius: 0 4px 4px 0;
+    }
+
+    .footnotes {
+        margin-top: 3em;
+        border-top: 1px solid $light;
+        padding-top: 1em;
+        font-size: $small-font-size;
+        color: $gray;
+
+        ol {
+            padding-left: 1.2em;
+        }
+
+        .footnote-reference {
+            font-size: 0.9em;
+            vertical-align: super;
+            line-height: 0;
+        }
+    }
+
     table {
         width: 100%;
         border-collapse: collapse;
