@@ -314,20 +314,18 @@
 .archive-group {
     .archive-item {
         margin: 0;
-        padding: 0;
-        border-bottom: 1px solid $light;
+        padding: 8px 0;
         font-weight: normal;
+        font-size: 1.25em;
 
-        &:last-child {
-            border-bottom: none;
+        &:not(:last-child) {
+            border-bottom: 1px solid $light;
         }
 
         .archive-link {
-            font-size: $base-font-size;
             color: $text-base-color;
             text-decoration: none;
             display: inline-block;
-            padding: 4px 0;
 
             &:hover {
                 color: $black;
@@ -335,6 +333,7 @@
 
             &:focus {
                 outline: 2px solid $text-link-blue;
+                outline-offset: 0;
             }
         }
     }
