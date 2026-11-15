@@ -30,7 +30,7 @@
         }
         
         &:focus {
-            outline: 2px solid $text-link-blue;
+            outline: 3px solid $text-link-blue;
             outline-offset: 2px;
         }
         
@@ -74,7 +74,7 @@
         }
         
         &:focus {
-            outline: 2px solid $text-link-blue;
+            outline: 3px solid $text-link-blue;
             outline-offset: 2px;
         }
 
@@ -125,6 +125,12 @@
             left: 10px;
             top: 12px;
             z-index: 10;
+        }
+
+        /* RAMKA DLA HAMBURGERA */
+        .menu-trigger:focus ~ label .menu-icon {
+            outline: 3px solid $text-link-blue;
+            outline-offset: -2px;
         }
 
         .menu-icon {
@@ -250,7 +256,6 @@
         opacity: 0.8;
         text-decoration: none;
 
-        /* DODANA RAMKA DLA LINKÓW W STOPCE */
         &:focus {
             outline: 3px solid $text-link-blue;
             outline-offset: 2px;
