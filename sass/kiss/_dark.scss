@@ -314,12 +314,16 @@ body[data-theme="dark"] {
         border-top-color: $dark-light;
 
         .post-nav-item {
+            &.prev {
+                border-bottom-color: $dark-light;
+            }
+
             .post-nav-link {
                 color: inherit;
 
                 &:hover {
                     .post-title {
-                        color: $dark-white;
+                        color: $dark-text-link-blue;
                     }
                 }
             }
@@ -329,7 +333,7 @@ body[data-theme="dark"] {
             }
 
             .post-title {
-                color: $dark-text-base-color;
+                color: $dark-white;
             }
         }
     }
