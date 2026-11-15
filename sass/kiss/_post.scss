@@ -304,21 +304,25 @@
 .archive-year {
     font-size: 1.375em;
     font-weight: $bold-weight;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
     color: $black;
     border-bottom: 1px solid $light;
     padding-bottom: 4px;
 }
 
 .archive-item {
-    padding: 1px 0;
-    border-bottom: 1px solid $light;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-weight: normal;
 
     .archive-link {
         font-size: 1.25em;
         color: $text-base-color;
         text-decoration: none;
+        display: block;
+        padding: 4px 0;
 
         &:hover {
             color: $black;
