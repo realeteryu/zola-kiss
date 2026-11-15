@@ -123,16 +123,21 @@ body[data-theme="dark"] {
         }
     }
 
+    // POPRAWKA: Górna linia listy wpisów (dodana w _post.scss)
+    .post-list {
+        border-top-color: $dark-light;
+    }
+
+    // POPRAWKA: Linie oddzielające wpisy
     .post-item {
-        &:not(:first-child) {
-            border-color: $dark-light;
-        }
-        // Linia oddzielająca wpisy (w _post.scss jest ustawiona na $light)
+        // W _post.scss jest ustawione $light, tutaj nadpisujemy na ciemny
         border-bottom-color: $dark-light; 
         
         .post-item-date {
-            color: $dark-white;
+            // W _post.scss mamy $black, tutaj nadpisujemy na biały
+            color: $dark-white; 
         }
+        
         .post-item-title {
             color: $dark-text-base-color;
             &:hover, &:focus {
