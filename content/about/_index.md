@@ -1,6 +1,6 @@
 +++
-title = "About"
-template = "page.html"
+title = "Colophon." 
+template = "about.html"
 +++
 
-Tutaj znajdzie się tekst o mnie lub o motywie Zola Kiss.
+He's a student from Banyuwangi... (itd.)
