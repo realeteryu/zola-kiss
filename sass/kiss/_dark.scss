@@ -309,4 +309,22 @@ body[data-theme="dark"] {
             }
         }
     }
+
+    .post-nav {
+        border-top-color: $dark-light;
+
+        .post-nav-item {
+            .nav-arrow {
+                color: $dark-gray;
+            }
+
+            .post-title {
+                color: $dark-text-base-color;
+
+                &:hover {
+                    color: $dark-white;
+                }
+            }
+        }
+    }
 }
