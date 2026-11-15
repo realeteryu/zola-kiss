@@ -176,7 +176,7 @@ body[data-theme="dark"] {
     }
 
     // ==========================================
-    // ARCHIVE PAGE DARK MODE OVERRIDES (Nowa sekcja)
+    // ARCHIVE PAGE DARK MODE OVERRIDES
     // ==========================================
     .search-container {
         input[type="text"] {
@@ -189,6 +189,25 @@ body[data-theme="dark"] {
             }
             &:focus {
                 border-color: $dark-gray;
+            }
+        }
+
+        // Style dla rozwijanej listy wyników w ciemnym motywie
+        .search-results {
+            background-color: $dark-light;
+            border-color: $dark-smoke;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+
+            li {
+                border-bottom-color: $dark-smoke;
+
+                a {
+                    color: $dark-text-link-blue;
+                    
+                    &:hover {
+                        color: $dark-text-link-blue-active;
+                    }
+                }
             }
         }
     }
