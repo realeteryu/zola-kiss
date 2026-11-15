@@ -314,16 +314,22 @@ body[data-theme="dark"] {
         border-top-color: $dark-light;
 
         .post-nav-item {
+            .post-nav-link {
+                color: inherit;
+
+                &:hover {
+                    .post-title {
+                        color: $dark-white;
+                    }
+                }
+            }
+
             .nav-arrow {
                 color: $dark-gray;
             }
 
             .post-title {
                 color: $dark-text-base-color;
-
-                &:hover {
-                    color: $dark-white;
-                }
             }
         }
     }
