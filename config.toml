@@ -6,6 +6,9 @@ compile_sass = true
 generate_feeds = true
 feed_filenames = ["index.xml"]
 
+[taxonomies]
+tags = "tags"
+
 [markdown]
 render_emoji = true
 
