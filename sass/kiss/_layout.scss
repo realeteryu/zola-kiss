@@ -9,10 +9,11 @@
     }
 }
 
-// Blur effect for wrapper when mobile menu is open
+/* Blur effect for wrapper when mobile menu is open */
 .wrapper.blurry {
     filter: blur(4px);
     transition: filter 0.3s ease;
+    pointer-events: none;
 }
 
 // Navbar
@@ -45,12 +46,8 @@
 
     a#mode {
         float: left;
-        left: 8px;
-        top: 6px;
+        margin: 6px 0 0 8px;
         position: relative;
-        clear: both;
-        -webkit-transform: scale(1, 1);
-        transform: scale(1, 1);
         opacity: 0.7;
         z-index: 1;
         
@@ -58,18 +55,15 @@
             cursor: pointer;
             opacity: 1;
         }
-        &:active {
-            -webkit-transform: scale(0.9, 0.9);
-            transform: scale(0.9, 0.9);
-        }
+        
         .mode-moon {
             display: block;
-            line { stroke: $black; fill: none; }
+            path, line { stroke: $black; fill: none; }
             circle { fill: $black; stroke: $black; }
         }
         .mode-sunny {
             display: none;
-            line { stroke: $dark-white; fill: none; }
+            path, line { stroke: $dark-white; fill: none; }
             circle { fill: none; stroke: $dark-white; }
         }
     }
@@ -100,20 +94,6 @@
         &:not(:last-child) {
             margin-right: 5px;
         }
-        &.rss {
-            position: relative;
-            bottom: -3px;
-            outline: none;
-        }
-
-        @include media-query($on-mobile) {
-            opacity: 0.8;
-        }
-    }
-
-    .menu-link.active {
-        opacity: 1;
-        font-weight: 600;
     }
 
     @include media-query($on-mobile) {
@@ -121,41 +101,40 @@
         top: 0;
         left: 0;
         right: 0;
-        z-index: 2;
+        z-index: 20;
         text-align: center;
         height: 50px;
         background-color: $white;
         border-bottom: 1px solid $light;
 
         a#mode {
-            left: 10px;
-            top: 12px;
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            float: none;
+            margin: 0;
+            z-index: 30; /* Above the menu */
         }
 
         .menu-icon {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: absolute;
             right: 0;
+            top: 0;
             width: 50px;
-            height: 23px;
-            line-height: 0;
-            padding-top: 13px;
-            padding-bottom: 15px;
+            height: 50px;
             cursor: pointer;
-            text-align: center;
-            z-index: 1;
+            z-index: 30; /* Above the menu - clickable to close */
             > svg {
                 fill: $black;
                 opacity: 0.7;
+                width: 24px;
+                height: 24px;
             }
-            &:hover {
-                > svg {
-                    opacity: 1;
-                }
-            }
-            &:active {
-                -webkit-transform: scale(0.9, 0.9);
-                transform: scale(0.9, 0.9);
+            &:hover > svg {
+                opacity: 1;
             }
         }
 
@@ -166,30 +145,25 @@
 
         input[type="checkbox"]:checked ~ .trigger {
             position: fixed;
-            animation: 0.2s ease-in forwards fadein;
-            -webkit-animation: 0.2s ease-in forwards fadein;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             background-color: $white;
-            height: 100vh;
-            width: 100%;
-            top: 0;
-        }
-
-        body:has(#menu-trigger:checked) {
-            overflow: hidden;
+            z-index: 10; /* Below icons (z-index: 30) */
         }
 
         .menu-link {
             display: block;
             box-sizing: border-box;
             font-size: 1.1em;
-            &:not(:last-child) {
-                margin: 0;
-                padding: 2px 0;
-            }
+            padding: 4px 0;
+            margin: 0;
+            color: $black;
         }
     }
 }
