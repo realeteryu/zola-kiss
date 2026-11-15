@@ -123,17 +123,17 @@ body[data-theme="dark"] {
         }
     }
 
-    .post-item {
-        &:not(:first-child) {
-            border-top-color: $dark-light; 
-        }
-        
-        .post-item-date {
-            color: $dark-white; 
-        }
-        
-        .post-item-title {
-            a {
+    .post-list {
+        border-top-color: $dark-light;
+
+        .post-item {
+            border-bottom-color: $dark-light; 
+            
+            .post-item-date {
+                color: $dark-white; 
+            }
+            
+            .post-item-title {
                 color: $dark-text-base-color;
                 &:hover, &:focus {
                     color: $dark-white;
@@ -177,6 +177,29 @@ body[data-theme="dark"] {
 
                 &:hover {
                     color: $dark-text-link-blue-active;
+                }
+            }
+        }
+    }
+
+    .archive-page {
+        .post-item {
+            &:not(:first-child) {
+                border-top-color: $dark-light; 
+            }
+            
+            .post-item-title {
+                a {
+                    color: $dark-text-base-color;
+                    text-decoration: none;
+                    
+                    &:hover, &:focus {
+                        color: $dark-white;
+                    }
+
+                    &:focus {
+                        outline-color: rgba(255, 82, 119, 0.6);
+                    }
                 }
             }
         }
