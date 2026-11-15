@@ -307,12 +307,14 @@
     margin-top: 1.5em;
     margin-bottom: 0.5em;
     color: $black;
+    border-bottom: 1px solid $light;
+    padding-bottom: 4px;
 }
 
 .archive-item {
     margin: 0;
     padding: 0;
-    border: none;
+    border-bottom: 1px solid $light;
     font-weight: normal;
 
     .archive-link {
@@ -324,6 +326,11 @@
 
         &:hover {
             color: $black;
+        }
+
+        &:focus {
+            outline: 2px solid $text-link-blue;
+            outline-offset: 2px;
         }
     }
 }
