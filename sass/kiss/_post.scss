@@ -249,11 +249,17 @@
         padding: 4px 0;
         list-style: none;
 
+        .search-hyphen {
+            color: $black;             /* Kolor myślnika */
+            font-weight: $bold-weight; /* Pogrubienie */
+            margin-right: 4px;         /* Odstęp od tytułu */
+        }
+
         a {
             color: $text-link-blue;
             text-decoration: none;
             font-size: $base-font-size;
-            display: block;
+            display: inline; /* Wymuszenie bycia w jednej linii z myślnikiem */
 
             &:hover {
                 text-decoration: underline;
