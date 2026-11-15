@@ -59,7 +59,7 @@ $on-widescreen: 1152px;
 }
 
 // ==========================================
-// BASE STYLES (Dodane, aby naprawić czcionki)
+// BASE STYLES (Naprawa czcionek i reset)
 // ==========================================
 html {
     font-size: $base-font-size;
@@ -76,6 +76,23 @@ body {
     text-rendering: optimizeLegibility;
     margin: 0;
     padding: 0;
+}
+
+// ==========================================
+// GŁÓWNY KONTENER (Marginesy i centrowanie)
+// ==========================================
+.wrapper {
+    max-width: calc(#{$wide-size} - (#{$spacing-full} * 2));
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: $spacing-full;
+    padding-right: $spacing-full;
+
+    @include media-query($on-mobile) {
+        padding-left: $spacing-half;
+        padding-right: $spacing-half;
+    }
 }
 
 // Import sass files
