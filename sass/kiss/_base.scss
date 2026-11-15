@@ -305,3 +305,34 @@
         }
     }
 }
+
+// ==========================================
+// GLOBAL HEADINGS (Zgodne z Jekyll Klisé)
+// ==========================================
+h1, h2, h3, h4, h5, h6 {
+    color: $black;
+    font-weight: $bold-weight;
+    margin-top: $spacing-full;
+    margin-bottom: 0;
+}
+
+h1 {
+    @include relative-font-size(1.5);
+}
+h2 {
+    @include relative-font-size(1.375);
+}
+h3 {
+    @include relative-font-size(1.25);
+    border-bottom: 1px solid $light;
+    padding-bottom: 4px;
+}
+h4 {
+    @include relative-font-size(1.25);
+}
+h5 {
+    @include relative-font-size(1);
+}
+h6 {
+    @include relative-font-size(0.875);
+}
