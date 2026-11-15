@@ -92,14 +92,14 @@
             outline: none;
             display: inline-flex;
             align-items: center;
-            font-weight: $bold-weight; // DODANE POGUBIENIE
+            font-weight: $bold-weight; // Pogrubienie
             
             // WYMUSZENIE POMARAŃCZOWEGO KOLORU
             color: #ff9900 !important; 
             
             svg {
                 vertical-align: middle;
-                stroke: #ff9900 !important; // Wymuszenie koloru na samej ikonie SVG
+                fill: #ff9900 !important; // Zmieniono na FILL
             }
         }
 
