@@ -147,18 +147,16 @@
         }
     }
 
-    /* Poprawione obrazy */
     img {
         max-width: 100%;
-        max-height: 500px;
+        max-height: 400px;
         object-fit: contain;
         height: auto;
-        border-radius: 4px;
+        border-radius: 6px;
         display: block;
-        margin: 1.5em auto;
+        margin: 2em auto;
     }
 
-    /* Poprawione cytaty (lżejsze, bez tła) */
     blockquote {
         border-left: 4px solid $light;
         padding-left: 1.2em;
@@ -185,7 +183,6 @@
         }
     }
 
-    /* Poprawione tabele */
     table {
         width: 100%;
         border-collapse: collapse;
