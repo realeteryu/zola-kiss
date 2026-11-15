@@ -1,6 +1,7 @@
 base_url = "https://realeteryu.github.io/zola-kiss"
 title = "Zola Kiss"
 description = "Minimalistyczny motyw Zola z obsługą trybu jasnego i ciemnego, idealny do prowadzenia osobistej strony i bloga. Port motywu Jekyll Klisé na Zolę."
+footer_text = "Motyw Kiss dla Zola"
 
 compile_sass = true
 generate_feeds = true
