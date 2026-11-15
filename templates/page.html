@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
 
 {% block title %}{{ page.title }} — {{ config.title }}{% endblock %}
 
@@ -17,7 +18,7 @@
             
             {% if page.date %}
             <div class="post-meta">
-                <time>{{ page.date | date(format="%b %d, %Y") }}</time>
+                <time>{{ macros::date_pl(date=page.date) }}</time>
                 <span itemprop="author">{{ config.author }}</span>
             </div>
             {% endif %}
