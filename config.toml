@@ -23,6 +23,8 @@ avatar = "https://avatars.githubusercontent.com/u/117126022?s=400&u=6d6363ad30ba
 [extra.ui]
 search_placeholder = "Szukaj wpisów..."
 search_no_results = "Brak wyników"
+error_404_phrase = "Wygląda na to, że się zgubiłeś."
+error_404_link = "Wróć na stronę główną"
 
 [[extra.nav]]
 name = "start"
