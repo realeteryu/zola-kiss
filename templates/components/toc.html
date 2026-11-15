@@ -1,5 +1,5 @@
 {% component toc(headers) %}
-    <ol class="toc-list">
+    <ul class="toc-list">
         {% for header in headers %}
             {% if header.level != 1 %}
                 <li class="toc-item">
@@ -10,5 +10,5 @@
                 </li>
             {% endif %}
         {% endfor %}
-    </ol>
+    </ul>
 {% endcomponent toc %}
