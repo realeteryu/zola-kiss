@@ -35,6 +35,14 @@ body[data-theme="dark"] {
         }
     }
 
+    // Podświetlenie tekstu (mark)
+    mark {
+        background-color: #4a4a21;
+        color: $dark-white;
+        padding: 0 2px;
+        border-radius: 2px;
+    }
+
     code:not(pre code) {
         background-color: $dark-light;
         border-color: rgba(128, 128, 128, 0.1);
