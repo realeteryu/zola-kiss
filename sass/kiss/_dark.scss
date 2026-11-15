@@ -28,8 +28,15 @@ body[data-theme="dark"] {
 
     .page-content a {
         color: $dark-text-link-blue;
-        &:hover, &:active, &:focus {
+        
+        &:hover, &:active {
             color: $dark-text-link-blue-active;
+        }
+        
+        // POPRAWKA: Kolor ramki przy kliknięciu w link wewnątrz treści
+        &:focus {
+            color: $dark-text-link-blue;
+            outline-color: $dark-text-link-blue;
         }
     }
 
