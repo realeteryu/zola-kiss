@@ -193,14 +193,21 @@ body[data-theme="dark"] {
 
     .archive-year {
         color: $dark-white;
+        border-bottom-color: $dark-light;
     }
 
     .archive-item {
+        border-bottom-color: $dark-light;
+
         .archive-link {
             color: $dark-text-base-color;
             
             &:hover {
                 color: $dark-white;
+            }
+
+            &:focus {
+                outline-color: $dark-text-link-blue;
             }
         }
     }
