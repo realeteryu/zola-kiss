@@ -87,7 +87,8 @@ body[data-theme="dark"] {
                     stroke: $dark-white;
                     fill: $dark-white;
                 }
-                // Kolor ramki dla ikony trybu
+                
+                // Kolor ramki dla ikony trybu w ciemnym motywie
                 &:focus {
                     outline-color: $dark-text-link-blue;
                 }
@@ -96,7 +97,7 @@ body[data-theme="dark"] {
             .menu-link { 
                 color: $dark-white; 
                 
-                // Kolor ramki przy kliknięciu w link w trybie ciemnym
+                // Kolor ramki przy kliknięciu w link w ciemnym motywie
                 &:focus {
                     outline-color: $dark-text-link-blue;
                 }
