@@ -1,12 +1,14 @@
 {% component toc(headers) %}
     <ol class="toc-list">
         {% for header in headers %}
-            <li class="toc-item">
-                <a href="#{{ header.id }}">{{ header.title }}</a>
-                {% if header.children %}
-                    {{<toc headers={header.children} />}}
-                {% endif %}
-            </li>
+            {% if header.level != 1 %}
+                <li class="toc-item">
+                    <a href="#{{ header.id }}">{{ header.title }}</a>
+                    {% if header.children %}
+                        {{<toc headers={header.children} />}}
+                    {% endif %}
+                </li>
+            {% endif %}
         {% endfor %}
     </ol>
 {% endcomponent toc %}
