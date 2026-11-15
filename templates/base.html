@@ -52,12 +52,18 @@
                 </span>
             </label>
 
+            <!-- DEFINICJA ZMIENNYCH DLA LINKÓW (Tera Fix) -->
+            {% set home_url = config.base_url %}
+            {% set archive_url = get_url(path='@/posts/_index.md') %}
+            {% set about_url = get_url(path='@/about/_index.md') %}
+            {% set rss_url = get_url(path='index.xml') %}
+
             <!-- LINKI NAWIGACJI (z logiką aktywnej strony) -->
             <div class="trigger">
-                <a href="{{ config.base_url }}" class="menu-link {% if current_url == config.base_url %}active{% endif %}">home</a>
-                <a href="{{ get_url(path='@/posts/_index.md') }}" class="menu-link {% if current_url is starting_with(get_url(path='@/posts/_index.md')) %}active{% endif %}">archive</a>
-                <a href="{{ get_url(path='@/about/_index.md') }}" class="menu-link {% if current_url == get_url(path='@/about/_index.md') %}active{% endif %}">about</a>
-                <a href="{{ get_url(path='index.xml') }}" class="menu-link rss" title="RSS Feed">
+                <a href="{{ home_url }}" class="menu-link {% if current_path == '/' %}active{% endif %}">home</a>
+                <a href="{{ archive_url }}" class="menu-link {% if current_path is starting_with('/posts') %}active{% endif %}">archive</a>
+                <a href="{{ about_url }}" class="menu-link {% if current_path is starting_with('/about') %}active{% endif %}">about</a>
+                <a href="{{ rss_url }}" class="menu-link rss" title="RSS Feed">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 11a9 9 0 0 1 9 9"></path>
                         <path d="M4 4a16 16 0 0 1 16 16"></path>
@@ -73,10 +79,10 @@
     </main>
 
     <footer class="footer">
-        <a href="{{ config.base_url }}" class="footer_item">home</a>
-        <a href="{{ get_url(path='@/posts/_index.md') }}" class="footer_item">archive</a>
-        <a href="{{ get_url(path='@/about/_index.md') }}" class="footer_item">about</a>
-        <a href="{{ get_url(path='index.xml') }}" class="footer_item">rss</a>
+        <a href="{{ home_url }}" class="footer_item">home</a>
+        <a href="{{ archive_url }}" class="footer_item">archive</a>
+        <a href="{{ about_url }}" class="footer_item">about</a>
+        <a href="{{ rss_url }}" class="footer_item">rss</a>
         <span class="footer_item">&copy; 2026</span>
         <small class="footer_copyright">{{ config.title }}</small>
     </footer>
