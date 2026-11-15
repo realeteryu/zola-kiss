@@ -477,11 +477,16 @@
     .post-nav-item {
         display: flex;
         flex-direction: column;
-        flex: 1;
         max-width: 45%;
+
+        &.prev {
+            text-align: left;
+            margin-right: auto;
+        }
 
         &.next {
             text-align: right;
+            margin-left: auto;
         }
 
         .nav-arrow {
@@ -510,6 +515,8 @@
 
         .post-nav-item {
             max-width: 100%;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
 
             &.next {
                 text-align: left;
