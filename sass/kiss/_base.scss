@@ -1,4 +1,3 @@
-// Navbar
 .navbar {
     height: auto;
     max-width: calc(#{$wide-size} - (#{$spacing-full} * 2));
@@ -9,7 +8,6 @@
     padding: $spacing-full - 15px $spacing-full;
 }
 
-// Navigation
 .menu {
     user-select: none;
     -ms-user-select: none;
@@ -194,7 +192,6 @@
     }
 }
 
-// Author
 .author {
     margin-top: 6.3rem;
     margin-bottom: 7.2rem;
@@ -236,7 +233,6 @@
     }
 }
 
-// Footer
 .footer {
     text-align: center;
     padding-top: $spacing-full;
@@ -268,10 +264,20 @@
         display: block;
         color: $gray;
         opacity: 0.8;
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+
+            &:hover {
+                color: $black;
+                opacity: 1;
+            }
+        }
     }
 }
 
-// 404 Page
 .not-found {
     text-align: center;
     display: flex;
@@ -302,7 +308,6 @@
     }
 }
 
-// Global Headings
 h1, h2, h3, h4, h5, h6 {
     color: $black;
     font-weight: $bold-weight;
@@ -331,7 +336,6 @@ h6 {
     @include relative-font-size(0.875);
 }
 
-// Inline Elements
 mark {
     background-color: #fbe8c2;
     color: $black;
