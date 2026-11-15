@@ -68,9 +68,9 @@
                 });
 
                 if (matches.length > 0) {
-                    // DODANY MYŚLNIK "- " PRZED TAGIEM <a>
+                    // OPAKOWANO MYŚLNIK W SPAN, ABY MOŻNA GO BYŁO OSOBNO OSTYLOWAĆ
                     searchResults.innerHTML = matches.map(match => 
-                        `<li>- <a href="${match.url}">${match.title}</a></li>`
+                        `<li><span class="search-hyphen">-</span> <a href="${match.url}">${match.title}</a></li>`
                     ).join('');
                     searchResults.style.display = 'block';
                 } else {
