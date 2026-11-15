@@ -1,6 +1,6 @@
 base_url = "https://realeteryu.github.io/zola-kiss"
 title = "Zola Kiss"
-description = "Minimalistyczny motyw Zola z obsługą trybu jasnego i ciemnego, idealny do prowadzenia osobistej strony i bloga. Poznaj motyw Zola Kiss na [GitHub](https://github.com/realeteryu/zola-kiss)."
+description = "Minimalistyczny motyw Zola z obsługą trybu jasnego i ciemnego, idealny do prowadzenia osobistej strony i bloga."
 
 compile_sass = true
 generate_feeds = true
