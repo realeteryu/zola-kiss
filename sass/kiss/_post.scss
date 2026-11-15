@@ -40,10 +40,9 @@
                 color: $black; 
             }
             
-            /* Ramka przy kliknięciu - idealnie przylegająca do tekstu */
             &:focus {
-                outline: 2px solid $text-link-blue;
-                outline-offset: 0;
+                outline: 3px solid $text-link-blue;
+                outline-offset: 1px;
             }
         }
     }
@@ -302,8 +301,8 @@
                 }
                 
                 &:focus {
-                    outline: 2px solid $text-link-blue;
-                    outline-offset: 2px;
+                    outline: 3px solid $text-link-blue;
+                    outline-offset: 1px;
                 }
             }
         }
