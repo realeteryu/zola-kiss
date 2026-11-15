@@ -11,6 +11,7 @@
 </head>
 <body>
     <script>
+        // Skrypt zapobiegający mignięciu (FOUC) przy ładowaniu strony
         const theme = (() => {
             if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
                 return localStorage.getItem('theme');
@@ -26,17 +27,7 @@
 
     <div class="navbar" role="navigation">
         <nav class="menu">
-            <input type="checkbox" id="menu-trigger" class="menu-trigger" />
-
-            <label for="menu-trigger">
-                <span class="menu-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
-                        <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
-                    </svg>
-                </span>
-            </label>
-
-            <!-- IKONA SŁOŃCA -->
+            <!-- IKONA TRYBU (Przeniesiona na początek) -->
             <a id="mode" href="javascript:void(0);" title="Toggle theme">
                 <svg class="mode-sunny" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="5"></circle>
@@ -51,6 +42,17 @@
                 </svg>
             </a>
 
+            <!-- HAMBURGER (Checkbox + Label) -->
+            <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+            <label for="menu-trigger">
+                <span class="menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512">
+                        <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+                    </svg>
+                </span>
+            </label>
+
+            <!-- LINKI NAWIGACJI -->
             <div class="trigger">
                 <a href="{{ config.base_url }}" class="menu-link">{{ config.title }}</a>
                 <a href="{{ get_url(path='@/posts/_index.md') }}" class="menu-link">Wpisy</a>
@@ -72,17 +74,17 @@
     </footer>
 
     <script>
+        // Obsługa przełączania motywu
         document.getElementById('mode').addEventListener('click', () => {
             const element = document.body;
             const currentTheme = element.getAttribute('data-theme');
-            let newTheme = 'light';
-            if (currentTheme === 'light') {
-                newTheme = 'dark';
-            }
+            let newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
             element.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
         });
 
+        // Obsługa blokowania przewijania przy otwartym menu mobilnym
         document.getElementById('menu-trigger').addEventListener('change', function() {
             const wrapper = document.querySelector('.wrapper');
             if (this.checked) {
