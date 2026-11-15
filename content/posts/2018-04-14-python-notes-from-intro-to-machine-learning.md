@@ -23,7 +23,7 @@ So here are some notes and snippets of Python that I've been collecting so far (
 
 | Markdown                | HTML                               |    Rendered Output    |
 | :---------------------- | :--------------------------------- | :-------------------: |
-| `[Example Link](#link)` | `<a href="#link">Example Link</a>` | [Example Link](#Link) |
+| `[Example Link](#link)` | `<a href="#link">Example Link</a>` | [Example Link](#example-table) |
 | `_Be Italic_`           | `<em>Be Italic<em/>`               |      _Be Italic_      |
 | `**Be Bold**`           | `<strong>Be Italic<strong/>`       |      **Be Bold**      |
 
