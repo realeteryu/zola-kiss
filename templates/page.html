@@ -1,19 +1,28 @@
 {% extends "base.html" %}
 
-{% block title %}{{ page.title }} — {{ config.title }}{% endblock %}
+{# Inteligentne przypisanie zmiennych: obsługuje zarówno Page jak i Section #}
+{% set page_title = page.title | default(value=section.title) %}
+{% set page_content = page.content | default(value=section.content) %}
+{% set page_date = page.date | default(value=0) %}
+
+{% block title %}{{ page_title }} — {{ config.title }}{% endblock %}
 
 {% block main %}
     <article>
         <div class="header">
-            <h1 class="header-title">{{ page.title }}</h1>
+            <h1 class="header-title">{{ page_title }}</h1>
+            
+            {# Data i autor pojawiają się tylko, jeśli data istnieje (czyli dla wpisów) #}
+            {% if page_date != 0 %}
             <div class="post-meta">
-                <time>{{ page.date | date(format="%b %d, %Y") }}</time>
+                <time>{{ page_date | date(format="%b %d, %Y") }}</time>
                 <span itemprop="author">{{ config.author }}</span>
             </div>
+            {% endif %}
         </div>
         
         <div class="page-content">
-            {{ page.content | safe }}
+            {{ page_content | safe }}
         </div>
     </article>
 {% endblock main %}
