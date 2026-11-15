@@ -1,16 +1,17 @@
 // Post list wrapper (Kontener dla listy i nagłówka)
 .post-list-wrapper {
     h2 {
-        font-size: 1em; // Dopasowane do rozmiaru daty (16px)
+        font-size: 1rem; // Dokładnie 16px
         font-weight: $bold-weight;
-        margin-bottom: 5px; // Zmniejszone, aby linia była bliżej nagłówka
+        margin-bottom: 5px; 
+        letter-spacing: 0.3px; // Dopasowanie do daty
         color: $black;
     }
 }
 
 // Post list (Strona główna i lista wpisów)
 .post-list {
-    border-top: 1px solid $light; // DODANA GÓRNA LINIA
+    border-top: 1px solid $light; // Górna linia nad pierwszym wpisem
     margin: 0;
     padding: 0;
     list-style: none;
@@ -18,26 +19,27 @@
     .post-item {
         display: flex;
         align-items: baseline;
-        padding: 5px 0; // Przywrócone 5px dla zachowania oryginalnego rytmu
+        padding: 5px 0; 
         border-bottom: 1px solid $light;
 
         .post-item-date {
-            min-width: 96px; // Oryginalna szerokość
+            min-width: 96px; 
             padding-right: 10px;
             color: $black;
             font-weight: $bold-weight;
-            font-size: 1em; // Dopasowane do rozmiaru nagłówka (16px)
+            font-size: 1rem; // Dokładnie 16px
+            letter-spacing: 0.3px; // Dopasowanie do nagłówka
             white-space: nowrap;
         }
 
         .post-item-title {
-            font-size: $base-font-size; // Oryginalny rozmiar (16px)
+            font-size: $base-font-size; 
             font-weight: $normal-weight;
             color: $text-base-color;
             text-decoration: none;
 
             &:hover {
-                color: $black; // Oryginalny hover
+                color: $black; 
             }
         }
     }
