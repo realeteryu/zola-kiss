@@ -31,9 +31,9 @@
             transform: scale(0.9, 0.9);
         }
         
-        // Ramka dla ikony trybu
+        // Ramka dla ikony trybu (ZMIENIONO NA SOLID)
         &:focus {
-            outline: 2px dashed $text-link-blue;
+            outline: 2px solid $text-link-blue;
             outline-offset: 2px;
         }
         
@@ -76,9 +76,9 @@
             opacity: 1;
         }
         
-        // DODANA RAMKA PRZY KLIKNIĘCIU
+        // Ramka przy kliknięciu (ZMIENIONO NA SOLID)
         &:focus {
-            outline: 2px dashed $text-link-blue;
+            outline: 2px solid $text-link-blue;
             outline-offset: 2px;
         }
 
