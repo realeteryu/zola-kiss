@@ -8,6 +8,7 @@ compile_sass = true
 
 # Whether to generate a feed
 generate_feeds = true
+feed_filenames = ["index.xml"]
 
 # Configuration of the Markdown rendering
 [markdown]
@@ -21,3 +22,16 @@ theme = "gruvbox-dark-medium"
 # Theme configuration variables
 author = "Eteryu"
 avatar = "https://avatars.githubusercontent.com/u/117126022?s=400&u=6d6363ad30ba498f53133c6712a8a75455b6aad6&v=4"
+
+# Definicja menu nawigacji (używana w base.html)
+[[extra.nav]]
+name = "home"
+url = "@/_index.md"
+
+[[extra.nav]]
+name = "archive"
+url = "@/posts/_index.md"
+
+[[extra.nav]]
+name = "about"
+url = "@/about/_index.md"
