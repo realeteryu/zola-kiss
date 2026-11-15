@@ -8,7 +8,7 @@
             {% if page.taxonomies.tags %}
             <div class="tags">
                 {% for tag in page.taxonomies.tags %}
-                    <a href="#" class="tag">{{ tag | upper }}</a>{% if not loop.last %}, {% endif %}
+                    <a href="{{ get_taxonomy_url(kind='tags', name=tag) }}" class="tag">{{ tag | upper }}</a>{% if not loop.last %}, {% endif %}
                 {% endfor %}
             </div>
             {% endif %}
