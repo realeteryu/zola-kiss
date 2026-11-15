@@ -420,3 +420,45 @@
         }
     }
 }
+
+.toc {
+    border: 1px solid $light;
+    background-color: rgba(128, 128, 128, 0.05);
+    border-radius: 4px;
+    padding: 1.5em 2em;
+    margin: 2em 0;
+
+    .toc-title {
+        font-size: 0.9em;
+        font-weight: $bold-weight;
+        text-transform: uppercase;
+        color: $gray;
+        margin-bottom: 1em;
+        letter-spacing: 1px;
+    }
+
+    .toc-list {
+        margin: 0;
+        padding-left: 1.2em;
+        list-style-type: decimal;
+
+        .toc-list {
+            list-style-type: lower-alpha;
+            margin-top: 0.5em;
+        }
+
+        .toc-item {
+            margin-bottom: 0.5em;
+            
+            a {
+                color: $text-base-color;
+                text-decoration: none;
+                
+                &:hover {
+                    color: $text-link-blue;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
