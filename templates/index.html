@@ -1,8 +1,8 @@
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
 
 {% block main %}
     <div class="author">
-        <!-- Upload your avatar to static/images/avatar.png or change the link in config.toml -->
         <img class="author-avatar" src="{{ config.extra.avatar }}" alt="{{ config.extra.author }}">
         <h1 class="author-name">{{ config.title }}</h1>
         <p class="author-bio">{{ config.description }}</p>
@@ -14,7 +14,7 @@
         {% set posts_section = get_section(path="posts/_index.md") %}
         {% for page in posts_section.pages %}
             <li class="post-item">
-                <span class="post-item-date">{{ page.date | date(format="%b %d, %Y") }}</span>
+                <span class="post-item-date">{{ macros::date_pl(date=page.date) }}</span>
                 <a href="{{ page.permalink }}" class="post-item-title">{{ page.title }}</a>
             </li>
         {% endfor %}
