@@ -301,13 +301,21 @@ body[data-theme="dark"] {
         }
 
         .toc-list {
-            .toc-item {
-                a {
-                    color: $dark-text-base-color;
-                    
-                    &:hover {
-                        color: $dark-white;
-                    }
+            > li::before {
+                color: $dark-gray;
+            }
+            
+            .toc-list > li::before {
+                color: $dark-gray;
+            }
+        }
+
+        .toc-item {
+            a {
+                color: $dark-text-base-color;
+                
+                &:hover {
+                    color: $dark-white;
                 }
             }
         }
