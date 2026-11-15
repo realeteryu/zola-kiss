@@ -1,9 +1,9 @@
 // Post list wrapper (Kontener dla listy i nagłówka)
 .post-list-wrapper {
     h2 {
-        font-size: 1.375em; // Rozmiar dopasowany do oryginału
+        font-size: 1em; // Dopasowane do rozmiaru daty (16px)
         font-weight: $bold-weight;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         color: $black;
     }
 }
@@ -17,15 +17,15 @@
     .post-item {
         display: flex;
         align-items: baseline;
-        padding: 5px 0; // ZNACZNIE zmniejszony odstęp (oryginał Jekyll)
+        padding: 3px 0; // Zmniejszone z 5px dla bardziej zwartej listy
         border-bottom: 1px solid $light;
 
         .post-item-date {
-            min-width: 96px; // Oryginalna szerokość z Jekyll
-            padding-right: 10px; // Odstęp między datą a tytułem
-            color: $black; // Ciemniejszy kolor daty (zgodnie z oryginałem)
+            min-width: 96px; // Oryginalna szerokość
+            padding-right: 10px;
+            color: $black;
             font-weight: $bold-weight;
-            font-size: $base-font-size; // Oryginalny rozmiar czcionki daty
+            font-size: 1em; // Dopasowane do rozmiaru nagłówka (16px)
             white-space: nowrap;
         }
 
@@ -36,7 +36,7 @@
             text-decoration: none;
 
             &:hover {
-                color: $black; // Oryginalny hover (czarny), zamiast niebieskiego
+                color: $black; // Oryginalny hover
             }
         }
     }
