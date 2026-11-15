@@ -79,7 +79,9 @@ body[data-theme="dark"] {
                 }
             }
 
-            .menu-link { color: $dark-white; }
+            .menu-link { 
+                color: $dark-white; 
+            }
             
             .menu-icon > svg { 
                 fill: $dark-white !important; 
@@ -87,7 +89,8 @@ body[data-theme="dark"] {
             
             @include media-query($on-mobile) {
                 input[type="checkbox"]:checked ~ .trigger {
-                    background-color: $dark-black;
+                    /* Używamy półprzezroczystego tła, aby blur działał */
+                    background-color: rgba(19, 20, 24, 0.85); 
                 }
                 .menu-link {
                     color: $dark-white;
@@ -112,9 +115,12 @@ body[data-theme="dark"] {
     }
 
     .footer {
-        span.footer_item, a.footer_item:not(:last-child) {
+        /* Uproszczony selektor, aby objąć wszystkie linki i napisy */
+        span.footer_item, 
+        a.footer_item {
             color: $dark-white;
         }
+        
         .footer_copyright {
             color: $dark-gray;
             opacity: 1;
