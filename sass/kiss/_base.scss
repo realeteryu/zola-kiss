@@ -250,6 +250,12 @@
         opacity: 0.8;
         text-decoration: none;
 
+        /* DODANA RAMKA DLA LINKÓW W STOPCE */
+        &:focus {
+            outline: 3px solid $text-link-blue;
+            outline-offset: 2px;
+        }
+
         &:not(:last-child) {
             margin-right: 10px;
             &:hover {
