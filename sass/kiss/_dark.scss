@@ -6,13 +6,14 @@ body[data-theme="dark"] {
         color: $dark-white;
     }
 
+    /* Tabele w trybie ciemnym */
     table {
-        thead {
-            color: $dark-white;
+        th, td {
             border-color: $dark-light;
         }
-        th, td, tr {
-            border-color: $dark-light;
+        th {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: $dark-white;
         }
     }
 
