@@ -147,25 +147,24 @@
         }
     }
 
+    /* Poprawione obrazy */
     img {
         max-width: 100%;
+        max-height: 500px;
+        object-fit: contain;
         height: auto;
         border-radius: 4px;
         display: block;
         margin: 1.5em auto;
     }
 
+    /* Poprawione cytaty (lżejsze, bez tła) */
     blockquote {
         border-left: 4px solid $light;
         padding-left: 1.2em;
         margin: 1.5em 0;
         color: $gray;
         font-style: italic;
-        background-color: rgba(128, 128, 128, 0.05);
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-        padding-right: 1em;
-        border-radius: 0 4px 4px 0;
     }
 
     .footnotes {
@@ -186,6 +185,7 @@
         }
     }
 
+    /* Poprawione tabele */
     table {
         width: 100%;
         border-collapse: collapse;
@@ -198,6 +198,7 @@
             padding: 8px 12px;
             border: 1px solid $light;
             text-align: left;
+            white-space: normal;
         }
 
         th {
