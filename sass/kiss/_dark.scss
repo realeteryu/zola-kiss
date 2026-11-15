@@ -31,7 +31,7 @@ body[data-theme="dark"] {
         
         &:focus {
             color: $dark-text-link-blue;
-            outline-color: rgba(255, 82, 119, 0.6);
+            outline-color: $dark-text-link-blue;
         }
     }
 
@@ -90,7 +90,7 @@ body[data-theme="dark"] {
                 }
                 
                 &:focus {
-                    outline-color: rgba(255, 82, 119, 0.6);
+                    outline-color: $dark-text-link-blue;
                 }
             }
 
@@ -98,7 +98,7 @@ body[data-theme="dark"] {
                 color: $dark-white; 
                 
                 &:focus {
-                    outline-color: rgba(255, 82, 119, 0.6);
+                    outline-color: $dark-text-link-blue;
                 }
             }
             
@@ -140,10 +140,9 @@ body[data-theme="dark"] {
                     color: $dark-white;
                 }
 
-                /* DODANA RÓŻOWA RAMKA PRZY KLIKNIĘCIU NA STRONIE GŁÓWNEJ */
                 &:focus {
                     color: $dark-white;
-                    outline-color: rgba(255, 82, 119, 0.6);
+                    outline-color: $dark-text-link-blue;
                 }
             }
         }
@@ -179,7 +178,6 @@ body[data-theme="dark"] {
 
     #search-results {
         li {
-            /* DODANA STYLIZACJA MYŚLNIKA DLA CIEMNEGO MOTYWU */
             .search-hyphen {
                 color: $dark-white;
                 font-weight: $bold-weight;
@@ -211,7 +209,7 @@ body[data-theme="dark"] {
                     }
 
                     &:focus {
-                        outline-color: rgba(255, 82, 119, 0.6);
+                        outline-color: $dark-text-link-blue;
                     }
                 }
             }
