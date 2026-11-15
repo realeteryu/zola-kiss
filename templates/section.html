@@ -11,11 +11,14 @@
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="text" id="search-input" placeholder="Find some articles here" aria-label="Search">
+            <input type="text" id="search-input" placeholder="Find some articles here" aria-label="Search" autocomplete="off">
+            
+            <!-- Kontener na wyniki wyszukiwania -->
+            <ul id="search-results" class="search-results"></ul>
         </div>
     </div>
 
-    <div class="archive-list">
+    <div class="archive-list" id="archive-list">
         {% set_global current_year = "" %}
         
         {% for page in section.pages %}
@@ -33,4 +36,57 @@
             </div>
         {% endfor %}
     </div>
+
+    <!-- SKRYPT WYSZUKIWARKI -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('search-input');
+            const searchResults = document.getElementById('search-results');
+            const archiveItems = document.querySelectorAll('.archive-item');
+
+            if (searchInput) {
+                // Nasłuchiwanie wpisywania tekstu
+                searchInput.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase().trim();
+                    
+                    if (query.length === 0) {
+                        searchResults.style.display = 'none';
+                        searchResults.innerHTML = '';
+                        return;
+                    }
+
+                    let matches = [];
+                    
+                    // Przeszukiwanie linków
+                    archiveItems.forEach(item => {
+                        const link = item.querySelector('.archive-link');
+                        if (link && link.textContent.toLowerCase().includes(query)) {
+                            matches.push({
+                                title: link.textContent,
+                                url: link.getAttribute('href')
+                            });
+                        }
+                    });
+
+                    // Wyświetlanie wyników
+                    if (matches.length > 0) {
+                        searchResults.innerHTML = matches.map(match => 
+                            `<li><a href="${match.url}">- ${match.title}</a></li>`
+                        ).join('');
+                        searchResults.style.display = 'block';
+                    } else {
+                        searchResults.innerHTML = '<li style="color: #767f87; padding: 10px 15px;">Brak wyników</li>';
+                        searchResults.style.display = 'block';
+                    }
+                });
+
+                // Ukrywanie wyników po kliknięciu poza wyszukiwarkę
+                document.addEventListener('click', (e) => {
+                    if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                        searchResults.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
 {% endblock main %}
