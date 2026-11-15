@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% import "macros.html" as macros %}
 
 {% block title %}Tagi — {{ config.title }}{% endblock %}
 
@@ -21,7 +20,7 @@
             <h2 id="{{ term.name | slugify }}">{{ term.name | upper }}</h2>
             {% for page in term.pages %}
                 <article class="post-item">
-                    <span class="post-item-date">{{ macros::date_pl(date=page.date) }}</span>
+                    <span class="post-item-date">{{<date_pl date={page.date} />}}</span>
                     <h3 class="post-item-title">
                         <a href="{{ page.permalink }}">{{ page.title }}</a>
                     </h3>
