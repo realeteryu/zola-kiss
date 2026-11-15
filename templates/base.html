@@ -112,13 +112,18 @@
             localStorage.setItem('theme', newTheme);
         });
 
+        // ZAKTUALIZOWANY SKRYPT: Dodaje rozmycie (blur) również do stopki
         document.getElementById('menu-trigger').addEventListener('change', function() {
             const wrapper = document.querySelector('.wrapper');
+            const footer = document.querySelector('.footer');
+            
             if (this.checked) {
                 wrapper.classList.add('blurry');
+                if (footer) footer.classList.add('blurry'); // Rozmycie stopki
                 document.body.style.overflow = 'hidden';
             } else {
                 wrapper.classList.remove('blurry');
+                if (footer) footer.classList.remove('blurry'); // Usunięcie rozmycia stopki
                 document.body.style.overflow = '';
             }
         });
