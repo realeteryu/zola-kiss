@@ -307,8 +307,6 @@
     margin-top: 1.5em;
     margin-bottom: 0.5em;
     color: $black;
-    border-bottom: 1px solid $light;
-    padding-bottom: 4px;
 }
 
 .archive-item {
@@ -318,7 +316,7 @@
     font-weight: normal;
 
     .archive-link {
-        font-size: 1.25em;
+        font-size: $base-font-size;
         color: $text-base-color;
         text-decoration: none;
         display: block;
