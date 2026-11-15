@@ -224,6 +224,10 @@ body[data-theme="dark"] {
                 border-top-color: $dark-light; 
             }
             
+            .post-item-date {
+                color: $dark-white;
+            }
+            
             .post-item-title {
                 a {
                     color: $dark-text-base-color;
@@ -241,26 +245,12 @@ body[data-theme="dark"] {
         }
     }
 
-    /* DODANA SEKCJA: Poprawka dla listy wpisów na stronie /tags/ */
-    .page-content {
-        .post-item {
-            .post-item-date {
-                color: $dark-white;
-            }
-            
-            .post-item-title {
-                a {
-                    color: $dark-text-base-color;
-                    
-                    &:hover,
-                    &:focus {
-                        color: $dark-white;
-                    }
+    .archive-tags {
+        .tag-item {
+            color: $dark-text-link-blue;
 
-                    &:focus {
-                        outline-color: rgba(255, 82, 119, 0.6);
-                    }
-                }
+            &:hover {
+                color: $dark-text-link-blue-active;
             }
         }
     }
