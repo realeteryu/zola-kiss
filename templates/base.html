@@ -24,9 +24,8 @@
         window.localStorage.setItem('theme', theme);
     </script>
 
-    <!-- ZABEZPIECZENIE DLA STRONY 404 (default value) -->
+    <!-- Pobieramy aktualny URL (zabezpieczenie dla 404) -->
     {% set c_url = current_url | default(value="") %}
-    {% set c_path = c_url | replace(from=config.base_url, to="/") %}
 
     <div class="navbar" role="navigation">
         <nav class="menu">
@@ -64,11 +63,9 @@
                         {% set item_url = get_url(path=item.url) %}
                     {% endif %}
                     
-                    {% set item_path = item_url | replace(from=config.base_url, to="/") %}
-                    
-                    <!-- POPRAWNA LOGIKA AKTYWNEJ STRONY -->
+                    <!-- POPRAWNA LOGIKA AKTYWNEJ STRONY (porównanie URL) -->
                     {% set is_active = false %}
-                    {% if c_path == item_path or (item_path != '/' and c_path is starting_with(pat=item_path)) %}
+                    {% if c_url == item_url or (item_url != config.base_url and c_url is starting_with(pat=item_url)) %}
                         {% set is_active = true %}
                     {% endif %}
                     
