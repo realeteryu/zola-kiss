@@ -152,7 +152,7 @@
             justify-content: center;
             align-items: center;
             background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(15px); /* Mocniejszy blur */
+            backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             z-index: 5;
             animation: 0.2s ease-in forwards fadein;
@@ -174,7 +174,7 @@
 // Author
 .author {
     margin-top: 6.3rem;
-    margin-bottom: 5rem; // Zmniejszono lekko margines dolny, by lista była bliżej
+    margin-bottom: 7.2rem; // Przywrócono oryginalny margines
     text-align: center;
 
     @include media-query($on-mobile) {
@@ -182,8 +182,8 @@
     }
 
     .author-avatar {
-        width: 96px; // Zwiększono z 70px
-        height: 96px; // Zwiększono z 70px
+        width: 70px;  // Przywrócono z 96px
+        height: 70px; // Przywrócono z 96px
         border-radius: 100%;
         user-select: none;
         -ms-user-select: none;
@@ -192,22 +192,22 @@
         animation: 0.5s ease-in forwards fadein;
         opacity: 1;
         object-fit: cover;
-        margin-bottom: 15px; // Dodano odstęp od imienia
     }
 
     .author-name {
-        font-size: 2.2em; // Zwiększono z 1.7em
+        font-size: 1.7em; // Przywrócono z 2.2em
         font-weight: $bold-weight;
-        margin-bottom: 8px; // Dodano odstęp od bio
+        margin-top: 10px; // Dodany lekki odstęp od awatara
+        margin-bottom: 2px;
         color: $black;
     }
 
     .author-bio {
         margin: 0 auto;
         opacity: 0.9;
-        max-width: 650px; // Poszerzono z 500px
-        font-size: 1.1em; // Zwiększono z 1em
-        line-height: 1.6;
+        max-width: 500px; // Przywrócono z 650px
+        font-size: 1em;   // Przywrócono z 1.1em
+        line-height: 1.5;
         letter-spacing: 0.2px;
         text-align: center;
     }
