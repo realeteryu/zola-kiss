@@ -24,12 +24,10 @@
         window.localStorage.setItem('theme', theme);
     </script>
 
-    <!-- Pobieramy aktualny URL (zabezpieczenie dla 404) -->
-    {% set c_url = current_url | default(value="") %}
+    {% set c_path = current_path | default(value="") %}
 
     <div class="navbar" role="navigation">
         <nav class="menu">
-            <!-- IKONA TRYBU -->
             <a id="mode" href="javascript:void(0);" title="Toggle theme">
                 <svg class="mode-sunny" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="5"></circle>
@@ -44,7 +42,6 @@
                 </svg>
             </a>
 
-            <!-- HAMBURGER -->
             <input type="checkbox" id="menu-trigger" class="menu-trigger" />
             <label for="menu-trigger">
                 <span class="menu-icon">
@@ -54,7 +51,6 @@
                 </span>
             </label>
 
-            <!-- LINKI NAWIGACJI -->
             <div class="trigger">
                 {% for item in config.extra.nav %}
                     {% set item_url = item.url %}
@@ -63,16 +59,23 @@
                         {% set item_url = get_url(path=item.url) %}
                     {% endif %}
                     
-                    <!-- POPRAWNA LOGIKA AKTYWNEJ STRONY (porównanie URL) -->
+                    {# Wyciągamy ścieżkę z pełnego URL #}
+                    {% set item_path = item_url | replace(from=config.base_url, to="") %}
+                    {% if item_path == "" %}
+                        {% set item_path = "/" %}
+                    {% endif %}
+                    
+                    {# Aktywne tylko gdy ścieżka się zgadza #}
                     {% set is_active = false %}
-                    {% if c_url == item_url or (item_url != config.base_url and c_url is starting_with(pat=item_url)) %}
+                    {% if c_path == item_path %}
+                        {% set is_active = true %}
+                    {% elif item_path != "/" and c_path is starting_with(pat=item_path) %}
                         {% set is_active = true %}
                     {% endif %}
                     
                     <a href="{{ item_url }}" class="menu-link {% if is_active %}active{% endif %}">{{ item.name }}</a>
                 {% endfor %}
 
-                <!-- Ikona RSS (Gruba, oryginalna z Jekyll Klisé) -->
                 <a href="{{ get_url(path='index.xml') }}" class="menu-link rss" title="RSS Feed">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor">
                         <path d="M108.56,342.78a60.34,60.34,0,1,0,60.56,60.44A60.63,60.63,0,0,0,108.56,342.78Z"/>
@@ -112,18 +115,17 @@
             localStorage.setItem('theme', newTheme);
         });
 
-        // ZAKTUALIZOWANY SKRYPT: Dodaje rozmycie (blur) również do stopki
         document.getElementById('menu-trigger').addEventListener('change', function() {
             const wrapper = document.querySelector('.wrapper');
             const footer = document.querySelector('.footer');
             
             if (this.checked) {
                 wrapper.classList.add('blurry');
-                if (footer) footer.classList.add('blurry'); // Rozmycie stopki
+                if (footer) footer.classList.add('blurry');
                 document.body.style.overflow = 'hidden';
             } else {
                 wrapper.classList.remove('blurry');
-                if (footer) footer.classList.remove('blurry'); // Usunięcie rozmycia stopki
+                if (footer) footer.classList.remove('blurry');
                 document.body.style.overflow = '';
             }
         });
