@@ -24,6 +24,9 @@
         window.localStorage.setItem('theme', theme);
     </script>
 
+    <!-- Zmienna pomocnicza dla ścieżki, z domyślną wartością na wypadek strony 404 -->
+    {% set c_path = current_path | default(value="") %}
+
     <div class="navbar" role="navigation">
         <nav class="menu">
             <!-- IKONA TRYBU -->
@@ -61,7 +64,7 @@
                     {% endif %}
                     
                     {% set is_active = false %}
-                    {% if current_path == item_url or (item_url != '/' and current_path is starting_with(pat=item_url)) %}
+                    {% if c_path == item_url or (item_url != '/' and c_path is starting_with(pat=item_url)) %}
                         {% set is_active = true %}
                     {% endif %}
                     
