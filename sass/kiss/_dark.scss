@@ -72,18 +72,16 @@ body[data-theme="dark"] {
             border-color: $dark-light;
 
             a#mode {
-                color: $dark-white; /* Dziedziczy kolor dla stroke */
-                
-                /* Wypełnienie słońca w trybie ciemnym */
                 .mode-sunny {
-                    fill: $dark-white;
-                    stroke: $dark-white;
+                    /* Wymuszenie białego koloru linii w trybie ciemnym */
+                    circle, line {
+                        stroke: #eaeaea !important;
+                    }
                 }
             }
 
             .menu-link { color: $dark-white; }
             
-            /* White hamburger icon in dark mode */
             .menu-icon > svg { 
                 fill: $dark-white !important; 
             }
