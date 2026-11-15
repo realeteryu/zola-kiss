@@ -80,7 +80,12 @@ body[data-theme="dark"] {
             }
 
             .menu-link { color: $dark-white; }
-            .menu-icon > svg { fill: $dark-white; }
+            
+            /* WYMUSZENIE BIAŁEGO KOLORU IKONY HAMBURGERA */
+            .menu-icon > svg { 
+                fill: $dark-white !important; 
+                stroke: $dark-white !important;
+            }
             
             @include media-query($on-mobile) {
                 input[type="checkbox"]:checked ~ .trigger {
