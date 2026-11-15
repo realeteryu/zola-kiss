@@ -35,14 +35,17 @@
             font-weight: $normal-weight;
             color: $text-base-color;
             text-decoration: none;
+            
+            display: inline-block;
+            line-height: 1.5;
 
             &:hover {
                 color: $black; 
             }
             
             &:focus {
-                outline: 3px solid $text-link-blue;
-                outline-offset: 1px;
+                outline: 2px solid $text-link-blue;
+                outline-offset: 2px;
             }
         }
     }
@@ -301,8 +304,8 @@
                 }
                 
                 &:focus {
-                    outline: 3px solid $text-link-blue;
-                    outline-offset: 1px;
+                    outline: 2px solid $text-link-blue;
+                    outline-offset: 2px;
                 }
             }
         }
