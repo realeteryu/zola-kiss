@@ -1,7 +1,7 @@
 // Post list wrapper (Kontener dla listy i nagłówka)
 .post-list-wrapper {
     h2 {
-        font-size: 1.3em; // Zmniejszony nagłówek "Ostatnie wpisy"
+        font-size: 1.375em; // Rozmiar dopasowany do oryginału
         font-weight: $bold-weight;
         margin-bottom: 15px;
         color: $black;
@@ -17,25 +17,26 @@
     .post-item {
         display: flex;
         align-items: baseline;
-        padding: 12px 0; // Lekko zwiększony odstęp góra/dół
+        padding: 5px 0; // ZNACZNIE zmniejszony odstęp (oryginał Jekyll)
         border-bottom: 1px solid $light;
 
         .post-item-date {
-            min-width: 110px; // Zwiększone z 96px dla lepszego wyrównania
-            color: $text-base-color;
+            min-width: 96px; // Oryginalna szerokość z Jekyll
+            padding-right: 10px; // Odstęp między datą a tytułem
+            color: $black; // Ciemniejszy kolor daty (zgodnie z oryginałem)
             font-weight: $bold-weight;
-            font-size: $small-font-size;
+            font-size: $base-font-size; // Oryginalny rozmiar czcionki daty
             white-space: nowrap;
         }
 
         .post-item-title {
-            font-size: 1.05em; // Lekko powiększony tytuł wpisu
+            font-size: $base-font-size; // Oryginalny rozmiar (16px)
             font-weight: $normal-weight;
             color: $text-base-color;
             text-decoration: none;
 
             &:hover {
-                color: $text-link-blue;
+                color: $black; // Oryginalny hover (czarny), zamiast niebieskiego
             }
         }
     }
