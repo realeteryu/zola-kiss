@@ -285,14 +285,13 @@
     }
 }
 
-/* Sekcja ARCHIVE (używana na /archive/ i /tags/) */
 .archive-header {
     margin-top: 6em;
     margin-bottom: 3em;
     text-align: center;
 
     .header-title {
-        font-size: 2em; /* Zmniejszono z 2.5em */
+        font-size: 2em; 
         margin-bottom: 1.5em;
         font-weight: $bold-weight;
         text-align: center;
@@ -343,22 +342,20 @@
     }
 }
 
-/* Sekcja TAGÓW (chmura tagów) */
 .archive-tags {
     height: auto;
     margin-bottom: 2em;
-    text-align: center; /* Wyśrodkowanie zawartości */
+    text-align: center; /* Wyśrodkowanie całego bloku tagów */
 
     .tag-item {
-        display: inline-block; /* Tagi układają się obok siebie */
+        display: inline-block;
         padding: 1px 3px;
-        margin: 2px; /* Delikatny odstęp zamiast gap */
+        margin: 0 2px 2px 0; /* Minimalny odstęp, aby ramki się nie zlewały */
         border-radius: 2px;
         border: 1px solid rgba(128, 128, 128, 0.1);
         background-color: rgba(128, 128, 128, 0.1);
         text-decoration: none;
         color: $text-link-blue;
-        font-size: 0.9em; /* Lekko mniejsza czcionka tagów */
 
         &:hover {
             color: $text-link-blue-active;
