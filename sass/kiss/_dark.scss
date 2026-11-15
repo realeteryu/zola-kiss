@@ -72,8 +72,9 @@ body[data-theme="dark"] {
             border-color: $dark-light;
 
             a#mode {
-                .mode-sunny { display: block; }
+                color: $dark-white; /* Biały kolor dla SVG */
                 .mode-moon { display: none; }
+                .mode-sunny { display: block; }
             }
 
             .menu-link { color: $dark-white; }
