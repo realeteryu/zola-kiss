@@ -25,7 +25,7 @@ search_placeholder = "Szukaj wpisów..."
 search_no_results = "Brak wyników"
 
 [[extra.nav]]
-name = "home"
+name = "start"
 url = "@/_index.md"
 
 [[extra.nav]]
