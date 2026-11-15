@@ -196,22 +196,24 @@ body[data-theme="dark"] {
         border-bottom-color: $dark-light;
     }
 
-    .archive-item {
-        border-bottom-color: $dark-light;
+    .archive-group {
+        .archive-item {
+            border-bottom-color: $dark-light;
 
-        &:last-child {
-            border-bottom: none;
-        }
-
-        .archive-link {
-            color: $dark-text-base-color;
-            
-            &:hover {
-                color: $dark-white;
+            &:last-child {
+                border-bottom: none;
             }
 
-            &:focus {
-                outline-color: $dark-text-link-blue;
+            .archive-link {
+                color: $dark-text-base-color;
+                
+                &:hover {
+                    color: $dark-white;
+                }
+
+                &:focus {
+                    outline-color: $dark-text-link-blue;
+                }
             }
         }
     }
