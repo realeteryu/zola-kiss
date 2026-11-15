@@ -39,6 +39,12 @@
             &:hover {
                 color: $black; 
             }
+            
+            /* DODANA RAMKA PRZY KLIKNIĘCIU DLA STRONY GŁÓWNEJ */
+            &:focus {
+                outline: 2px solid $text-link-blue;
+                outline-offset: 2px;
+            }
         }
     }
 }
@@ -250,16 +256,16 @@
         list-style: none;
 
         .search-hyphen {
-            color: $black;             /* Kolor myślnika */
-            font-weight: $bold-weight; /* Pogrubienie */
-            margin-right: 4px;         /* Odstęp od tytułu */
+            color: $black;
+            font-weight: $bold-weight;
+            margin-right: 4px;
         }
 
         a {
             color: $text-link-blue;
             text-decoration: none;
             font-size: $base-font-size;
-            display: inline; /* Wymuszenie bycia w jednej linii z myślnikiem */
+            display: inline;
 
             &:hover {
                 text-decoration: underline;
