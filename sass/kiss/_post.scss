@@ -152,8 +152,12 @@
         &:hover {
             color: $text-link-blue-active;
         }
+        
+        // DODANA RAMKA PRZY KLIKNIĘCIU W LINK W TREŚCI
         &:focus {
             color: $text-link-blue;
+            outline: 2px solid $text-link-blue;
+            outline-offset: 2px;
         }
     }
 
