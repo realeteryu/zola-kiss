@@ -102,7 +102,7 @@
         
         <a href="{{ get_url(path='index.xml') }}" class="footer_item">rss</a>
         <span class="footer_item">&copy; 2026</span>
-        <small class="footer_copyright">{{ config.title }}</small>
+        <small class="footer_copyright">{{ config.footer_text | default(value=config.title) }}</small>
     </footer>
 
     <script>
