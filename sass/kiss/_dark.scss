@@ -73,10 +73,9 @@ body[data-theme="dark"] {
 
             a#mode {
                 .mode-sunny {
-                    /* Wymuszenie białego koloru linii w trybie ciemnym */
-                    circle, line {
-                        stroke: #eaeaea !important;
-                    }
+                    /* Wypełnione słońce w trybie ciemnym */
+                    stroke: $dark-white;
+                    fill: $dark-white;
                 }
             }
 
