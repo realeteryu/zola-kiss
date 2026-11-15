@@ -345,17 +345,18 @@
 .archive-tags {
     height: auto;
     margin-bottom: 2em;
-    text-align: center; /* Wyśrodkowanie całego bloku tagów */
+    text-align: center;
 
     .tag-item {
         display: inline-block;
         padding: 1px 3px;
-        margin: 0 2px 2px 0; /* Minimalny odstęp, aby ramki się nie zlewały */
+        margin: 0 2px 2px 0;
         border-radius: 2px;
         border: 1px solid rgba(128, 128, 128, 0.1);
         background-color: rgba(128, 128, 128, 0.1);
         text-decoration: none;
         color: $text-link-blue;
+        font-size: 0.9em; /* Przywrócony mniejszy rozmiar czcionki */
 
         &:hover {
             color: $text-link-blue-active;
