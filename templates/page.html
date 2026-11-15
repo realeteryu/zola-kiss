@@ -38,15 +38,19 @@
         <nav class="post-nav">
             <div class="post-nav-item prev">
                 {% if page.lower %}
-                <span class="nav-arrow">← Poprzedni</span>
-                <a href="{{ page.lower.permalink }}" class="post-title">{{ page.lower.title | truncate(length=50) }}</a>
+                <a href="{{ page.lower.permalink }}" class="post-nav-link">
+                    <span class="nav-arrow">Poprzedni</span>
+                    <span class="post-title">{{ page.lower.title | truncate(length=50) }}</span>
+                </a>
                 {% endif %}
             </div>
 
             <div class="post-nav-item next">
                 {% if page.higher %}
-                <span class="nav-arrow">Następny →</span>
-                <a href="{{ page.higher.permalink }}" class="post-title">{{ page.higher.title | truncate(length=50) }}</a>
+                <a href="{{ page.higher.permalink }}" class="post-nav-link">
+                    <span class="nav-arrow">Następny</span>
+                    <span class="post-title">{{ page.higher.title | truncate(length=50) }}</span>
+                </a>
                 {% endif %}
             </div>
         </nav>
