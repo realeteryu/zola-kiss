@@ -464,3 +464,56 @@
         }
     }
 }
+
+/* --- Nowa nawigacja Poprzedni / Następny --- */
+.post-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4em;
+    padding-top: 1.5em;
+    border-top: 1px solid $light;
+    gap: 2em;
+
+    .post-nav-item {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        max-width: 45%;
+
+        &.next {
+            text-align: right;
+        }
+
+        .nav-arrow {
+            font-size: $small-font-size;
+            color: $gray;
+            margin-bottom: 0.3em;
+            font-weight: $bold-weight;
+        }
+
+        .post-title {
+            font-size: 1.1em;
+            color: $text-base-color;
+            text-decoration: none;
+            font-weight: $normal-weight;
+            line-height: 1.4;
+
+            &:hover {
+                color: $text-link-blue;
+            }
+        }
+    }
+
+    @include media-query($on-mobile) {
+        flex-direction: column;
+        gap: 1.5em;
+
+        .post-nav-item {
+            max-width: 100%;
+
+            &.next {
+                text-align: left;
+            }
+        }
+    }
+}
