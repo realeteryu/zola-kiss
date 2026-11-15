@@ -8,12 +8,23 @@
         <h1 class="header-title center">Tags</h1>
     </div>
 
-    <div class="tags-list" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 2em;">
+    <div class="archive-tags">
+        <a class="tag-item" href="#">all</a>
         {% for term in terms %}
-            <a href="{{ term.permalink }}" class="tag" style="font-size: 1.2em; font-weight: bold;">
-                {{ term.name | upper }} ({{ term.pages | length }})
-            </a>
+            <a class="tag-item" href="#{{ term.name | slugify }}">{{ term.name }}</a>
         {% endfor %}
     </div>
+
+    {% for term in terms %}
+        <h2 id="{{ term.name | slugify }}">{{ term.name | upper }}</h2>
+        {% for page in term.pages %}
+            <article class="post-item">
+                <span class="post-item-date">{{ page.date | date(format="%b %d, %Y") }}</span>
+                <h3 class="post-item-title">
+                    <a href="{{ page.permalink }}">{{ page.title }}</a>
+                </h3>
+            </article>
+        {% endfor %}
+    {% endfor %}
 </div>
 {% endblock main %}
