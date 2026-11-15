@@ -59,6 +59,19 @@ body[data-theme="dark"] {
         border-color: $dark-light;
     }
 
+    // Stylizacja tagów w nagłówku wpisu
+    .header {
+        .tags {
+            .tag {
+                color: $dark-text-link-blue;
+                
+                &:hover {
+                    color: $dark-text-link-blue-active;
+                }
+            }
+        }
+    }
+
     .post-meta {
         color: $dark-gray;
         time::after {
