@@ -1,31 +1,38 @@
 {% extends "base.html" %}
 
 {% block title %}
-    {% set page_title = page.title | default(value=section.title) %}
-    {{ page_title }} — {{ config.title }}
+    {% if page %}
+        {{ page.title }} — {{ config.title }}
+    {% elif section %}
+        {{ section.title }} — {{ config.title }}
+    {% endif %}
 {% endblock title %}
 
 {% block main %}
-    {# Inteligentne przypisanie zmiennych WEWNĄTRZ bloku #}
-    {% set page_title = page.title | default(value=section.title) %}
-    {% set page_content = page.content | default(value=section.content) %}
-    {% set page_date = page.date | default(value="") %}
-
     <article>
-        <div class="header">
-            <h1 class="header-title">{{ page_title }}</h1>
-            
-            {# Sprawdzamy, czy to wpis (ma datę), czy statyczna strona #}
-            {% if page_date != "" %}
-            <div class="post-meta">
-                <time>{{ page_date | date(format="%b %d, %Y") }}</time>
-                <span itemprop="author">{{ config.author }}</span>
+        {% if page %}
+            {# Obsługa zwykłych wpisów i stron (Page) #}
+            <div class="header">
+                <h1 class="header-title">{{ page.title }}</h1>
+                {% if page.date %}
+                <div class="post-meta">
+                    <time>{{ page.date | date(format="%b %d, %Y") }}</time>
+                    <span itemprop="author">{{ config.author }}</span>
+                </div>
+                {% endif %}
             </div>
-            {% endif %}
-        </div>
-        
-        <div class="page-content">
-            {{ page_content | safe }}
-        </div>
+            <div class="page-content">
+                {{ page.content | safe }}
+            </div>
+            
+        {% elif section %}
+            {# Obsługa sekcji (np. jeśli About zostanie w folderze z _index.md) #}
+            <div class="header">
+                <h1 class="header-title">{{ section.title }}</h1>
+            </div>
+            <div class="page-content">
+                {{ section.content | safe }}
+            </div>
+        {% endif %}
     </article>
 {% endblock main %}
