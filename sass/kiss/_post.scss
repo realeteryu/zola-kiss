@@ -75,6 +75,11 @@
                 color: $text-link-blue-active;
                 text-decoration: none;
             }
+
+            &:focus {
+                outline: 3px solid $text-link-blue;
+                outline-offset: 2px;
+            }
         }
     }
 
