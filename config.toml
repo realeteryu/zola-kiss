@@ -1,6 +1,6 @@
 base_url = "https://realeteryu.github.io/zola-kiss"
 title = "Zola Kiss"
-description = "The minimalist Zola theme with light and dark mode support, perfect for running a personal site and blog. Meet the Zola Kiss theme at @github."
+description = "Minimalistyczny motyw Zola z obsługą trybu jasnego i ciemnego, idealny do prowadzenia osobistej strony i bloga. Poznaj motyw Zola Kiss na [GitHub](https://github.com/realeteryu/zola-kiss)."
 
 compile_sass = true
 generate_feeds = true
@@ -21,17 +21,17 @@ author = "Eteryu"
 avatar = "https://avatars.githubusercontent.com/u/117126022?s=400&u=6d6363ad30ba498f53133c6712a8a75455b6aad6&v=4"
 
 [extra.ui]
-search_placeholder = "Find some articles here"
-search_no_results = "No results found"
+search_placeholder = "Szukaj wpisów..."
+search_no_results = "Brak wyników"
 
 [[extra.nav]]
 name = "home"
 url = "@/_index.md"
 
 [[extra.nav]]
-name = "archive"
+name = "archiwum"
 url = "@/posts/_index.md"
 
 [[extra.nav]]
-name = "about"
+name = "o mnie"
 url = "@/about/_index.md"
