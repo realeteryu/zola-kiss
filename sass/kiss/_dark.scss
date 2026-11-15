@@ -172,6 +172,11 @@ body[data-theme="dark"] {
 
     #search-results {
         li {
+            .search-hyphen {
+                color: $dark-white;        /* Biały myślnik w trybie ciemnym */
+                font-weight: $bold-weight; /* Pogrubienie */
+            }
+
             a {
                 color: $dark-text-link-blue;
 
