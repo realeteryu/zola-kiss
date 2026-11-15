@@ -58,5 +58,25 @@ $on-widescreen: 1152px;
     font-size: $base-font-size * $ratio;
 }
 
+// ==========================================
+// BASE STYLES (Dodane, aby naprawić czcionki)
+// ==========================================
+html {
+    font-size: $base-font-size;
+}
+
+body {
+    font-family: $sans-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    color: $text-base-color;
+    background-color: $white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    margin: 0;
+    padding: 0;
+}
+
 // Import sass files
 @import "kiss/fonts", "kiss/base", "kiss/post", "kiss/miscellaneous", "kiss/syntax", "kiss/dark";
