@@ -92,14 +92,16 @@
             outline: none;
             display: inline-flex;
             align-items: center;
-            font-weight: $bold-weight; // Pogrubienie
+            font-weight: $bold-weight;
             
             // WYMUSZENIE POMARAŃCZOWEGO KOLORU
             color: #ff9900 !important; 
             
             svg {
                 vertical-align: middle;
-                fill: #ff9900 !important; // Zmieniono na FILL
+                fill: #ff9900 !important; // POPRAWKA: Zmieniono ze stroke na fill
+                width: 18px;               // DODANE: Większy rozmiar
+                height: 18px;              // DODANE: Większy rozmiar
             }
         }
 
