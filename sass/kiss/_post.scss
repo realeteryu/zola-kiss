@@ -147,6 +147,27 @@
         }
     }
 
+    /* NOWA SEKCJA: Poprawka dla tabel */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5em 0;
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid $light;
+            text-align: left;
+        }
+
+        th {
+            font-weight: $bold-weight;
+            background-color: rgba(128, 128, 128, 0.05);
+        }
+    }
+
     a {
         color: $text-link-blue;
         text-decoration: none;
@@ -356,7 +377,7 @@
         background-color: rgba(128, 128, 128, 0.1);
         text-decoration: none;
         color: $text-link-blue;
-        font-size: 0.9em; /* Przywrócony mniejszy rozmiar czcionki */
+        font-size: 0.9em;
 
         &:hover {
             color: $text-link-blue-active;
