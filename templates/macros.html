@@ -1,0 +1,5 @@
+{% macro date_pl(date) %}
+    {% set months_pl = ["sty", "lut", "mar", "kwi", "maj", "cze", "lip", "sie", "wrz", "paź", "lis", "gru"] %}
+    {% set m = date | date(format="%m") | int %}
+    {{ date | date(format="%-d") }} {{ months_pl[m - 1] }} {{ date | date(format="%Y") }}
+{% endmacro date_pl %}
