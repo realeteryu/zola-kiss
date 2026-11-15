@@ -92,15 +92,13 @@
             outline: none;
             display: inline-flex;
             align-items: center;
-            color: #ff9900; // DODANY POMARAŃCZOWY KOLOR DLA IKONY RSS
+            
+            // WYMUSZENIE POMARAŃCZOWEGO KOLORU
+            color: #ff9900 !important; 
             
             svg {
                 vertical-align: middle;
-            }
-
-            &:hover {
-                opacity: 1;
-                color: #ff9900; // Podtrzymanie koloru przy najechaniu
+                stroke: #ff9900 !important; // Wymuszenie koloru na samej ikonie SVG
             }
         }
 
