@@ -16,7 +16,6 @@ body[data-theme="dark"] {
         }
     }
 
-    // Poprawka dla nagłówków w treści artykułu (nadpisanie $black z _post.scss)
     .page-content {
         h1, h2, h3, h4, h5, h6 {
             color: $dark-white;
@@ -33,7 +32,6 @@ body[data-theme="dark"] {
             color: $dark-text-link-blue-active;
         }
         
-        // POPRAWKA: Kolor ramki przy kliknięciu w link wewnątrz treści
         &:focus {
             color: $dark-text-link-blue;
             outline-color: $dark-text-link-blue;
@@ -90,12 +88,10 @@ body[data-theme="dark"] {
 
             a#mode {
                 .mode-sunny {
-                    /* WYPEŁNIONE SŁOŃCE w trybie ciemnym */
                     stroke: $dark-white;
                     fill: $dark-white;
                 }
                 
-                // Kolor ramki dla ikony trybu w ciemnym motywie
                 &:focus {
                     outline-color: $dark-text-link-blue;
                 }
@@ -104,7 +100,6 @@ body[data-theme="dark"] {
             .menu-link { 
                 color: $dark-white; 
                 
-                // Kolor ramki przy kliknięciu w link w ciemnym motywie
                 &:focus {
                     outline-color: $dark-text-link-blue;
                 }
@@ -116,7 +111,6 @@ body[data-theme="dark"] {
             
             @include media-query($on-mobile) {
                 input[type="checkbox"]:checked ~ .trigger {
-                    /* Używamy półprzezroczystego tła, aby blur działał */
                     background-color: rgba(19, 20, 24, 0.85); 
                 }
                 .menu-link {
@@ -126,32 +120,26 @@ body[data-theme="dark"] {
         }
     }
 
-    // POPRAWKA: Sekcja autora (nadpisanie $black z _base.scss)
     .author {
         .author-name {
             color: $dark-white;
         }
     }
 
-    // POPRAWKA: Nagłówek listy wpisów (nadpisanie $black z _post.scss)
     .post-list-wrapper {
         h2 {
             color: $dark-white;
         }
     }
 
-    // POPRAWKA: Górna linia listy wpisów (dodana w _post.scss)
     .post-list {
         border-top-color: $dark-light;
     }
 
-    // POPRAWKA: Linie oddzielające wpisy
     .post-item {
-        // W _post.scss jest ustawione $light, tutaj nadpisujemy na ciemny
         border-bottom-color: $dark-light; 
         
         .post-item-date {
-            // W _post.scss mamy $black, tutaj nadpisujemy na biały
             color: $dark-white; 
         }
         
@@ -175,38 +163,29 @@ body[data-theme="dark"] {
         }
     }
 
-    // ==========================================
-    // ARCHIVE PAGE DARK MODE OVERRIDES
-    // ==========================================
-    .search-container {
-        input[type="text"] {
-            background-color: $dark-light;
-            border-color: $dark-light;
-            color: $dark-white;
+    .search-article {
+        input[type="search"] {
+            color: $dark-text-base-color;
+            background-color: rgba(128, 128, 128, 0.1);
+            border-color: rgba(128, 128, 128, 0.1);
 
             &::placeholder {
-                color: $dark-gray;
+                color: rgba(128, 128, 128, 0.8);
             }
+
             &:focus {
                 border-color: $dark-gray;
             }
         }
+    }
 
-        // Style dla rozwijanej listy wyników w ciemnym motywie
-        .search-results {
-            background-color: $dark-light;
-            border-color: $dark-smoke;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    #search-results {
+        li {
+            a {
+                color: $dark-text-link-blue;
 
-            li {
-                border-bottom-color: $dark-smoke;
-
-                a {
-                    color: $dark-text-link-blue;
-                    
-                    &:hover {
-                        color: $dark-text-link-blue-active;
-                    }
+                &:hover {
+                    color: $dark-text-link-blue-active;
                 }
             }
         }
