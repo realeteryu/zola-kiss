@@ -31,7 +31,7 @@ body[data-theme="dark"] {
         
         &:focus {
             color: $dark-text-link-blue;
-            outline-color: $dark-text-link-blue;
+            outline-color: rgba(255, 82, 119, 0.6);
         }
     }
 
@@ -90,7 +90,7 @@ body[data-theme="dark"] {
                 }
                 
                 &:focus {
-                    outline-color: $dark-text-link-blue;
+                    outline-color: rgba(255, 82, 119, 0.6);
                 }
             }
 
@@ -98,7 +98,7 @@ body[data-theme="dark"] {
                 color: $dark-white; 
                 
                 &:focus {
-                    outline-color: $dark-text-link-blue;
+                    outline-color: rgba(255, 82, 119, 0.6);
                 }
             }
             
@@ -142,7 +142,7 @@ body[data-theme="dark"] {
 
                 &:focus {
                     color: $dark-white;
-                    outline-color: $dark-text-link-blue;
+                    outline-color: rgba(255, 82, 119, 0.6);
                 }
             }
         }
@@ -209,7 +209,7 @@ body[data-theme="dark"] {
                     }
 
                     &:focus {
-                        outline-color: $dark-text-link-blue;
+                        outline-color: rgba(255, 82, 119, 0.6);
                     }
                 }
             }
