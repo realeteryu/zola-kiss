@@ -26,6 +26,7 @@ search_placeholder = "Szukaj wpisów..."
 search_no_results = "Brak wyników"
 error_404_phrase = "Wygląda na to, że się zgubiłeś."
 error_404_link = "Wróć na stronę główną"
+toc_title = "Spis treści"
 
 [[extra.nav]]
 name = "start"
