@@ -35,7 +35,6 @@ body[data-theme="dark"] {
         }
     }
 
-    // Podświetlenie tekstu (mark)
     mark {
         background-color: #4a4a21;
         color: $dark-white;
@@ -59,7 +58,6 @@ body[data-theme="dark"] {
         border-color: $dark-light;
     }
 
-    // Stylizacja tagów w nagłówku wpisu
     .header {
         .tags {
             .tag {
@@ -67,6 +65,10 @@ body[data-theme="dark"] {
                 
                 &:hover {
                     color: $dark-text-link-blue-active;
+                }
+
+                &:focus {
+                    outline-color: rgba(255, 82, 119, 0.6);
                 }
             }
         }
