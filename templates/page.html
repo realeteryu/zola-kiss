@@ -36,19 +36,19 @@
 
         {% if page.lower or page.higher %}
         <nav class="post-nav">
-            {% if page.lower %}
             <div class="post-nav-item prev">
+                {% if page.lower %}
                 <span class="nav-arrow">← Poprzedni</span>
                 <a href="{{ page.lower.permalink }}" class="post-title">{{ page.lower.title | truncate(length=50) }}</a>
+                {% endif %}
             </div>
-            {% endif %}
 
-            {% if page.higher %}
             <div class="post-nav-item next">
+                {% if page.higher %}
                 <span class="nav-arrow">Następny →</span>
                 <a href="{{ page.higher.permalink }}" class="post-title">{{ page.higher.title | truncate(length=50) }}</a>
+                {% endif %}
             </div>
-            {% endif %}
         </nav>
         {% endif %}
     </article>
