@@ -437,27 +437,56 @@
         letter-spacing: 1px;
     }
 
-    .toc-list {
+    ul, ol {
+        list-style: none;
+        padding-left: 0;
         margin: 0;
-        padding-left: 1.2em;
-        list-style-type: decimal;
+    }
 
-        .toc-list {
-            list-style-type: lower-alpha;
-            margin-top: 0.5em;
+    .toc-list {
+        counter-reset: toc-counter;
+        
+        > li {
+            counter-increment: toc-counter;
+            margin-bottom: 0.5em;
+            position: relative;
+            padding-left: 1.8em;
+            
+            &::before {
+                content: counter(toc-counter) ".";
+                position: absolute;
+                left: 0;
+                color: $gray;
+                font-weight: $bold-weight;
+            }
         }
 
-        .toc-item {
+        .toc-list {
+            margin-top: 0.5em;
             margin-bottom: 0.5em;
             
-            a {
-                color: $text-base-color;
-                text-decoration: none;
+            > li {
+                counter-increment: none;
+                margin-bottom: 0.25em;
+                padding-left: 1.2em;
                 
-                &:hover {
-                    color: $text-link-blue;
-                    text-decoration: underline;
+                &::before {
+                    content: "–";
+                    color: $gray;
+                    font-weight: normal;
                 }
+            }
+        }
+    }
+
+    .toc-item {
+        a {
+            color: $text-base-color;
+            text-decoration: none;
+            
+            &:hover {
+                color: $text-link-blue;
+                text-decoration: underline;
             }
         }
     }
