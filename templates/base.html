@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{{ config.title }}{% endblock %}</title>
     
-    <!-- Bunny Fonts (privacy-friendly) -->
     <link href="https://fonts.bunny.net/css?family=roboto:400,700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
@@ -66,7 +65,6 @@
         {% block main %}{% endblock %}
     </main>
 
-    <!-- Footer structure matching original Klise -->
     <footer class="footer">
         <a href="{{ config.base_url }}" class="footer_item">home</a>
         <a href="{{ get_url(path='@/posts/_index.md') }}" class="footer_item">wpisy</a>
@@ -88,51 +86,16 @@
             localStorage.setItem('theme', newTheme);
         });
 
-        // Blur effect logic for mobile menu
+        // Menu open/close logic - blur and scroll lock
         document.getElementById('menu-trigger').addEventListener('change', function() {
             const wrapper = document.querySelector('.wrapper');
             if (this.checked) {
                 wrapper.classList.add('blurry');
+                document.body.style.overflow = 'hidden';
             } else {
                 wrapper.classList.remove('blurry');
+                document.body.style.overflow = '';
             }
-        });
-
-        // Image Lightbox Logic
-        document.addEventListener("DOMContentLoaded", function() {
-            const images = document.querySelectorAll('.page-content img');
-            if (images.length === 0) return;
-
-            const overlay = document.createElement('div');
-            overlay.className = 'lightbox-overlay';
-            const img = document.createElement('img');
-            img.className = 'lightbox-image';
-            overlay.appendChild(img);
-            document.body.appendChild(overlay);
-
-            images.forEach(image => {
-                if (image.closest('a')) return;
-
-                image.classList.add('zoomable');
-                image.addEventListener('click', (e) => {
-                    img.src = e.target.src;
-                    img.alt = e.target.alt;
-                    overlay.classList.add('is-open');
-                    document.body.classList.add('lightbox-open');
-                });
-            });
-
-            overlay.addEventListener('click', () => {
-                overlay.classList.remove('is-open');
-                document.body.classList.remove('lightbox-open');
-            });
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
-                    overlay.classList.remove('is-open');
-                    document.body.classList.remove('lightbox-open');
-                }
-            });
         });
     </script>
 </body>
