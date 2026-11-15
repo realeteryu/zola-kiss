@@ -41,7 +41,7 @@ body[data-theme="dark"] {
         
         &:focus {
             color: $dark-text-link-blue;
-            outline-color: rgba(255, 82, 119, 0.6);
+            outline: 3px solid rgba(255, 82, 119, 0.6) !important;
         }
     }
 
@@ -78,7 +78,7 @@ body[data-theme="dark"] {
                 }
 
                 &:focus {
-                    outline-color: rgba(255, 82, 119, 0.6);
+                    outline: 3px solid rgba(255, 82, 119, 0.6) !important;
                 }
             }
         }
@@ -125,7 +125,7 @@ body[data-theme="dark"] {
                 }
                 
                 &:focus {
-                    outline-color: rgba(255, 82, 119, 0.6);
+                    outline: 3px solid rgba(255, 82, 119, 0.6) !important;
                 }
             }
 
@@ -133,7 +133,7 @@ body[data-theme="dark"] {
                 color: $dark-white; 
                 
                 &:focus {
-                    outline-color: rgba(255, 82, 119, 0.6);
+                    outline: 3px solid rgba(255, 82, 119, 0.6) !important;
                 }
             }
             
@@ -147,6 +147,11 @@ body[data-theme="dark"] {
                 }
                 .menu-link {
                     color: $dark-white;
+                }
+                
+                /* RAMKA DLA HAMBURGERA W CIEMNYM MOTYWIE */
+                .menu-trigger:focus ~ label .menu-icon {
+                    outline: 3px solid rgba(255, 82, 119, 0.6) !important;
                 }
             }
         }
@@ -177,7 +182,7 @@ body[data-theme="dark"] {
 
                 &:focus {
                     color: $dark-white;
-                    outline-color: rgba(255, 82, 119, 0.6);
+                    outline: 3px solid rgba(255, 82, 119, 0.6) !important;
                 }
             }
         }
@@ -187,6 +192,10 @@ body[data-theme="dark"] {
         span.footer_item, 
         a.footer_item {
             color: $dark-white;
+        }
+        
+        a.footer_item:focus {
+            outline: 3px solid rgba(255, 82, 119, 0.6) !important;
         }
         
         .footer_copyright {
@@ -259,7 +268,7 @@ body[data-theme="dark"] {
                     }
 
                     &:focus {
-                        outline-color: rgba(255, 82, 119, 0.6);
+                        outline: 3px solid rgba(255, 82, 119, 0.6) !important;
                     }
                 }
             }
