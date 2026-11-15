@@ -294,20 +294,9 @@ body[data-theme="dark"] {
 
     .toc {
         border-color: $dark-light;
-        background-color: rgba(255, 255, 255, 0.05);
 
         .toc-title {
             color: $dark-gray;
-        }
-
-        .toc-list {
-            > li::before {
-                color: $dark-gray;
-            }
-            
-            .toc-list > li::before {
-                color: $dark-gray;
-            }
         }
 
         .toc-item {
