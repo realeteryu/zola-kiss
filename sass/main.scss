@@ -79,19 +79,25 @@ body {
 }
 
 // ==========================================
-// GŁÓWNY KONTENER (Marginesy i centrowanie)
+// GŁÓWNY KONTENER (Wartości z oryginalnego Jekyll Klisé)
 // ==========================================
 .wrapper {
-    max-width: calc(#{$wide-size} - (#{$spacing-full} * 2));
+    max-width: calc(#{$narrow-size} - (#{$spacing-full} * 2));
     position: relative;
     margin-right: auto;
     margin-left: auto;
-    padding-left: $spacing-full;
     padding-right: $spacing-full;
+    padding-left: $spacing-full;
 
     @include media-query($on-mobile) {
-        padding-left: 20px;  // Zmienione z $spacing-half na 20px
-        padding-right: 20px; // Zmienione z $spacing-half na 20px
+        max-width: calc(#{$narrow-size} - (#{$spacing-full}));
+        padding-right: $spacing-full - 10; // Daje dokładnie 20px
+        padding-left: $spacing-full - 10;  // Daje dokładnie 20px
+
+        &.blurry {
+            animation: 0.2s ease-in forwards blur;
+            -webkit-animation: 0.2s ease-in forwards blur;
+        }
     }
 }
 
