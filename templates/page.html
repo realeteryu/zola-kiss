@@ -41,8 +41,6 @@
                 <span class="nav-arrow">← Poprzedni</span>
                 <a href="{{ page.lower.permalink }}" class="post-title">{{ page.lower.title | truncate(length=50) }}</a>
             </div>
-            {% else %}
-            <div class="post-nav-item prev"></div>
             {% endif %}
 
             {% if page.higher %}
@@ -50,8 +48,6 @@
                 <span class="nav-arrow">Następny →</span>
                 <a href="{{ page.higher.permalink }}" class="post-title">{{ page.higher.title | truncate(length=50) }}</a>
             </div>
-            {% else %}
-            <div class="post-nav-item next"></div>
             {% endif %}
         </nav>
         {% endif %}
