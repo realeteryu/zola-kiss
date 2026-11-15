@@ -68,8 +68,9 @@
                 });
 
                 if (matches.length > 0) {
+                    // DODANY MYŚLNIK "- " PRZED TAGIEM <a>
                     searchResults.innerHTML = matches.map(match => 
-                        `<li><a href="${match.url}">${match.title}</a></li>`
+                        `<li>- <a href="${match.url}">${match.title}</a></li>`
                     ).join('');
                     searchResults.style.display = 'block';
                 } else {
