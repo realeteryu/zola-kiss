@@ -1,19 +1,22 @@
 {% extends "base.html" %}
 
-{# Inteligentne przypisanie zmiennych: obsługuje zarówno Page jak i Section #}
-{% set page_title = page.title | default(value=section.title) %}
-{% set page_content = page.content | default(value=section.content) %}
-{% set page_date = page.date | default(value=0) %}
-
-{% block title %}{{ page_title }} — {{ config.title }}{% endblock %}
+{% block title %}
+    {% set page_title = page.title | default(value=section.title) %}
+    {{ page_title }} — {{ config.title }}
+{% endblock title %}
 
 {% block main %}
+    {# Inteligentne przypisanie zmiennych WEWNĄTRZ bloku #}
+    {% set page_title = page.title | default(value=section.title) %}
+    {% set page_content = page.content | default(value=section.content) %}
+    {% set page_date = page.date | default(value="") %}
+
     <article>
         <div class="header">
             <h1 class="header-title">{{ page_title }}</h1>
             
-            {# Data i autor pojawiają się tylko, jeśli data istnieje (czyli dla wpisów) #}
-            {% if page_date != 0 %}
+            {# Sprawdzamy, czy to wpis (ma datę), czy statyczna strona #}
+            {% if page_date != "" %}
             <div class="post-meta">
                 <time>{{ page_date | date(format="%b %d, %Y") }}</time>
                 <span itemprop="author">{{ config.author }}</span>
