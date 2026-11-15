@@ -7,10 +7,8 @@ $small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.85;
 
 // Font weight
-// $light-weight: 300; // uncomment if necessary
 $normal-weight: 400;
 $bold-weight: 700;
-// $black-weight: 900; // uncomment if necessary
 
 //Light Colors
 $text-base-color: #434648;
@@ -59,7 +57,7 @@ $on-widescreen: 1152px;
 }
 
 // ==========================================
-// BASE STYLES (Naprawa czcionek i reset)
+// BASE STYLES
 // ==========================================
 html {
     font-size: $base-font-size;
@@ -79,7 +77,7 @@ body {
 }
 
 // ==========================================
-// GŁÓWNY KONTENER (Wartości z oryginalnego Jekyll Klisé)
+// GŁÓWNY KONTENER
 // ==========================================
 .wrapper {
     max-width: calc(#{$narrow-size} - (#{$spacing-full} * 2));
@@ -91,8 +89,8 @@ body {
 
     @include media-query($on-mobile) {
         max-width: calc(#{$narrow-size} - (#{$spacing-full}));
-        padding-right: $spacing-full - 10; // Daje dokładnie 20px
-        padding-left: $spacing-full - 10;  // Daje dokładnie 20px
+        padding-right: $spacing-full - 10;
+        padding-left: $spacing-full - 10;
 
         &.blurry {
             animation: 0.2s ease-in forwards blur;
