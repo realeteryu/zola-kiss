@@ -23,7 +23,7 @@
             {% endif %}
         </div>
 
-        {% if page.toc %}
+        {% if page.toc and page.extra.toc %}
         <div class="toc">
             <div class="toc-title">Spis treści</div>
             {{<toc headers={page.toc} />}}
