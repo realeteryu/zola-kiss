@@ -3,13 +3,14 @@
     h2 {
         font-size: 1em; // Dopasowane do rozmiaru daty (16px)
         font-weight: $bold-weight;
-        margin-bottom: 10px;
+        margin-bottom: 5px; // Zmniejszone, aby linia była bliżej nagłówka
         color: $black;
     }
 }
 
 // Post list (Strona główna i lista wpisów)
 .post-list {
+    border-top: 1px solid $light; // DODANA GÓRNA LINIA
     margin: 0;
     padding: 0;
     list-style: none;
@@ -17,7 +18,7 @@
     .post-item {
         display: flex;
         align-items: baseline;
-        padding: 3px 0; // Zmniejszone z 5px dla bardziej zwartej listy
+        padding: 5px 0; // Przywrócone 5px dla zachowania oryginalnego rytmu
         border-bottom: 1px solid $light;
 
         .post-item-date {
