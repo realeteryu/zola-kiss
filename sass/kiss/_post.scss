@@ -465,11 +465,11 @@
     }
 }
 
-/* --- Nawigacja Poprzedni / Następny (Jekyll Klisé style z CSS Grid) --- */
+/* --- Nawigacja Poprzedni / Następny (Jekyll Klisé stack style) --- */
 .post-nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
     margin-top: 4em;
     padding-top: 1.5em;
     border-top: 1px solid $light;
@@ -479,12 +479,10 @@
         flex-direction: column;
 
         &.prev {
-            grid-column: 1;
             text-align: left;
         }
 
         &.next {
-            grid-column: 2;
             text-align: right;
         }
 
@@ -504,17 +502,6 @@
 
             &:hover {
                 color: $text-link-blue;
-            }
-        }
-    }
-
-    @include media-query($on-mobile) {
-        grid-template-columns: 1fr;
-        gap: 1.5em;
-
-        .post-nav-item {
-            &.next {
-                text-align: left;
             }
         }
     }
