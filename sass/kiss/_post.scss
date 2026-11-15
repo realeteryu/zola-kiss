@@ -1,3 +1,13 @@
+// Post list wrapper (Kontener dla listy i nagłówka)
+.post-list-wrapper {
+    h2 {
+        font-size: 1.3em; // Zmniejszony nagłówek "Ostatnie wpisy"
+        font-weight: $bold-weight;
+        margin-bottom: 15px;
+        color: $black;
+    }
+}
+
 // Post list (Strona główna i lista wpisów)
 .post-list {
     margin: 0;
@@ -7,11 +17,11 @@
     .post-item {
         display: flex;
         align-items: baseline;
-        padding: 10px 0;
+        padding: 12px 0; // Lekko zwiększony odstęp góra/dół
         border-bottom: 1px solid $light;
 
         .post-item-date {
-            min-width: 96px; // To zapewnia idealne wyrównanie daty
+            min-width: 110px; // Zwiększone z 96px dla lepszego wyrównania
             color: $text-base-color;
             font-weight: $bold-weight;
             font-size: $small-font-size;
@@ -19,7 +29,7 @@
         }
 
         .post-item-title {
-            font-size: $base-font-size;
+            font-size: 1.05em; // Lekko powiększony tytuł wpisu
             font-weight: $normal-weight;
             color: $text-base-color;
             text-decoration: none;
