@@ -22,6 +22,13 @@
             </div>
             {% endif %}
         </div>
+
+        {% if page.toc %}
+        <div class="toc">
+            <div class="toc-title">Spis treści</div>
+            {{<toc headers={page.toc} />}}
+        </div>
+        {% endif %}
         
         <div class="page-content">
             {{ page.content | safe }}
