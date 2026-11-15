@@ -233,7 +233,7 @@
 }
 
 // ==========================================
-// ARCHIVE PAGE STYLES (Nowa sekcja)
+// ARCHIVE PAGE STYLES (Zaktualizowana sekcja)
 // ==========================================
 .archive-header {
     margin-top: 6em;
@@ -251,6 +251,7 @@
     position: relative;
     max-width: 600px;
     margin: 0 auto;
+    z-index: 10; // Aby wyniki wyszukiwania były na wierzchu
 
     .search-icon {
         position: absolute;
@@ -280,16 +281,56 @@
             border-color: $gray;
         }
     }
+
+    // Styl dla rozwijanej listy wyników
+    .search-results {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: $white;
+        border: 1px solid $light;
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-height: 300px;
+        overflow-y: auto;
+        text-align: left;
+
+        li {
+            padding: 10px 15px;
+            border-bottom: 1px solid $light;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            a {
+                color: $text-link-blue;
+                text-decoration: none;
+                display: block;
+                font-size: 1rem;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 }
 
 .archive-list {
-    margin-top: 2em;
+    margin-top: 1em; // Zmniejszono z 2em
 }
 
 .archive-year {
     font-size: 1.8em;
     font-weight: $bold-weight;
-    margin-top: 2em;
+    margin-top: 1.5em; // Zmniejszono z 2em
     margin-bottom: 0.5em;
     color: $black;
     border-bottom: 1px solid $light;
@@ -297,7 +338,7 @@
 }
 
 .archive-item {
-    padding: 12px 0;
+    padding: 8px 0; // Zmniejszono z 12px
     border-bottom: 1px solid $light;
 
     .archive-link {
