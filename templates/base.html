@@ -24,8 +24,8 @@
         window.localStorage.setItem('theme', theme);
     </script>
 
-    <!-- Zmienna pomocnicza dla ścieżki, z domyślną wartością na wypadek strony 404 -->
-    {% set c_path = current_path | default(value="") %}
+    <!-- Pobieramy aktualną ścieżkę i usuwamy z niej przedrostek base_url -->
+    {% set c_path = current_url | replace(from=config.base_url, to="/") %}
 
     <div class="navbar" role="navigation">
         <nav class="menu">
@@ -63,8 +63,12 @@
                         {% set item_url = get_url(path=item.url) %}
                     {% endif %}
                     
+                    <!-- Również usuwamy przedrostek z linku nawigacji -->
+                    {% set item_path = item_url | replace(from=config.base_url, to="/") %}
+                    
+                    <!-- POPRAWNA LOGIKA AKTYWNEJ STRONY -->
                     {% set is_active = false %}
-                    {% if c_path == item_url or (item_url != '/' and c_path is starting_with(pat=item_url)) %}
+                    {% if c_path == item_path or (item_path != '/' and c_path is starting_with(pat=item_path)) %}
                         {% set is_active = true %}
                     {% endif %}
                     
