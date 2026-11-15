@@ -72,9 +72,13 @@ body[data-theme="dark"] {
             border-color: $dark-light;
 
             a#mode {
-                color: $dark-white; /* Biały kolor dla SVG */
-                .mode-moon { display: none; }
-                .mode-sunny { display: block; }
+                color: $dark-white; /* Dziedziczy kolor dla stroke */
+                
+                /* Wypełnienie słońca w trybie ciemnym */
+                .mode-sunny {
+                    fill: $dark-white;
+                    stroke: $dark-white;
+                }
             }
 
             .menu-link { color: $dark-white; }
