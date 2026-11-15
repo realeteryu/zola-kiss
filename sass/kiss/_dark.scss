@@ -199,6 +199,10 @@ body[data-theme="dark"] {
     .archive-item {
         border-bottom-color: $dark-light;
 
+        &:last-child {
+            border-bottom: none;
+        }
+
         .archive-link {
             color: $dark-text-base-color;
             
