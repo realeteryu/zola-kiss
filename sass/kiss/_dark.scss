@@ -6,7 +6,6 @@ body[data-theme="dark"] {
         color: $dark-white;
     }
 
-    /* Tabele w trybie ciemnym */
     table {
         th, td {
             border-color: $dark-light;
@@ -183,6 +182,17 @@ body[data-theme="dark"] {
         .footer_copyright {
             color: $dark-gray;
             opacity: 1;
+
+            a {
+                color: inherit;
+                text-decoration: underline;
+                text-underline-offset: 2px;
+
+                &:hover {
+                    color: $dark-white;
+                    opacity: 1;
+                }
+            }
         }
     }
 
@@ -256,7 +266,6 @@ body[data-theme="dark"] {
         }
     }
 
-    /* Strona 404 w trybie ciemnym */
     .not-found {
         .title {
             color: $dark-white;
