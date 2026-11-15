@@ -11,7 +11,6 @@
 </head>
 <body>
     <script>
-        // Skrypt zapobiegający mignięciu (FOUC) przy ładowaniu strony
         const theme = (() => {
             if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
                 return localStorage.getItem('theme');
@@ -27,7 +26,7 @@
 
     <div class="navbar" role="navigation">
         <nav class="menu">
-            <!-- IKONA TRYBU (Przeniesiona na początek) -->
+            <!-- IKONA TRYBU -->
             <a id="mode" href="javascript:void(0);" title="Toggle theme">
                 <svg class="mode-sunny" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="5"></circle>
@@ -42,7 +41,7 @@
                 </svg>
             </a>
 
-            <!-- HAMBURGER (Checkbox + Label) -->
+            <!-- HAMBURGER -->
             <input type="checkbox" id="menu-trigger" class="menu-trigger" />
             <label for="menu-trigger">
                 <span class="menu-icon">
@@ -52,18 +51,27 @@
                 </span>
             </label>
 
-            <!-- DEFINICJA ZMIENNYCH DLA LINKÓW (Tera Fix) -->
-            {% set home_url = config.base_url %}
-            {% set archive_url = get_url(path='@/posts/_index.md') %}
-            {% set about_url = get_url(path='@/about/_index.md') %}
-            {% set rss_url = get_url(path='index.xml') %}
-
-            <!-- LINKI NAWIGACJI (z logiką aktywnej strony) -->
+            <!-- LINKI NAWIGACJI (Generowane dynamicznie z config.toml) -->
             <div class="trigger">
-                <a href="{{ home_url }}" class="menu-link {% if current_path == '/' %}active{% endif %}">home</a>
-                <a href="{{ archive_url }}" class="menu-link {% if current_path is starting_with('/posts') %}active{% endif %}">archive</a>
-                <a href="{{ about_url }}" class="menu-link {% if current_path is starting_with('/about') %}active{% endif %}">about</a>
-                <a href="{{ rss_url }}" class="menu-link rss" title="RSS Feed">
+                {% for item in config.extra.nav %}
+                    {% set item_url = item.url %}
+                    
+                    <!-- Sprawdzamy, czy link jest wewnętrzny (Zola) czy zewnętrzny (http) -->
+                    {% if item.url is starting_with("@") %}
+                        {% set item_url = get_url(path=item.url) %}
+                    {% endif %}
+                    
+                    <!-- Logika aktywnej strony (dla linków wewnętrznych) -->
+                    {% set is_active = false %}
+                    {% if current_path == item_url or (item_url != '/' and current_path is starting_with(item_url)) %}
+                        {% set is_active = true %}
+                    {% endif %}
+                    
+                    <a href="{{ item_url }}" class="menu-link {% if is_active %}active{% endif %}">{{ item.name }}</a>
+                {% endfor %}
+
+                <!-- Ikona RSS dodana na sztywno na końcu -->
+                <a href="{{ get_url(path='index.xml') }}" class="menu-link rss" title="RSS Feed">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 11a9 9 0 0 1 9 9"></path>
                         <path d="M4 4a16 16 0 0 1 16 16"></path>
@@ -79,10 +87,16 @@
     </main>
 
     <footer class="footer">
-        <a href="{{ home_url }}" class="footer_item">home</a>
-        <a href="{{ archive_url }}" class="footer_item">archive</a>
-        <a href="{{ about_url }}" class="footer_item">about</a>
-        <a href="{{ rss_url }}" class="footer_item">rss</a>
+        <!-- To samo generowanie w stopce -->
+        {% for item in config.extra.nav %}
+            {% set item_url = item.url %}
+            {% if item.url is starting_with("@") %}
+                {% set item_url = get_url(path=item.url) %}
+            {% endif %}
+            <a href="{{ item_url }}" class="footer_item">{{ item.name }}</a>
+        {% endfor %}
+        
+        <a href="{{ get_url(path='index.xml') }}" class="footer_item">rss</a>
         <span class="footer_item">&copy; 2026</span>
         <small class="footer_copyright">{{ config.title }}</small>
     </footer>
