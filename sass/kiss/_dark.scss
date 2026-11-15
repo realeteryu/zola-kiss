@@ -291,4 +291,25 @@ body[data-theme="dark"] {
             }
         }
     }
+
+    .toc {
+        border-color: $dark-light;
+        background-color: rgba(255, 255, 255, 0.05);
+
+        .toc-title {
+            color: $dark-gray;
+        }
+
+        .toc-list {
+            .toc-item {
+                a {
+                    color: $dark-text-base-color;
+                    
+                    &:hover {
+                        color: $dark-white;
+                    }
+                }
+            }
+        }
+    }
 }
