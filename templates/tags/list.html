@@ -5,7 +5,7 @@
 {% block main %}
 <div class="page-content">
     <div class="archive-header">
-        <h1 class="header-title center">Tags</h1>
+        <h1 class="header-title center">Tags.</h1>
     </div>
 
     <div class="archive-tags">
@@ -15,16 +15,18 @@
         {% endfor %}
     </div>
 
-    {% for term in terms %}
-        <h2 id="{{ term.name | slugify }}">{{ term.name | upper }}</h2>
-        {% for page in term.pages %}
-            <article class="post-item">
-                <span class="post-item-date">{{ page.date | date(format="%b %d, %Y") }}</span>
-                <h3 class="post-item-title">
-                    <a href="{{ page.permalink }}">{{ page.title }}</a>
-                </h3>
-            </article>
+    <div class="archive-page">
+        {% for term in terms %}
+            <h2 id="{{ term.name | slugify }}">{{ term.name | upper }}</h2>
+            {% for page in term.pages %}
+                <article class="post-item">
+                    <span class="post-item-date">{{ page.date | date(format="%b %d, %Y") }}</span>
+                    <h3 class="post-item-title">
+                        <a href="{{ page.permalink }}">{{ page.title }}</a>
+                    </h3>
+                </article>
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
+    </div>
 </div>
 {% endblock main %}
