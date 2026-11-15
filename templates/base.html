@@ -57,13 +57,13 @@
                     {% set item_url = item.url %}
                     
                     <!-- Sprawdzamy, czy link jest wewnętrzny (Zola) czy zewnętrzny (http) -->
-                    {% if item.url is starting_with("@") %}
+                    {% if item.url is starts_with("@") %}
                         {% set item_url = get_url(path=item.url) %}
                     {% endif %}
                     
-                    <!-- Logika aktywnej strony (dla linków wewnętrznych) -->
+                    <!-- Logika aktywnej strony -->
                     {% set is_active = false %}
-                    {% if current_path == item_url or (item_url != '/' and current_path is starting_with(item_url)) %}
+                    {% if current_path == item_url or (item_url != '/' and current_path is starts_with(item_url)) %}
                         {% set is_active = true %}
                     {% endif %}
                     
@@ -90,7 +90,7 @@
         <!-- To samo generowanie w stopce -->
         {% for item in config.extra.nav %}
             {% set item_url = item.url %}
-            {% if item.url is starting_with("@") %}
+            {% if item.url is starts_with("@") %}
                 {% set item_url = get_url(path=item.url) %}
             {% endif %}
             <a href="{{ item_url }}" class="footer_item">{{ item.name }}</a>
