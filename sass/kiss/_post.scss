@@ -319,3 +319,23 @@
         }
     }
 }
+
+.archive-tags {
+    height: auto;
+    margin-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    .tag-item {
+        padding: 1px 3px;
+        border-radius: 2px;
+        border: 1px solid rgba(128, 128, 128, 0.1);
+        background-color: rgba(128, 128, 128, 0.1);
+        text-decoration: none;
+        
+        &:hover {
+            color: $black;
+        }
+    }
+}
