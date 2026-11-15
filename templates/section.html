@@ -14,6 +14,7 @@
                 </svg>
             </label>
             <input type="search" id="search-input" placeholder="Find some articles here" aria-label="Search" autocomplete="off">
+            <ul id="search-results"></ul>
         </div>
     </div>
 
@@ -37,33 +38,40 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const searchInput = document.getElementById('search-input');
+            const searchResults = document.getElementById('search-results');
             const archiveItems = document.querySelectorAll('.archive-item');
-            const archiveYears = document.querySelectorAll('.archive-year');
 
             if (searchInput) {
                 searchInput.addEventListener('input', (e) => {
                     const query = e.target.value.toLowerCase().trim();
                     
+                    if (query.length === 0) {
+                        searchResults.style.display = 'none';
+                        searchResults.innerHTML = '';
+                        return;
+                    }
+
+                    let matches = [];
+                    
                     archiveItems.forEach(item => {
                         const link = item.querySelector('.archive-link');
-                        if (link) {
-                            const text = link.textContent.toLowerCase();
-                            item.style.display = text.includes(query) ? '' : 'none';
+                        if (link && link.textContent.toLowerCase().includes(query)) {
+                            matches.push({
+                                title: link.textContent,
+                                url: link.getAttribute('href')
+                            });
                         }
                     });
 
-                    archiveYears.forEach(yearHeader => {
-                        let nextEl = yearHeader.nextElementSibling;
-                        let hasVisibleItems = false;
-                        while (nextEl && !nextEl.classList.contains('archive-year')) {
-                            if (nextEl.classList.contains('archive-item') && nextEl.style.display !== 'none') {
-                                hasVisibleItems = true;
-                                break;
-                            }
-                            nextEl = nextEl.nextElementSibling;
-                        }
-                        yearHeader.style.display = hasVisibleItems ? '' : 'none';
-                    });
+                    if (matches.length > 0) {
+                        searchResults.innerHTML = matches.map(match => 
+                            `<li><a href="${match.url}">- ${match.title}</a></li>`
+                        ).join('');
+                        searchResults.style.display = 'block';
+                    } else {
+                        searchResults.innerHTML = '<li style="color: #767f87; padding: 10px 15px;">No results found</li>';
+                        searchResults.style.display = 'block';
+                    }
                 });
             }
         });
