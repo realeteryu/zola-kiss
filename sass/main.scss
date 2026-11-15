@@ -90,8 +90,8 @@ body {
     padding-right: $spacing-full;
 
     @include media-query($on-mobile) {
-        padding-left: $spacing-half;
-        padding-right: $spacing-half;
+        padding-left: 20px;  // Zmienione z $spacing-half na 20px
+        padding-right: 20px; // Zmienione z $spacing-half na 20px
     }
 }
 
