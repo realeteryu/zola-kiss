@@ -1,29 +1,26 @@
-# The URL the site will be built for
 base_url = "https://realeteryu.github.io/zola-kiss/"
 title = "Zola Kiss"
 description = "The minimalist Zola theme with light and dark mode support, perfect for running a personal site and blog. Meet the Zola Kiss theme at @github."
 
-# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-
-# Whether to generate a feed
 generate_feeds = true
 feed_filenames = ["index.xml"]
 
-# Configuration of the Markdown rendering
 [markdown]
 render_emoji = true
 
-# Configuration of syntax highlighting
 [markdown.highlighting]
 theme = "gruvbox-dark-medium"
 
 [extra]
-# Theme configuration variables
 author = "Eteryu"
 avatar = "https://avatars.githubusercontent.com/u/117126022?s=400&u=6d6363ad30ba498f53133c6712a8a75455b6aad6&v=4"
 
-# Definicja menu nawigacji (używana w base.html)
+# Nowa sekcja na teksty interfejsu użytkownika
+[extra.ui]
+search_placeholder = "Find some articles here"
+search_no_results = "No results found"
+
 [[extra.nav]]
 name = "home"
 url = "@/_index.md"
