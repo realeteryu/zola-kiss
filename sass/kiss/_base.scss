@@ -174,7 +174,7 @@
 // Author
 .author {
     margin-top: 6.3rem;
-    margin-bottom: 7.2rem;
+    margin-bottom: 5rem; // Zmniejszono lekko margines dolny, by lista była bliżej
     text-align: center;
 
     @include media-query($on-mobile) {
@@ -182,8 +182,8 @@
     }
 
     .author-avatar {
-        width: 70px;
-        height: 70px;
+        width: 96px; // Zwiększono z 70px
+        height: 96px; // Zwiększono z 70px
         border-radius: 100%;
         user-select: none;
         -ms-user-select: none;
@@ -192,19 +192,22 @@
         animation: 0.5s ease-in forwards fadein;
         opacity: 1;
         object-fit: cover;
+        margin-bottom: 15px; // Dodano odstęp od imienia
     }
 
     .author-name {
-        font-size: 1.7em;
-        margin-bottom: 2px;
+        font-size: 2.2em; // Zwiększono z 1.7em
+        font-weight: $bold-weight;
+        margin-bottom: 8px; // Dodano odstęp od bio
+        color: $black;
     }
 
     .author-bio {
         margin: 0 auto;
         opacity: 0.9;
-        max-width: 500px;
-        font-size: 1em;
-        line-height: 1.5;
+        max-width: 650px; // Poszerzono z 500px
+        font-size: 1.1em; // Zwiększono z 1em
+        line-height: 1.6;
         letter-spacing: 0.2px;
         text-align: center;
     }
