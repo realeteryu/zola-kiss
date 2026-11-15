@@ -46,8 +46,11 @@
 
     a#mode {
         float: left;
-        margin: 6px 0 0 8px;
+        left: 8px;
+        top: 6px;
         position: relative;
+        clear: both;
+        color: $black; /* Ustawia kolor dla currentColor w SVG */
         opacity: 0.7;
         z-index: 1;
         
@@ -55,16 +58,17 @@
             cursor: pointer;
             opacity: 1;
         }
+        &:active {
+            transform: scale(0.9, 0.9);
+        }
         
         .mode-moon {
             display: block;
-            path, line { stroke: $black; fill: none; }
-            circle { fill: $black; stroke: $black; }
+            stroke: currentColor;
         }
         .mode-sunny {
             display: none;
-            path, line { stroke: $dark-white; fill: none; }
-            circle { fill: none; stroke: $dark-white; }
+            stroke: currentColor;
         }
     }
 
@@ -101,7 +105,7 @@
         top: 0;
         left: 0;
         right: 0;
-        z-index: 20; /* Pasek nawigacji jest nad menu */
+        z-index: 20;
         text-align: center;
         height: 50px;
         background-color: $white;
@@ -112,7 +116,7 @@
             left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            z-index: 30; /* Ponad wszystkim, żeby można było kliknąć */
+            z-index: 30;
             float: none;
             margin: 0;
         }
@@ -128,7 +132,7 @@
             width: 24px;
             height: 24px;
             cursor: pointer;
-            z-index: 30; /* Ponad wszystkim, żeby można było zamknąć */
+            z-index: 30;
             > svg {
                 fill: $black;
                 opacity: 0.7;
@@ -145,7 +149,6 @@
             visibility: hidden;
         }
 
-        /* MENU ROZWIJANE: Zaczyna się 50px od góry (pod paskiem) */
         input[type="checkbox"]:checked ~ .trigger {
             position: fixed;
             top: 50px;
@@ -157,7 +160,7 @@
             justify-content: center;
             align-items: center;
             background-color: $white;
-            z-index: 10; /* Niżej niż pasek (20) i ikony (30) */
+            z-index: 10;
         }
 
         .menu-link {
