@@ -135,8 +135,15 @@ body[data-theme="dark"] {
             
             .post-item-title {
                 color: $dark-text-base-color;
-                &:hover, &:focus {
+                
+                &:hover {
                     color: $dark-white;
+                }
+
+                /* DODANA RÓŻOWA RAMKA PRZY KLIKNIĘCIU NA STRONIE GŁÓWNEJ */
+                &:focus {
+                    color: $dark-white;
+                    outline-color: rgba(255, 82, 119, 0.6);
                 }
             }
         }
@@ -172,9 +179,10 @@ body[data-theme="dark"] {
 
     #search-results {
         li {
+            /* DODANA STYLIZACJA MYŚLNIKA DLA CIEMNEGO MOTYWU */
             .search-hyphen {
-                color: $dark-white;        /* Biały myślnik w trybie ciemnym */
-                font-weight: $bold-weight; /* Pogrubienie */
+                color: $dark-white;
+                font-weight: $bold-weight;
             }
 
             a {
