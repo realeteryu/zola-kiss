@@ -68,7 +68,7 @@ body[data-theme="dark"] {
         border-color: $dark-light;
         
         .menu {
-            background-color: $dark-black; /* Naprawia bialy pasek na mobile */
+            background-color: $dark-black;
             border-color: $dark-light;
 
             a#mode {
@@ -77,11 +77,18 @@ body[data-theme="dark"] {
             }
 
             .menu-link { color: $dark-white; }
-            .menu-icon > svg { fill: $dark-white; }
+            
+            /* White hamburger icon in dark mode */
+            .menu-icon > svg { 
+                fill: $dark-white !important; 
+            }
             
             @include media-query($on-mobile) {
                 input[type="checkbox"]:checked ~ .trigger {
                     background-color: $dark-black;
+                }
+                .menu-link {
+                    color: $dark-white;
                 }
             }
         }
