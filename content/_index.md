@@ -1,5 +1,5 @@
 +++
-title = "Strona Główna"
+title = "Home Page"
 sort_by = "date"
 template = "index.html"
 page_template = "page.html"
