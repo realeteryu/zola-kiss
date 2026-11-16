@@ -313,7 +313,26 @@ body[data-theme="dark"] {
     .post-nav {
         border-top-color: $dark-light;
 
+        /* Gdy na stronie występują oba elementy, przechodzą w układ rzędowy (lewa/prawa) */
+        &:has(.post-nav-item + .post-nav-item) {
+            flex-direction: row;
+            justify-content: space-between;
+
+            .post-nav-item {
+                flex: 1;
+                min-width: 45%;
+
+                &.next {
+                    text-align: right;
+                    border-top: none !important;
+                }
+            }
+        }
+
         .post-nav-item {
+            display: flex;
+            flex-direction: column;
+            padding: 0.9em 0;
             text-align: left;
 
             & + .post-nav-item {
