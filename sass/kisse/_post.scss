@@ -455,18 +455,18 @@
 
     .toc-item {
         a {
-            color: $text-base-color;
+            color: $text-link-blue; // Kolorujemy linki w spisie treści na niebieski w trybie jasnym
             text-decoration: none;
 
             &:hover {
-                color: $text-link-blue;
+                color: $text-link-blue-active;
                 text-decoration: underline;
             }
         }
     }
 }
 
-/* --- Nawigacja Poprzedni / Następny (Pełny outline kafelka) --- */
+/* --- Nawigacja Poprzedni / Następny --- */
 .post-nav {
     display: flex;
     flex-direction: column;
@@ -502,7 +502,6 @@
             border-top: 1px solid $light;
         }
 
-        /* Przenosimy fokus na cały kafelek `.post-nav-item` */
         &:focus-within {
             outline: 3px solid $text-link-blue;
             outline-offset: 2px;
@@ -515,7 +514,7 @@
             text-decoration: none;
             color: inherit;
             width: 100%;
-            outline: none; // Wyłączamy wewnętrzny fokus na rzecz kafelka
+            outline: none;
 
             &:hover {
                 .post-title {
