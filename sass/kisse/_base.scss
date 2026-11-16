@@ -8,6 +8,22 @@
     padding: $spacing-full - 15px $spacing-full;
 }
 
+// Globalny kontener .wrapper dopasowany do oryginału Klisé
+.wrapper {
+    max-width: calc(#{$narrow-size} - (#{$spacing-full} * 2));
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-full;
+    padding-left: $spacing-full;
+
+    @include media-query($on-mobile) {
+        max-width: calc(#{$narrow-size} - (#{$spacing-full}));
+        padding-right: $spacing-full - 10;
+        padding-left: $spacing-full - 10;
+    }
+}
+
 .menu {
     user-select: none;
     -ms-user-select: none;
