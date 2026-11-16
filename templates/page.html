@@ -26,14 +26,14 @@
         {% if page.toc and page.extra.toc %}
         <div class="toc">
             <div class="toc-title">Table of Contents</div>
-            <ul>
+            <ul class="toc-list">
                 {% for h1 in page.toc %}
-                <li>
+                <li class="toc-item">
                     <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
                     {% if h1.children %}
-                    <ul>
+                    <ul class="toc-list">
                         {% for h2 in h1.children %}
-                        <li>
+                        <li class="toc-item">
                             <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
                         </li>
                         {% endfor %}
