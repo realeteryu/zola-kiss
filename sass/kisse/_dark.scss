@@ -178,32 +178,6 @@ body[data-theme="dark"] {
         }
     }
 
-    .post-list {
-        border-top-color: $dark-light;
-
-        .post-item {
-            border-bottom-color: $dark-light; 
-            
-            .post-item-date {
-                color: $dark-white; 
-            }
-            
-            .post-item-title {
-                color: $dark-text-base-color;
-                
-                &:hover {
-                    color: $dark-white;
-                }
-
-                &:focus {
-                    color: $dark-white;
-                    outline: 3px solid rgba(255, 82, 119, 0.6) !important;
-                    outline-offset: 2px;
-                }
-            }
-        }
-    }
-
     .footer {
         span.footer_item, 
         a.footer_item {
@@ -226,11 +200,13 @@ body[data-theme="dark"] {
                 text-underline-offset: 2px;
 
                 &:hover {
-                    color: $dark-white;
-                    opacity: 1;
+                    color: $dark-text-link-blue;
+                    text-decoration-color: $dark-text-link-blue;
                 }
 
                 &:focus {
+                    color: $dark-text-link-blue;
+                    text-decoration-color: $dark-text-link-blue;
                     outline: 3px solid rgba(255, 82, 119, 0.6) !important;
                     outline-offset: 2px;
                 }
