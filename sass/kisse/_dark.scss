@@ -160,12 +160,12 @@ body[data-theme="dark"] {
             a {
                 color: inherit;
                 text-decoration: underline;
-                text-decoration-color: $dark-gray; // Widoczne, dyskretne podkreślenie w kolorze tekstu w dark mode
+                text-decoration-color: $dark-gray;
                 text-underline-offset: 2px;
 
                 &:hover {
-                    color: $dark-white;
-                    text-decoration-color: $dark-white;
+                    color: inherit;
+                    text-decoration-color: inherit;
                 }
 
                 &:focus {
