@@ -12,6 +12,13 @@
     <link rel="shortcut icon" href="{{ get_url(path='favicon.ico') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ get_url(path='apple-touch-icon.png') }}">
     <link rel="manifest" href="{{ get_url(path='site.webmanifest') }}">
+
+    <!-- Open Graph (og image) -->
+    <meta property="og:title" content="{{ config.title }}">
+    <meta property="og:description" content="{{ config.description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ config.base_url }}">
+    <meta property="og:image" content="{{ get_url(path='web-app-manifest-512x512.png') }}">
 </head>
 <body>
     <script>
