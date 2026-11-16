@@ -307,10 +307,10 @@ body[data-theme="dark"] {
 
         .toc-item {
             a {
-                color: $dark-text-base-color;
+                color: $dark-text-link-blue; // Kolorujemy linki w spisie treści na różowy w trybie ciemnym
                 
                 &:hover {
-                    color: $dark-white;
+                    color: $dark-text-link-blue-active;
                 }
             }
         }
@@ -349,7 +349,6 @@ body[data-theme="dark"] {
                 border-top-color: $dark-light;
             }
 
-            /* Fokus na cały kafelek w trybie ciemnym (różowa ramka) */
             &:focus-within {
                 outline: 3px solid rgba(255, 82, 119, 0.6) !important;
                 outline-offset: 2px;
