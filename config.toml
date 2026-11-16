@@ -1,6 +1,6 @@
 base_url = "https://realeteryu.github.io/zola-kisse"
 title = "Zola Kisse"
-description = "A minimalist Zola theme inspired by Jekyll Klisé, featuring light and dark mode support for personal websites and blogs."
+description = "A minimalist Zola theme inspired by <a href='https://github.com/piharpi/jekyll-klise'>Jekyll Klisé</a>, featuring light and dark mode support for personal websites and blogs."
 
 compile_sass = true
 generate_feeds = true
