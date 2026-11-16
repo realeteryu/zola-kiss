@@ -315,7 +315,15 @@ body[data-theme="dark"] {
 
         .post-nav-item {
             &.prev {
-                border-bottom-color: $dark-light;
+                text-align: left;
+            }
+
+            &.next {
+                text-align: right;
+            }
+
+            & + .post-nav-item {
+                border-top-color: $dark-light;
             }
 
             .post-nav-link {
