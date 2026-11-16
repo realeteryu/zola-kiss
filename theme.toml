@@ -1,4 +1,5 @@
 name = "kisse"
-description = "Minimalistyczny motyw inspirowany Jekyll Klise"
+description = "A minimalist Zola theme inspired by Jekyll Klisé, featuring light and dark mode support."
 license = "MIT"
 min_version = "0.23.6"
+homepage = "https://github.com/realeteryu/zola-kisse"
