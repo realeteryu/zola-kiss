@@ -307,10 +307,10 @@ body[data-theme="dark"] {
 
         .toc-item {
             a {
-                color: $dark-text-link-blue; // Kolorujemy linki w spisie treści na różowy w trybie ciemnym
+                color: $dark-text-base-color;
                 
                 &:hover {
-                    color: $dark-text-link-blue-active;
+                    color: $dark-text-link-blue;
                 }
             }
         }
