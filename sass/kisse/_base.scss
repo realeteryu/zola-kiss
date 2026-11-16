@@ -8,7 +8,6 @@
     padding: $spacing-full - 15px $spacing-full;
 }
 
-// Globalny kontener .wrapper dopasowany do oryginału Klisé
 .wrapper {
     max-width: calc(#{$narrow-size} - (#{$spacing-full} * 2));
     position: relative;
@@ -241,6 +240,22 @@
         line-height: 1.5;
         letter-spacing: 0.2px;
         text-align: center;
+
+        a {
+            color: $text-link-blue;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+
+            &:hover {
+                color: $text-link-blue-active;
+            }
+
+            &:focus {
+                color: $text-link-blue;
+                outline: 3px solid $text-link-blue;
+                outline-offset: 2px;
+            }
+        }
     }
 }
 
@@ -295,6 +310,11 @@
                 color: $black;
                 opacity: 1;
             }
+
+            &:focus {
+                outline: 3px solid $text-link-blue;
+                outline-offset: 2px;
+            }
         }
     }
 }
@@ -328,6 +348,11 @@
         &:hover {
             color: $text-link-blue-active;
             border-bottom-color: $text-link-blue-active;
+        }
+
+        &:focus {
+            outline: 3px solid $text-link-blue;
+            outline-offset: 2px;
         }
     }
 }
