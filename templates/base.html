@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{{ config.title }}{% endblock %}</title>
     
-    <link href="https://fonts.bunny.net/css?family=roboto:400,700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
 
-    <!-- Favicons & Manifest -->
     <link rel="icon" type="image/png" href="{{ get_url(path='favicon-96x96.png') }}" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="{{ get_url(path='favicon.svg') }}">
     <link rel="shortcut icon" href="{{ get_url(path='favicon.ico') }}">
@@ -66,13 +63,11 @@
                         {% set item_url = get_url(path=item.url) %}
                     {% endif %}
                     
-                    {# Extract relative path from full URL #}
                     {% set item_path = item_url | replace(from=config.base_url, to="") %}
                     {% if item_path == "" %}
                         {% set item_path = "/" %}
                     {% endif %}
                     
-                    {# Mark as active only when path matches #}
                     {% set is_active = false %}
                     {% if c_path == item_path %}
                         {% set is_active = true %}
