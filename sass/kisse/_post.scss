@@ -438,7 +438,6 @@
     border-radius: 4px;
     padding: 15px 20px;
     margin: 2em 0;
-    counter-reset: toc-counter;
 
     .toc-title {
         margin: 0 0 8px;
@@ -451,34 +450,18 @@
 
     .toc-list {
         margin: 0;
-        padding: 0;
-        list-style: none;
+        padding-left: 20px;
+        list-style-type: decimal;
 
         li {
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            counter-increment: toc-counter;
-            
-            > a::before {
-                content: counter(toc-counter) ". ";
-                color: $text-link-blue;
-                font-weight: $bold-weight;
-                margin-right: 6px;
-            }
         }
 
         .toc-list {
             padding-left: 1.5em;
-            list-style: none;
-            counter-reset: sub-toc-counter;
-            
-            li {
-                counter-increment: sub-toc-counter;
-                > a::before {
-                    content: counter(toc-counter) "." counter(sub-toc-counter) " ";
-                }
-            }
+            list-style-type: decimal;
         }
     }
 
