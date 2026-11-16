@@ -455,11 +455,11 @@
 
     .toc-item {
         a {
-            color: $text-link-blue; // Kolorujemy linki w spisie treści na niebieski w trybie jasnym
+            color: $text-base-color;
             text-decoration: none;
 
             &:hover {
-                color: $text-link-blue-active;
+                color: $text-link-blue;
                 text-decoration: underline;
             }
         }
