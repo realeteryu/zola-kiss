@@ -1,3 +1,4 @@
+
 body[data-theme="dark"] {
     color: $dark-text-base-color;
     background-color: $dark-black;
@@ -10,6 +11,7 @@ body[data-theme="dark"] {
         th, td {
             border-color: $dark-light;
         }
+
         th {
             background-color: rgba(255, 255, 255, 0.05);
             color: $dark-white;
@@ -34,11 +36,11 @@ body[data-theme="dark"] {
 
     .page-content a {
         color: $dark-text-link-blue;
-        
+
         &:hover, &:active {
             color: $dark-text-link-blue-active;
         }
-        
+
         &:focus {
             color: $dark-text-link-blue;
             outline: 3px solid rgba(255, 82, 119, 0.6) !important;
@@ -73,7 +75,7 @@ body[data-theme="dark"] {
         .tags {
             .tag {
                 color: $dark-text-link-blue;
-                
+
                 &:hover {
                     color: $dark-text-link-blue-active;
                 }
@@ -88,9 +90,11 @@ body[data-theme="dark"] {
 
     .post-meta {
         color: $dark-gray;
+
         time::after {
             background-color: $dark-light;
         }
+
         span[itemprop="author"] {
             border-color: $dark-light;
         }
@@ -99,6 +103,7 @@ body[data-theme="dark"] {
     a {
         color: inherit;
         text-decoration-color: $dark-smoke;
+
         &:hover {
             color: $dark-text-link-blue;
         }
@@ -115,7 +120,7 @@ body[data-theme="dark"] {
 
     .navbar {
         border-color: $dark-light;
-        
+
         .menu {
             background-color: $dark-black;
             border-color: $dark-light;
@@ -127,23 +132,24 @@ body[data-theme="dark"] {
                 }
             }
 
-            .menu-link { 
-                color: $dark-white; 
-                
+            .menu-link {
+                color: $dark-white;
+
                 &:focus {
                     outline: 3px solid rgba(255, 82, 119, 0.6) !important;
                     outline-offset: 2px;
                 }
             }
-            
-            .menu-icon > svg { 
-                fill: $dark-white !important; 
+
+            .menu-icon > svg {
+                fill: $dark-white !important;
             }
-            
+
             @include media-query($on-mobile) {
                 input[type="checkbox"]:checked ~ .trigger {
-                    background-color: rgba(19, 20, 24, 0.85); 
+                    background-color: rgba(19, 20, 24, 0.85);
                 }
+
                 .menu-link {
                     color: $dark-white;
                 }
@@ -182,15 +188,15 @@ body[data-theme="dark"] {
         border-top-color: $dark-light;
 
         .post-item {
-            border-bottom-color: $dark-light; 
-            
+            border-bottom-color: $dark-light;
+
             .post-item-date {
-                color: $dark-white; // NAPRAWIONE: Jasny kolor dat na liście postów
+                color: $dark-white;
             }
-            
+
             .post-item-title {
                 color: $dark-text-base-color;
-                
+
                 &:hover {
                     color: $dark-white;
                 }
@@ -205,16 +211,16 @@ body[data-theme="dark"] {
     }
 
     .footer {
-        span.footer_item, 
+        span.footer_item,
         a.footer_item {
             color: $dark-white;
         }
-        
+
         a.footer_item:focus {
             outline: 3px solid rgba(255, 82, 119, 0.6) !important;
             outline-offset: 2px;
         }
-        
+
         .footer_copyright {
             color: $dark-gray;
             opacity: 1;
@@ -281,18 +287,18 @@ body[data-theme="dark"] {
     .archive-page {
         .post-item {
             &:not(:first-child) {
-                border-top-color: $dark-light; 
+                border-top-color: $dark-light;
             }
-            
+
             .post-item-date {
                 color: $dark-white;
             }
-            
+
             .post-item-title {
                 a {
                     color: $dark-text-base-color;
                     text-decoration: none;
-                    
+
                     &:hover, &:focus {
                         color: $dark-white;
                     }
@@ -326,18 +332,24 @@ body[data-theme="dark"] {
             color: $dark-white;
             text-shadow: 1px 0px 0px $dark-text-link-blue;
         }
+
         .phrase {
             color: $dark-text-base-color;
         }
+
         .solution {
             color: $dark-text-link-blue;
-            text-decoration: none;
-            border-bottom: 1px solid $dark-text-base-color;
-            padding-bottom: 2px;
-            
+
+            text-decoration: underline;
+            text-decoration-color: rgba(128, 128, 128, 0.5);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 1px;
+
+            transition: color 0.2s ease, text-decoration-color 0.2s ease;
+
             &:hover {
                 color: $dark-text-link-blue-active;
-                border-bottom-color: $dark-text-link-blue-active;
+                text-decoration-color: $dark-text-link-blue-active;
             }
 
             &:focus {
@@ -357,7 +369,7 @@ body[data-theme="dark"] {
         .toc-item {
             a {
                 color: $dark-text-base-color;
-                
+
                 &:hover {
                     color: $dark-text-link-blue;
                 }
@@ -393,6 +405,7 @@ body[data-theme="dark"] {
                     text-align: left;
                     align-items: flex-start;
                 }
+
                 &:not(:only-child) {
                     text-align: right;
                     align-items: flex-end;
