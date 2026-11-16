@@ -4,7 +4,7 @@
     <div class="author">
         <img class="author-avatar" src="{{ config.extra.avatar }}" alt="{{ config.extra.author }}">
         <h1 class="author-name">{{ config.title }}</h1>
-        <p class="author-bio">{{ config.description }}</p>
+        <p class="author-bio">{{ config.description | safe }}</p>
     </div>
 
     <div class="post-list-wrapper">
