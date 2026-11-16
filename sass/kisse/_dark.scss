@@ -313,27 +313,20 @@ body[data-theme="dark"] {
     .post-nav {
         border-top-color: $dark-light;
 
-        /* Gdy na stronie występują oba elementy, przechodzą w układ rzędowy (lewa/prawa) */
-        &:has(.post-nav-item + .post-nav-item) {
-            flex-direction: row;
-            justify-content: space-between;
-
-            .post-nav-item {
-                flex: 1;
-                min-width: 45%;
-
-                &.next {
-                    text-align: right;
-                    border-top: none !important;
-                }
-            }
-        }
-
         .post-nav-item {
             display: flex;
             flex-direction: column;
             padding: 0.9em 0;
             text-align: left;
+
+            &.prev {
+                text-align: left;
+            }
+
+            &.next {
+                text-align: right;
+                align-items: flex-end;
+            }
 
             & + .post-nav-item {
                 border-top-color: $dark-light;
@@ -341,6 +334,10 @@ body[data-theme="dark"] {
 
             .post-nav-link {
                 color: inherit;
+                display: flex;
+                flex-direction: column;
+                text-decoration: none;
+                width: 100%;
 
                 &:hover {
                     .post-title {
@@ -351,10 +348,17 @@ body[data-theme="dark"] {
 
             .nav-arrow {
                 color: $dark-gray;
+                font-size: $small-font-size;
+                margin-bottom: 0.25em;
+                font-weight: $normal-weight;
             }
 
             .post-title {
                 color: $dark-white;
+                font-size: $base-font-size;
+                text-decoration: none;
+                font-weight: $bold-weight;
+                line-height: 1.35;
             }
         }
     }
