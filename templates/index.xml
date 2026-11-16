@@ -4,19 +4,20 @@
         <title>{{ config.title }}</title>
         <link>{{ config.base_url }}</link>
         <description>{{ config.description }}</description>
-        <language>pl</language>
+        <language>en</language>
         <lastBuildDate>{{ now() | date(format="%a, %d %b %Y %H:%M:%S %z") }}</lastBuildDate>
-        <atom:link href="{{ get_url(path='index.xml') }}" rel="self" type="application/rss+xml" />
+        <atom:link href="{{ config.base_url }}/index.xml" rel="self" type="application/rss+xml" />
         
-        {# Pobieramy sekcję z wpisami #}
         {% set posts_section = get_section(path="posts/_index.md") %}
         
         {% for page in posts_section.pages %}
         <item>
             <title>{{ page.title }}</title>
             <link>{{ page.permalink }}</link>
-            <description>{{ page.description | default(value="") }}</description>
+            <description>{{ page.description | default(value="") | escape }}</description>
+            {% if page.date %}
             <pubDate>{{ page.date | date(format="%a, %d %b %Y %H:%M:%S %z") }}</pubDate>
+            {% endif %}
             <guid>{{ page.permalink }}</guid>
         </item>
         {% endfor %}
