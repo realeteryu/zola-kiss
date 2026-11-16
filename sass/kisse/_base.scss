@@ -1,3 +1,4 @@
+
 .navbar {
     height: auto;
     max-width: calc(#{$wide-size} - (#{$spacing-full} * 2));
@@ -35,23 +36,25 @@
         position: relative;
         opacity: 0.7;
         z-index: 1;
+
         &:hover {
             cursor: pointer;
             opacity: 1;
         }
+
         &:active {
             -webkit-transform: scale(0.9, 0.9);
             transform: scale(0.9, 0.9);
         }
-        
+
         .mode-sunny {
             display: block;
             opacity: 1;
             visibility: visible;
             width: 20px;
             height: 20px;
-            stroke: $black; 
-            fill: none;     
+            stroke: $black;
+            fill: none;
             stroke-width: 2;
             stroke-linecap: round;
             stroke-linejoin: round;
@@ -82,7 +85,7 @@
         &:hover {
             opacity: 1;
         }
-        
+
         &:focus {
             outline: 3px solid $text-link-blue;
             outline-offset: 2px;
@@ -91,7 +94,7 @@
         &:not(:last-child) {
             margin-right: 5px;
         }
-        
+
         &.rss {
             position: relative;
             bottom: -3px;
@@ -99,13 +102,13 @@
             display: inline-flex;
             align-items: center;
             font-weight: $bold-weight;
-            color: #ff9900 !important; 
-            
+            color: #ff9900 !important;
+
             svg {
                 vertical-align: middle;
-                fill: #ff9900 !important; 
-                width: 20px !important;   
-                height: 20px !important;  
+                fill: #ff9900 !important;
+                width: 20px !important;
+                height: 20px !important;
             }
         }
 
@@ -148,7 +151,7 @@
             cursor: pointer;
             text-align: center;
             z-index: 10;
-            
+
             > svg {
                 fill: $black;
                 opacity: 0.7;
@@ -156,7 +159,7 @@
                 height: 24px;
                 vertical-align: middle;
             }
-            
+
             &:hover > svg {
                 opacity: 1;
             }
@@ -187,11 +190,12 @@
             display: block;
             box-sizing: border-box;
             font-size: 1.1em;
+
             &:not(:last-child) {
                 margin: 0;
                 padding: 2px 0;
             }
-            
+
             &.active {
                 opacity: 1;
                 font-weight: 700;
@@ -291,6 +295,7 @@
 
         &:not(:last-child) {
             margin-right: 10px;
+
             &:hover {
                 opacity: 1;
             }
@@ -345,13 +350,17 @@
     .solution {
         color: $text-link-blue;
         letter-spacing: 0.5px;
-        text-decoration: none;
-        border-bottom: 1px solid $text-base-color;
-        padding-bottom: 2px;
+
+        text-decoration: underline;
+        text-decoration-color: rgba(128, 128, 128, 0.5);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 1px;
+
+        transition: color 0.2s ease, text-decoration-color 0.2s ease;
 
         &:hover {
             color: $text-link-blue-active;
-            border-bottom-color: $text-link-blue-active;
+            text-decoration-color: $text-link-blue-active;
         }
 
         &:focus {
@@ -371,20 +380,25 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     @include relative-font-size(1.5);
 }
+
 h2 {
     @include relative-font-size(1.375);
 }
+
 h3 {
     @include relative-font-size(1.25);
     border-bottom: 1px solid $light;
     padding-bottom: 4px;
 }
+
 h4 {
     @include relative-font-size(1.25);
 }
+
 h5 {
     @include relative-font-size(1);
 }
+
 h6 {
     @include relative-font-size(0.875);
 }
