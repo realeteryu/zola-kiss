@@ -158,16 +158,17 @@ body[data-theme="dark"] {
 
         .author-bio {
             a {
-                color: $dark-text-link-blue;
+                color: inherit;
                 text-decoration: underline;
+                text-decoration-color: $dark-light;
                 text-underline-offset: 2px;
 
                 &:hover {
-                    color: $dark-text-link-blue-active;
+                    color: $dark-white;
                 }
 
                 &:focus {
-                    color: $dark-text-link-blue;
+                    color: $dark-white;
                     outline: 3px solid rgba(255, 82, 119, 0.6) !important;
                     outline-offset: 2px;
                 }
