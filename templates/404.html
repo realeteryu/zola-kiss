@@ -6,8 +6,8 @@
     <div class="not-found">
         <div>
             <h1 class="title">404</h1>
-            <p class="phrase">😕 {{ config.extra.ui.error_404_phrase | default(value="Strona, której szukasz, nie istnieje.") }}</p>
-            <a href="{{ config.base_url }}" class="solution">{{ config.extra.ui.error_404_link | default(value="Wróć na stronę główną") }}</a>
+            <p class="phrase">😕 Looks like you're lost.</p>
+            <a href="{{ config.base_url }}" class="solution">Return to home page</a>
         </div>
     </div>
 {% endblock main %}
