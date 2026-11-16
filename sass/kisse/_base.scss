@@ -305,11 +305,13 @@
     .solution {
         color: $text-link-blue;
         letter-spacing: 0.5px;
-        text-decoration: underline;
-        text-underline-offset: 4px;
+        text-decoration: none;
+        border-bottom: 1px solid $text-base-color;
+        padding-bottom: 2px;
 
         &:hover {
             color: $text-link-blue-active;
+            border-bottom-color: $text-link-blue-active;
         }
     }
 }
