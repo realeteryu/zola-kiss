@@ -34,25 +34,25 @@
             {{ page.content | safe }}
         </div>
 
-        {% if page.lower or page.higher %}
+        {% if page.higher or page.lower %}
         <nav class="post-nav">
+            {% if page.higher %}
             <div class="post-nav-item prev">
-                {% if page.higher %}
                 <a href="{{ page.higher.permalink }}" class="post-nav-link">
                     <span class="nav-arrow">Poprzedni</span>
                     <span class="post-title">{{ page.higher.title | truncate(length=50) }}</span>
                 </a>
-                {% endif %}
             </div>
+            {% endif %}
 
+            {% if page.lower %}
             <div class="post-nav-item next">
-                {% if page.lower %}
                 <a href="{{ page.lower.permalink }}" class="post-nav-link">
                     <span class="nav-arrow">Następny</span>
                     <span class="post-title">{{ page.lower.title | truncate(length=50) }}</span>
                 </a>
-                {% endif %}
             </div>
+            {% endif %}
         </nav>
         {% endif %}
     </article>
