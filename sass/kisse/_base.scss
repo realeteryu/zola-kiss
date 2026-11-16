@@ -232,8 +232,6 @@
     margin-top: 8em;
     margin-bottom: 2em;
     text-align: center;
-    padding-top: $spacing-full;
-    padding-bottom: $spacing-full - 15;
 
     @include media-query($on-mobile) {
         margin-top: 3em;
@@ -267,7 +265,7 @@
 
     .footer_copyright {
         font-size: $small-font-size - 1;
-        margin-top: 10px;
+        margin-top: 3px;
         display: block;
         color: $gray;
         opacity: 0.8;
