@@ -480,11 +480,21 @@
 
         &.prev {
             text-align: left;
+            align-items: flex-start;
         }
 
         &.next {
-            text-align: right;
-            align-items: flex-end;
+            /* Jeśli jest jedynym elementem (brak poprzedniego), ląduje po lewej */
+            &:only-child {
+                text-align: left;
+                align-items: flex-start;
+            }
+
+            /* Jeśli występuje jako drugi element (pod poprzednim), ląduje po prawej */
+            &:not(:only-child) {
+                text-align: right;
+                align-items: flex-end;
+            }
         }
 
         /* Linia oddzielająca pojawia się tylko wtedy, gdy występują oba elementy pod sobą */
