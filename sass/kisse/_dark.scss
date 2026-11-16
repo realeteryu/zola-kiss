@@ -42,6 +42,7 @@ body[data-theme="dark"] {
         &:focus {
             color: $dark-text-link-blue;
             outline: 3px solid rgba(255, 82, 119, 0.6) !important;
+            outline-offset: 2px;
         }
     }
 
@@ -79,6 +80,7 @@ body[data-theme="dark"] {
 
                 &:focus {
                     outline: 3px solid rgba(255, 82, 119, 0.6) !important;
+                    outline-offset: 2px;
                 }
             }
         }
@@ -130,6 +132,7 @@ body[data-theme="dark"] {
                 
                 &:focus {
                     outline: 3px solid rgba(255, 82, 119, 0.6) !important;
+                    outline-offset: 2px;
                 }
             }
             
@@ -174,6 +177,7 @@ body[data-theme="dark"] {
                 &:focus {
                     color: $dark-white;
                     outline: 3px solid rgba(255, 82, 119, 0.6) !important;
+                    outline-offset: 2px;
                 }
             }
         }
@@ -187,6 +191,7 @@ body[data-theme="dark"] {
         
         a.footer_item:focus {
             outline: 3px solid rgba(255, 82, 119, 0.6) !important;
+            outline-offset: 2px;
         }
         
         .footer_copyright {
@@ -260,6 +265,7 @@ body[data-theme="dark"] {
 
                     &:focus {
                         outline: 3px solid rgba(255, 82, 119, 0.6) !important;
+                        outline-offset: 2px;
                     }
                 }
             }
@@ -329,13 +335,10 @@ body[data-theme="dark"] {
             }
 
             &.next {
-                /* Jeśli jest jedynym elementem (brak poprzedniego), ląduje po lewej */
                 &:only-child {
                     text-align: left;
                     align-items: flex-start;
                 }
-
-                /* Jeśli występuje jako drugi element (pod poprzednim), ląduje po prawej */
                 &:not(:only-child) {
                     text-align: right;
                     align-items: flex-end;
@@ -357,6 +360,11 @@ body[data-theme="dark"] {
                     .post-title {
                         color: $dark-text-link-blue;
                     }
+                }
+
+                &:focus {
+                    outline: 3px solid rgba(255, 82, 119, 0.6) !important;
+                    outline-offset: 2px;
                 }
             }
 
