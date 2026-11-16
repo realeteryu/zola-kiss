@@ -305,7 +305,8 @@
     .solution {
         color: $text-link-blue;
         letter-spacing: 0.5px;
-        text-decoration: none;
+        text-decoration: underline;
+        text-underline-offset: 4px;
 
         &:hover {
             color: $text-link-blue-active;
