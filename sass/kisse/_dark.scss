@@ -1,4 +1,3 @@
-
 body[data-theme="dark"] {
     color: $dark-text-base-color;
     background-color: $dark-black;
@@ -364,6 +363,22 @@ body[data-theme="dark"] {
 
         .toc-title {
             color: $dark-gray;
+        }
+
+        .toc-list {
+            li {
+                > a::before {
+                    color: $dark-text-link-blue; // Różowy numer w dark mode
+                }
+            }
+
+            .toc-list {
+                li {
+                    > a::before {
+                        color: $dark-text-link-blue;
+                    }
+                }
+            }
         }
 
         .toc-item {
