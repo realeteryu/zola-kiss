@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="{{ config.default_language | default(value='en') }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}">
 
-    <!-- Favicons & Manifest (dodane na podstawie plików w folderze static) -->
+    <!-- Favicons & Manifest -->
     <link rel="icon" type="image/png" href="{{ get_url(path='favicon-96x96.png') }}" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="{{ get_url(path='favicon.svg') }}">
     <link rel="shortcut icon" href="{{ get_url(path='favicon.ico') }}">
@@ -66,13 +66,13 @@
                         {% set item_url = get_url(path=item.url) %}
                     {% endif %}
                     
-                    {# Wyciągamy ścieżkę z pełnego URL #}
+                    {# Extract relative path from full URL #}
                     {% set item_path = item_url | replace(from=config.base_url, to="") %}
                     {% if item_path == "" %}
                         {% set item_path = "/" %}
                     {% endif %}
                     
-                    {# Aktywne tylko gdy ścieżka się zgadza #}
+                    {# Mark as active only when path matches #}
                     {% set is_active = false %}
                     {% if c_path == item_path %}
                         {% set is_active = true %}
