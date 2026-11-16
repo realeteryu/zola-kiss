@@ -349,22 +349,25 @@ body[data-theme="dark"] {
                 border-top-color: $dark-light;
             }
 
+            /* Fokus na cały kafelek w trybie ciemnym (różowa ramka) */
+            &:focus-within {
+                outline: 3px solid rgba(255, 82, 119, 0.6) !important;
+                outline-offset: 2px;
+                z-index: 2;
+            }
+
             .post-nav-link {
                 color: inherit;
                 display: flex;
                 flex-direction: column;
                 text-decoration: none;
                 width: 100%;
+                outline: none;
 
                 &:hover {
                     .post-title {
                         color: $dark-text-link-blue;
                     }
-                }
-
-                &:focus {
-                    outline: 3px solid rgba(255, 82, 119, 0.6) !important;
-                    outline-offset: 2px;
                 }
             }
 
