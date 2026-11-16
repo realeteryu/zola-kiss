@@ -242,12 +242,13 @@
         text-align: center;
 
         a {
-            color: $text-link-blue;
+            color: inherit;
             text-decoration: underline;
+            text-decoration-color: $light;
             text-underline-offset: 2px;
 
             &:hover {
-                color: $text-link-blue-active;
+                color: $text-link-blue;
             }
 
             &:focus {
