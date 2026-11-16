@@ -244,14 +244,17 @@
         a {
             color: inherit;
             text-decoration: underline;
+            text-decoration-color: rgba(0, 0, 0, 0.3); // Widoczne podkreślenie w kolorze tekstu
             text-underline-offset: 2px;
 
             &:hover {
-                color: inherit;
+                color: $text-link-blue;
+                text-decoration-color: $text-link-blue;
             }
 
             &:focus {
-                color: inherit;
+                color: $text-link-blue;
+                text-decoration-color: $text-link-blue;
                 outline: 3px solid $text-link-blue;
                 outline-offset: 2px;
             }
@@ -304,6 +307,7 @@
         a {
             color: inherit;
             text-decoration: underline;
+            text-decoration-color: rgba(128, 128, 128, 0.4);
             text-underline-offset: 2px;
 
             &:hover {
