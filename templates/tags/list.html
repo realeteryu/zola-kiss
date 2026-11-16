@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}Tagi — {{ config.title }}{% endblock %}
+{% block title %}Tags — {{ config.title }}{% endblock %}
 
 {% block main %}
 <div class="page-content">
     <div class="archive-header">
-        <h1 class="header-title center">Tagi.</h1>
+        <h1 class="header-title center">Tags.</h1>
     </div>
 
     <div class="archive-tags">
-        <a class="tag-item" href="#">wszystkie</a>
+        <a class="tag-item" href="#">all</a>
         {% for term in terms %}
             <a class="tag-item" href="#{{ term.name | slugify }}">{{ term.name }}</a>
         {% endfor %}
@@ -20,7 +20,11 @@
             <h2 id="{{ term.name | slugify }}">{{ term.name | upper }}</h2>
             {% for page in term.pages %}
                 <article class="post-item">
-                    <span class="post-item-date">{{<date_pl date={page.date} />}}</span>
+                    <span class="post-item-date">
+                        {% if page.date %}
+                            {{ page.date | date(format="%b %d, %Y") }}
+                        {% endif %}
+                    </span>
                     <h3 class="post-item-title">
                         <a href="{{ page.permalink }}">{{ page.title }}</a>
                     </h3>
