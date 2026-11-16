@@ -1,6 +1,6 @@
 base_url = "https://realeteryu.github.io/zola-kisse"
 title = "Zola Kisse"
-description = "Minimalistyczny motyw Zola z obsługą trybu jasnego i ciemnego, idealny do prowadzenia osobistej strony i bloga."
+description = "A minimalist Zola theme with light and dark mode support, perfect for your personal website and blog."
 
 compile_sass = true
 generate_feeds = true
@@ -19,23 +19,16 @@ theme = "gruvbox-dark-medium"
 [extra]
 author = "Eteryu"
 avatar = "https://avatars.githubusercontent.com/u/117126022?s=400&u=6d6363ad30ba498f53133c6712a8a75455b6aad6&v=4"
-footer_text = "motyw <a href='https://github.com/realeteryu/zola-kisse'>kisse</a> dla <a href='https://www.getzola.org'>zola</a>"
-
-[extra.ui]
-search_placeholder = "Szukaj wpisów..."
-search_no_results = "Brak wyników"
-error_404_phrase = "Wygląda na to, że się zgubiłeś."
-error_404_link = "Wróć na stronę główną"
-toc_title = "Spis treści"
+footer_text = "<a href='https://github.com/realeteryu/zola-kisse'>kisse</a> theme for <a href='https://www.getzola.org'>zola</a>"
 
 [[extra.nav]]
-name = "start"
+name = "home"
 url = "@/_index.md"
 
 [[extra.nav]]
-name = "archiwum"
+name = "archive"
 url = "@/posts/_index.md"
 
 [[extra.nav]]
-name = "o mnie"
+name = "about"
 url = "@/about/_index.md"
