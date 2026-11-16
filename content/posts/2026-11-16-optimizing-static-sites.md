@@ -2,9 +2,12 @@
 title = "Optimizing Static Sites for Speed and Design"
 date = 2026-11-16
 description = "A deep dive into performance tuning, asset optimization, and clean data structures for Zola and Jekyll blogs."
-toc = true
+
 [taxonomies]
 tags = ["performance", "zola", "guide"]
+
+[extra]
+toc = true
 +++
 
 Static site generators have completely transformed how we build personal blogs and documentation. By compiling everything into pure HTML and CSS upfront, we eliminate server-side bottlenecks entirely.
