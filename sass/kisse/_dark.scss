@@ -314,13 +314,7 @@ body[data-theme="dark"] {
         border-top-color: $dark-light;
 
         .post-nav-item {
-            &.prev {
-                text-align: left;
-            }
-
-            &.next {
-                text-align: right;
-            }
+            text-align: left;
 
             & + .post-nav-item {
                 border-top-color: $dark-light;
