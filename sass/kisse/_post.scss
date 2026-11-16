@@ -479,11 +479,15 @@
 
         &.prev {
             text-align: left;
-            border-bottom: 1px solid $light;
         }
 
         &.next {
             text-align: right;
+        }
+
+        /* Linia oddzielająca pojawia się tylko wtedy, gdy tuż pod poprzednim elementem występuje kolejny */
+        & + .post-nav-item {
+            border-top: 1px solid $light;
         }
 
         .post-nav-link {
