@@ -17,7 +17,7 @@
             
             {% if page.date %}
             <div class="post-meta">
-                <time>{{<date_pl date={page.date} />}}</time>
+                <time>{{ page.date | date(format="%B %d, %Y") }}</time>
                 <span itemprop="author">{{ config.extra.author }}</span>
             </div>
             {% endif %}
@@ -25,8 +25,8 @@
 
         {% if page.toc and page.extra.toc %}
         <div class="toc">
-            <div class="toc-title">{{ config.extra.ui.toc_title | default(value="Spis treści") }}</div>
-            {{<toc headers={page.toc} />}}
+            <div class="toc-title">Table of Contents</div>
+            {{ page.toc | safe }}
         </div>
         {% endif %}
         
@@ -39,7 +39,7 @@
             {% if page.higher %}
             <div class="post-nav-item prev">
                 <a href="{{ page.higher.permalink }}" class="post-nav-link">
-                    <span class="nav-arrow">Poprzedni</span>
+                    <span class="nav-arrow">Previous</span>
                     <span class="post-title">{{ page.higher.title | truncate(length=50) }}</span>
                 </a>
             </div>
@@ -48,7 +48,7 @@
             {% if page.lower %}
             <div class="post-nav-item next">
                 <a href="{{ page.lower.permalink }}" class="post-nav-link">
-                    <span class="nav-arrow">Następny</span>
+                    <span class="nav-arrow">Next</span>
                     <span class="post-title">{{ page.lower.title | truncate(length=50) }}</span>
                 </a>
             </div>
