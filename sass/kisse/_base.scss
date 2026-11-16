@@ -303,13 +303,13 @@
     }
 
     .solution {
-        color: $text-base-color;
+        color: $text-link-blue;
         letter-spacing: 0.5px;
         text-decoration: underline;
         text-underline-offset: 4px;
 
         &:hover {
-            color: $text-link-blue;
+            color: $text-link-blue-active;
         }
     }
 }
