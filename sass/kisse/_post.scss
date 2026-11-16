@@ -45,6 +45,7 @@
             
             &:focus {
                 outline: 3px solid $text-link-blue;
+                outline-offset: 2px;
             }
         }
     }
@@ -465,7 +466,7 @@
     }
 }
 
-/* --- Nawigacja Poprzedni / Następny (Jekyll Klisé 1:1 style) --- */
+/* --- Nawigacja Poprzedni / Następny --- */
 .post-nav {
     display: flex;
     flex-direction: column;
@@ -487,20 +488,16 @@
         }
 
         &.next {
-            /* Jeśli jest jedynym elementem (brak poprzedniego), ląduje po lewej */
             &:only-child {
                 text-align: left;
                 align-items: flex-start;
             }
-
-            /* Jeśli występuje jako drugi element (pod poprzednim), ląduje po prawej */
             &:not(:only-child) {
                 text-align: right;
                 align-items: flex-end;
             }
         }
 
-        /* Linia oddzielająca pojawia się tylko wtedy, gdy występują oba elementy pod sobą */
         & + .post-nav-item {
             border-top: 1px solid $light;
         }
@@ -516,6 +513,11 @@
                 .post-title {
                     color: $text-link-blue;
                 }
+            }
+
+            &:focus {
+                outline: 3px solid $text-link-blue;
+                outline-offset: 2px;
             }
         }
 
