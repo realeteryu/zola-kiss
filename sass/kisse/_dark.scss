@@ -369,7 +369,7 @@ body[data-theme="dark"] {
 
             .post-title {
                 color: $dark-white;
-                font-size: $base-font-size;
+                font-size: inherit;
                 text-decoration: none;
                 font-weight: $bold-weight;
                 line-height: 1.35;
