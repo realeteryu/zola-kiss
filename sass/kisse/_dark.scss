@@ -155,6 +155,24 @@ body[data-theme="dark"] {
         .author-name {
             color: $dark-white;
         }
+
+        .author-bio {
+            a {
+                color: $dark-text-link-blue;
+                text-decoration: underline;
+                text-underline-offset: 2px;
+
+                &:hover {
+                    color: $dark-text-link-blue-active;
+                }
+
+                &:focus {
+                    color: $dark-text-link-blue;
+                    outline: 3px solid rgba(255, 82, 119, 0.6) !important;
+                    outline-offset: 2px;
+                }
+            }
+        }
     }
 
     .post-list {
@@ -207,6 +225,11 @@ body[data-theme="dark"] {
                     color: $dark-white;
                     opacity: 1;
                 }
+
+                &:focus {
+                    outline: 3px solid rgba(255, 82, 119, 0.6) !important;
+                    outline-offset: 2px;
+                }
             }
         }
     }
@@ -239,6 +262,11 @@ body[data-theme="dark"] {
 
                 &:hover {
                     color: $dark-text-link-blue-active;
+                }
+
+                &:focus {
+                    outline: 3px solid rgba(255, 82, 119, 0.6) !important;
+                    outline-offset: 2px;
                 }
             }
         }
@@ -279,6 +307,11 @@ body[data-theme="dark"] {
             &:hover {
                 color: $dark-text-link-blue-active;
             }
+
+            &:focus {
+                outline: 3px solid rgba(255, 82, 119, 0.6) !important;
+                outline-offset: 2px;
+            }
         }
     }
 
@@ -300,6 +333,11 @@ body[data-theme="dark"] {
                 color: $dark-text-link-blue-active;
                 border-bottom-color: $dark-text-link-blue-active;
             }
+
+            &:focus {
+                outline: 3px solid rgba(255, 82, 119, 0.6) !important;
+                outline-offset: 2px;
+            }
         }
     }
 
@@ -316,6 +354,11 @@ body[data-theme="dark"] {
                 
                 &:hover {
                     color: $dark-text-link-blue;
+                }
+
+                &:focus {
+                    outline: 3px solid rgba(255, 82, 119, 0.6) !important;
+                    outline-offset: 2px;
                 }
             }
         }
