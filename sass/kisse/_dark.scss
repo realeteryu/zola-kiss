@@ -291,12 +291,12 @@ body[data-theme="dark"] {
             color: $dark-text-base-color;
         }
         .solution {
-            color: $dark-text-link-blue;
+            color: $dark-text-base-color;
             text-decoration: underline;
             text-underline-offset: 4px;
             
             &:hover {
-                color: $dark-text-link-blue-active;
+                color: $dark-text-link-blue;
             }
         }
     }
