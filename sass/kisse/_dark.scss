@@ -161,6 +161,7 @@ body[data-theme="dark"] {
                 color: $dark-text-link-blue;
                 text-decoration: underline;
                 text-underline-offset: 2px;
+                border-radius: 2px;
 
                 &:hover {
                     color: $dark-text-link-blue-active;
