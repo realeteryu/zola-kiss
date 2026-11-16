@@ -365,22 +365,6 @@ body[data-theme="dark"] {
             color: $dark-gray;
         }
 
-        .toc-list {
-            li {
-                > a::before {
-                    color: $dark-text-link-blue; // Różowy numer w dark mode
-                }
-            }
-
-            .toc-list {
-                li {
-                    > a::before {
-                        color: $dark-text-link-blue;
-                    }
-                }
-            }
-        }
-
         .toc-item {
             a {
                 color: $dark-text-base-color;
