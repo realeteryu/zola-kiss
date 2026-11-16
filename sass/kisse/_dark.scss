@@ -285,12 +285,15 @@ body[data-theme="dark"] {
     .not-found {
         .title {
             color: $dark-white;
+            text-shadow: 1px 0px 0px $dark-text-link-blue;
         }
         .phrase {
             color: $dark-text-base-color;
         }
         .solution {
             color: $dark-text-link-blue;
+            text-decoration: underline;
+            text-underline-offset: 4px;
             
             &:hover {
                 color: $dark-text-link-blue-active;
