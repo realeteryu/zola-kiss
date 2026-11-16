@@ -7,9 +7,8 @@
 {% block main %}
     <article>
         <div class="header" style="margin-bottom: 2em;">
-            <h1 class="header-title center">
-                {% if page %}{{ page.title }}{% elif section %}{{ section.title }}{% endif %}
-            </h1>
+            <!-- Tutaj nagłówek jest na sztywno, niezależnie od pliku Markdown -->
+            <h1 class="header-title center">About.</h1>
         </div>
         
         <div class="page-content">
