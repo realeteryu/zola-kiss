@@ -292,11 +292,13 @@ body[data-theme="dark"] {
         }
         .solution {
             color: $dark-text-link-blue;
-            text-decoration: underline;
-            text-underline-offset: 4px;
+            text-decoration: none;
+            border-bottom: 1px solid $dark-text-base-color;
+            padding-bottom: 2px;
             
             &:hover {
                 color: $dark-text-link-blue-active;
+                border-bottom-color: $dark-text-link-blue-active;
             }
         }
     }
