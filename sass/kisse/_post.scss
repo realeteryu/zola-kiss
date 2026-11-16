@@ -466,7 +466,7 @@
     }
 }
 
-/* --- Nawigacja Poprzedni / Następny --- */
+/* --- Nawigacja Poprzedni / Następny (Pełny outline kafelka) --- */
 .post-nav {
     display: flex;
     flex-direction: column;
@@ -502,22 +502,25 @@
             border-top: 1px solid $light;
         }
 
+        /* Przenosimy fokus na cały kafelek `.post-nav-item` */
+        &:focus-within {
+            outline: 3px solid $text-link-blue;
+            outline-offset: 2px;
+            z-index: 2;
+        }
+
         .post-nav-link {
             display: flex;
             flex-direction: column;
             text-decoration: none;
             color: inherit;
             width: 100%;
+            outline: none; // Wyłączamy wewnętrzny fokus na rzecz kafelka
 
             &:hover {
                 .post-title {
                     color: $text-link-blue;
                 }
-            }
-
-            &:focus {
-                outline: 3px solid $text-link-blue;
-                outline-offset: 2px;
             }
         }
 
