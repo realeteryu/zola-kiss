@@ -11,7 +11,7 @@
         <h2>Latest Posts</h2>
         <ul class="post-list">
         {% set posts_section = get_section(path="posts/_index.md") %}
-        {% for page in posts_section.pages %}
+        {% for page in posts_section.pages | slice(end=5) %}
             <li class="post-item">
                 <span class="post-item-date">
                     {% if page.date %}
