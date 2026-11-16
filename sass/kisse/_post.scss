@@ -339,6 +339,11 @@
             &:hover {
                 text-decoration: underline;
             }
+
+            &:focus {
+                outline: 3px solid $text-link-blue;
+                outline-offset: 2px;
+            }
         }
     }
 }
@@ -394,6 +399,7 @@
                 
                 &:focus {
                     outline: 3px solid $text-link-blue;
+                    outline-offset: 2px;
                 }
             }
         }
@@ -418,6 +424,11 @@
 
         &:hover {
             color: $text-link-blue-active;
+        }
+
+        &:focus {
+            outline: 3px solid $text-link-blue;
+            outline-offset: 2px;
         }
     }
 }
@@ -450,7 +461,7 @@
 
         .toc-list {
             padding-left: 1.5em;
-            list-style: none; /* Usunięto kropki dla podlist */
+            list-style: none;
         }
     }
 
@@ -462,6 +473,11 @@
             &:hover {
                 color: $text-link-blue;
                 text-decoration: underline;
+            }
+
+            &:focus {
+                outline: 3px solid $text-link-blue;
+                outline-offset: 2px;
             }
         }
     }
