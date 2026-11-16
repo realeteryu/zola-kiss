@@ -164,13 +164,13 @@ body[data-theme="dark"] {
                 text-underline-offset: 2px;
 
                 &:hover {
-                    color: inherit;
-                    text-decoration-color: inherit;
+                    color: $dark-text-link-blue;
+                    text-decoration-color: $dark-text-link-blue;
                 }
 
                 &:focus {
-                    color: $dark-white;
-                    text-decoration-color: $dark-white;
+                    color: $dark-text-link-blue;
+                    text-decoration-color: $dark-text-link-blue;
                     outline: 3px solid rgba(255, 82, 119, 0.6) !important;
                     outline-offset: 2px;
                 }
