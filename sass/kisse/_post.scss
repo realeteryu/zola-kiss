@@ -472,29 +472,22 @@
     margin-top: 3.5em;
     border-top: 1px solid $light;
 
-    /* Gdy na stronie występują oba elementy, przechodzą w układ rzędowy (lewa/prawa) */
-    &:has(.post-nav-item + .post-nav-item) {
-        flex-direction: row;
-        justify-content: space-between;
-
-        .post-nav-item {
-            flex: 1;
-            min-width: 45%;
-
-            &.next {
-                text-align: right;
-                border-top: none !important;
-            }
-        }
-    }
-
     .post-nav-item {
         display: flex;
         flex-direction: column;
         padding: 0.9em 0;
         text-align: left;
 
-        /* Gdy jest pojedynczy element, nadmiarowa linia nie występuje, a kolejne items (jeśli są) dostają górny border */
+        &.prev {
+            text-align: left;
+        }
+
+        &.next {
+            text-align: right;
+            align-items: flex-end;
+        }
+
+        /* Linia oddzielająca pojawia się tylko wtedy, gdy występują oba elementy pod sobą */
         & + .post-nav-item {
             border-top: 1px solid $light;
         }
