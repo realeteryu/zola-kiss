@@ -1,6 +1,6 @@
 # site settings
 base_url = "https://realeteryu.github.io/zola-kisse"
-title = "Zola Kisse"
+title = "Kisse Theme"
 description = "A minimalist Zola theme inspired by <a href='https://github.com/piharpi/jekyll-klise'>Jekyll Klisé</a>, featuring light and dark mode support for personal websites and blogs."
 
 # build settings
