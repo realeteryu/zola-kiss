@@ -41,3 +41,12 @@ url = "@/posts/_index.md"
 [[extra.nav]]
 name = "about"
 url = "@/about/_index.md"
+
+# footer links
+[[extra.footer]]
+name = "github"
+url = "https://github.com/realeteryu/zola-kisse"
+
+[[extra.footer]]
+name = "klisé"
+url = "https://github.com/piharpi/jekyll-klise"
