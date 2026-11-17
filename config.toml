@@ -1,26 +1,35 @@
+# site settings
 base_url = "https://realeteryu.github.io/zola-kisse"
 title = "Zola Kisse"
 description = "A minimalist Zola theme inspired by <a href='https://github.com/piharpi/jekyll-klise'>Jekyll Klisé</a>, featuring light and dark mode support for personal websites and blogs."
 
+# build settings
 compile_sass = true
 generate_feeds = true
 feed_filenames = ["index.xml"]
 
+# taxonomies
 taxonomies = [
     { name = "tags" },
 ]
 
+# markdown settings
 [markdown]
 render_emoji = true
 
 [markdown.highlighting]
 theme = "gruvbox-dark-medium"
 
+# theme settings
 [extra]
 author = "Eteryu"
 avatar = "https://avatars.githubusercontent.com/u/117126022?s=400&u=6d6363ad30ba498f53133c6712a8a75455b6aad6&v=4"
 footer_text = "<a href='https://github.com/realeteryu/zola-kisse'>kisse</a> theme for <a href='https://www.getzola.org'>zola</a>"
 
+# homepage limit posts
+number_of_posts = 5
+
+# navigation menu
 [[extra.nav]]
 name = "home"
 url = "@/_index.md"
