@@ -12,7 +12,8 @@
         <ul class="post-list">
         {% set posts_section = get_section(path="posts/_index.md") %}
         {% set limit = config.extra.number_of_posts | default(value=5) %}
-        {% for page in posts_section.pages | slice(end=limit) %}
+        {% for page in posts_section.pages %}
+            {% if loop.index <= limit %}
             <li class="post-item">
                 <span class="post-item-date">
                     {% if page.date %}
@@ -21,6 +22,7 @@
                 </span>
                 <a href="{{ page.permalink }}" class="post-item-title">{{ page.title }}</a>
             </li>
+            {% endif %}
         {% endfor %}
         </ul>
     </div>
