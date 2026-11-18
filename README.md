@@ -20,7 +20,7 @@ A minimalist, responsive port of the [Jekyll-Klisé](https://github.com/piharpi/
 From the root of your Zola site, add the theme as a submodule:
 
 ```bash
-git submodule add [https://github.com/realeteryu/zola-kisse.git](https://github.com/realeteryu/zola-kisse.git) themes/kisse
+git submodule add https://github.com/realeteryu/zola-kisse.git themes/kisse
 ```
 
 ### Option 2: Clone Directly
@@ -28,7 +28,7 @@ git submodule add [https://github.com/realeteryu/zola-kisse.git](https://github.
 Navigate to your Zola site directory and clone the repository into the `themes` folder:
 
 ```bash
-git clone [https://github.com/realeteryu/zola-kisse.git](https://github.com/realeteryu/zola-kisse.git) themes/kisse
+git clone https://github.com/realeteryu/zola-kisse.git themes/kisse
 ```
 
 ## Configuration
@@ -55,9 +55,11 @@ Configure your profile details, homepage post limit, navigation menu, and extra 
 ```toml
 [extra]
 author = "Your Name"
+
 # Avatar URL (external link or path inside static/, e.g., "/avatar.png")
-avatar = "[https://example.com/avatar.png](https://example.com/avatar.png)"
-footer_text = "<a href='[https://github.com/realeteryu/zola-kisse](https://github.com/realeteryu/zola-kisse)'>kisse</a> theme for <a href='[https://www.getzola.org](https://www.getzola.org)'>zola</a>"
+avatar = "https://example.com/avatar.png"
+
+footer_text = "<a href='https://github.com/realeteryu/zola-kisse'>kisse</a> theme for <a href='https://www.getzola.org/'>zola</a>"
 
 # Number of posts displayed on the homepage
 number_of_posts = 5
@@ -77,9 +79,15 @@ url = "@/about/_index.md"
 
 # Additional footer links
 [[extra.footer]]
-name = "github"
-url = "[https://github.com/yourusername](https://github.com/yourusername)"
+name = "support"
+url = "https://ko-fi.com/yourusername"
 ```
+
+## Support
+
+If you find Kisse useful and would like to support its development, you can buy me a coffee:
+
+**[☕ Support Kisse on Ko-fi](https://ko-fi.com/eteryu)**
 
 ## License
 
