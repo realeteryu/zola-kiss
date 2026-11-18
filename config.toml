@@ -44,9 +44,5 @@ url = "@/about/_index.md"
 
 # footer links
 [[extra.footer]]
-name = "github"
-url = "https://github.com/realeteryu/zola-kisse"
-
-[[extra.footer]]
 name = "support"
 url = "https://ko-fi.com/eteryu"
