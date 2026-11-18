@@ -11,7 +11,7 @@ A minimalist, responsive port of the [Jekyll-Klisé](https://github.com/piharpi/
 - **Responsive Layout:** Optimized for mobile, tablet, and desktop screens.
 - **Configurable Navigation & Footer:** Managed directly through `config.toml` using Zola internal links (`@/`).
 - **Syntax Highlighting & Emoji:** Built-in support for Zola's code highlighting and emoji rendering.
-- **Conditional RSS Support:** Automatic feed links in the menu and footer when feed generation is enabled.
+- **Automatic RSS Links:** RSS links are automatically added to the footer and mobile hamburger menu when feed generation is enabled.
 
 ## Installation
 
@@ -50,7 +50,7 @@ render_emoji = true
 
 ### Theme Settings, Navigation & Footer
 
-Configure your profile details, homepage post limit, navigation menu, and extra footer links under `[extra]` in `config.toml`:
+Configure your profile details, homepage post limit, navigation menu, and additional footer links under `[extra]` in `config.toml`:
 
 ```toml
 [extra]
@@ -59,6 +59,7 @@ author = "Your Name"
 # Avatar URL (external link or path inside static/, e.g., "/avatar.png")
 avatar = "https://example.com/avatar.png"
 
+# Footer text (HTML supported)
 footer_text = "<a href='https://github.com/realeteryu/zola-kisse'>kisse</a> theme for <a href='https://www.getzola.org/'>zola</a>"
 
 # Number of posts displayed on the homepage
@@ -82,6 +83,8 @@ url = "@/about/_index.md"
 name = "support"
 url = "https://ko-fi.com/yourusername"
 ```
+
+RSS links are added automatically to the footer and mobile hamburger menu when `generate_feeds = true` is enabled. No additional configuration is required.
 
 ## Support
 
